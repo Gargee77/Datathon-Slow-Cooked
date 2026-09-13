@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slow Cooked · the world trades calories, not nutrition</title>
+<meta name="description" content="178 countries, 2010 to 2023. We tried four ways to blame food trade for anemia in women. One thing survived. Women in Data Datathon 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,300..800;1,300..800&family=Archivo:wght@400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --1s:1s;
+  --ease:cubic-bezier(.19,1,.22,1);
+  --bg:#F5F2EC; --surf:#FAF8F3; --ink:#043647; --ink2:#52463D; --ink3:#8C8279;
+  --line:rgba(4,54,71,.14); --accent:#B0632F; --accent2:#038DA2;
+}
+@media(prefers-reduced-motion:reduce){:root{--1s:1ms}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo',system-ui,sans-serif;
+  font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+h1,h2,h3,h4,p{margin:0}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:var(--bg)}
+:focus-visible{outline:2px solid var(--accent2);outline-offset:4px;border-radius:3px}
+*{scrollbar-color:var(--ink3) var(--surf);scrollbar-width:thin}
+.wrap{max-width:1060px;margin:0 auto;padding:0 30px}
+@media(max-width:640px){.wrap{padding:0 20px}body{font-size:16px}}
+
+/* fixed background layers  present on every section */
+#fx{position:fixed;inset:0;z-index:0;pointer-events:none}
+.grain{position:fixed;inset:0;z-index:900;pointer-events:none;opacity:.05;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:250px 250px}
+.page,nav,footer{position:relative;z-index:2}
+
+/* ── nav ── */
+nav{position:sticky;top:0;z-index:500;backdrop-filter:blur(12px);border-bottom:1px solid rgba(4,54,71,.14);
+  background:rgba(245,242,236,.9);transition:background .5s var(--ease),border-color .5s var(--ease),color .5s var(--ease)}
+nav .in{max-width:1060px;margin:0 auto;padding:13px 30px;display:flex;align-items:center;gap:20px}
+.mk{font-family:'Petrona',serif;font-weight:600;font-size:1.08rem;letter-spacing:-.01em;
+  padding:0;cursor:pointer}
+#egg{position:fixed;left:50%;top:74px;transform:translate(-50%,-14px);z-index:800;
+  background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;
+  font-family:'Petrona',serif;font-size:.98rem;font-style:italic;white-space:nowrap;
+  opacity:0;visibility:hidden;transition:opacity .5s var(--ease),transform .5s var(--ease),visibility .5s;
+  box-shadow:0 16px 32px -20px rgba(4,54,71,.7)}
+#egg.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media(max-width:560px){#egg{font-size:.85rem;padding:10px 15px}}
+.mk i{font-style:italic;color:var(--accent)}
+.tabs{margin-left:auto;display:flex;gap:3px;padding:3px;border-radius:999px;
+  background:color-mix(in srgb,var(--ink) 7%,transparent)}
+.tab{padding:8px 18px;border-radius:999px;font-size:.85rem;font-weight:600;color:var(--ink2);
+  transition:background .4s var(--ease),color .4s var(--ease)}
+.tab.on{background:var(--accent);color:var(--bg)}
+@media(max-width:540px){.mk{font-size:.96rem}.tab{padding:7px 13px;font-size:.79rem}}
+.page{display:none} .page.on{display:block}
+
+/* ── Dark Capacity section grammar ── */
+section.blk{padding:44px 0 40px}
+@media(max-width:640px){section.blk{padding:34px 0 30px}}
+.section-label{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent2);margin-bottom:14px;display:flex;align-items:center;gap:14px}
+.section-label::after{content:'';flex:1;height:1px;background:var(--line)}
+.section-title{font-family:'Petrona',serif;font-weight:600;
+  font-size:clamp(2.3rem,5.4vw,4rem);line-height:1.03;letter-spacing:-.028em;
+  max-width:19ch;margin-bottom:18px}
+.section-title em{font-style:italic;color:var(--accent)}
+p.body{font-size:1.07rem;line-height:1.74;max-width:66ch;color:var(--ink2)}
+p.body+p.body{margin-top:15px}
+p.body b{font-weight:600;color:var(--ink)}
+
+/* ── hero ── */
+.hero{min-height:74svh;display:flex;flex-direction:column;justify-content:center;padding:70px 0 0}
+h1.big{font-family:'Petrona',serif;font-weight:600;font-size:clamp(2.6rem,6.8vw,5.3rem);
+  line-height:1.01;letter-spacing:-.03em;max-width:17ch}
+h1.big em{font-style:italic;color:var(--accent)}
+.hero .sub{margin-top:28px;font-size:clamp(1.04rem,1.7vw,1.24rem);line-height:1.62;color:var(--ink2);max-width:54ch}
+.hero .go{margin-top:42px;display:flex;gap:13px;flex-wrap:wrap}
+.pill{display:flex;align-items:center;gap:12px;padding:15px 24px;border-radius:999px;
+  background:var(--accent);color:var(--bg);border:1px solid var(--accent);
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.pill:hover{transform:translateY(-3px);box-shadow:0 18px 32px -24px color-mix(in srgb,var(--ink) 70%,transparent)}
+.pill b{font-weight:600;font-size:.97rem}
+.pill svg{transition:transform .5s var(--ease)}
+.pill:hover svg{transform:translateX(4px)}
+.mq{margin-top:auto;padding:24px 0;border-top:1px solid var(--line);overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.mq-t{display:flex;width:max-content;animation:slide 82s linear infinite}
+.mq:hover .mq-t{animation-play-state:paused}
+.mq-t span{font-family:'Petrona',serif;font-size:1.04rem;padding:0 21px;white-space:nowrap;color:var(--ink3)}
+.mq-t span b{font-style:italic;font-weight:400;color:var(--accent)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ── number cards + callout, after the write-up's own pattern ── */
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:26px 0}
+.num{background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:22px 20px;
+  transition:transform .5s var(--ease),border-color .4s}
+.num:hover{transform:translateY(-3px);border-color:var(--accent)}
+.num .bn{font-family:'Petrona',serif;font-size:2.4rem;line-height:1;font-weight:600;color:var(--accent);display:block}
+.num .bl{font-size:.82rem;line-height:1.5;color:var(--ink3);display:block;margin-top:10px}
+.callout{background:var(--surf);border:1px solid var(--line);border-left:3px solid var(--accent2);
+  border-radius:8px;padding:20px 24px;margin:26px 0;font-size:.98rem;line-height:1.7;color:var(--ink2)}
+.callout b{color:var(--ink);font-weight:600}
+
+/* ── cards & chips ── */
+.card{background:var(--surf);border:1px solid var(--line);border-radius:12px}
+.chips{display:flex;gap:11px;flex-wrap:wrap;margin-top:34px}
+.chip{border-radius:11px;padding:17px 20px;min-width:152px;flex:1 1 152px;background:var(--surf);border:1px solid var(--line)}
+.chip b{font-family:'Petrona',serif;font-size:2.05rem;display:block;line-height:1;font-weight:600;color:var(--accent)}
+.chip span{font-size:.79rem;display:block;margin-top:8px;line-height:1.45;color:var(--ink3)}
+
+/* ── pick your starting point ── */
+.opener{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:30px 0 0}
+@media(max-width:760px){.opener{grid-template-columns:1fr}}
+.op{background:var(--surf);border:1px solid var(--line);border-radius:11px;padding:24px 20px;
+  text-align:center;cursor:pointer;transition:border-color .35s,background .35s,transform .5s var(--ease)}
+.op:hover{border-color:var(--accent);transform:translateY(-3px)}
+.op.picked{border-color:var(--accent2);background:color-mix(in srgb,var(--accent2) 9%,var(--surf))}
+.op .ic{width:38px;height:38px;margin:0 auto 13px;color:var(--accent2);display:grid;place-items:center}
+.op .ic svg{width:27px;height:27px;stroke:currentColor;stroke-width:1.5;fill:none}
+.op .lb{font-weight:600;font-size:1rem;margin-bottom:6px}
+.op .ds{font-size:.845rem;line-height:1.55;color:var(--ink3)}
+.op-out{margin-top:16px;font-size:.93rem;line-height:1.66;color:var(--ink2);
+  border-left:2px solid var(--accent2);padding-left:16px;display:none}
+.op-out.on{display:block}
+.op-out a{color:var(--accent2);font-weight:600;border-bottom:1px solid color-mix(in srgb,var(--accent2) 40%,transparent)}
+
+/* ── instrument ── */
+.machine{margin-top:44px;border-radius:14px;overflow:hidden;background:var(--surf);border:1px solid var(--line)}
+.m-top{padding:24px 30px;border-bottom:1px solid var(--line);display:flex;
+  justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.m-top .t{font-family:'Petrona',serif;font-size:1.4rem;font-weight:600}
+.m-top .h{font-size:.8rem;color:var(--ink3);max-width:40ch;line-height:1.55}
+.m-grid{display:grid;grid-template-columns:1.06fr .94fr}
+@media(max-width:900px){.m-grid{grid-template-columns:1fr}}
+.m-l{padding:30px}
+.m-r{padding:30px;background:color-mix(in srgb,var(--ink) 4%,transparent);border-left:1px solid var(--line)}
+@media(max-width:900px){.m-r{border-left:none;border-top:1px solid var(--line)}}
+.step{margin-bottom:30px}.step:last-child{margin-bottom:0}
+.step .hd{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.step .hd i{font-family:'Petrona',serif;font-style:italic;color:var(--accent);font-size:1rem;font-weight:600}
+.step .hd h4{font-size:1rem;font-weight:600}
+.step .ex{font-size:.855rem;line-height:1.6;color:var(--ink3);margin-bottom:14px;max-width:45ch}
+.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+/* custom country dropdown */
+.dd{position:relative}
+.dd-btn{display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:var(--bg);
+  padding:11px 16px;border-radius:8px;font-size:.93rem;font-weight:600;min-width:232px;
+  justify-content:space-between;white-space:nowrap;transition:border-color .35s}
+.dd-btn svg{width:11px;height:7px;flex:none}
+.dd-btn:hover,.dd.open .dd-btn{border-color:var(--accent2)}
+.dd-btn svg{transition:transform .35s var(--ease);flex:none}
+.dd.open .dd-btn svg{transform:rotate(180deg)}
+.dd-panel{position:absolute;top:calc(100% + 7px);left:0;width:252px;z-index:60;
+  background:var(--surf);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  box-shadow:0 22px 44px -26px rgba(4,54,71,.55);
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s}
+.dd.open .dd-panel{opacity:1;visibility:visible;transform:none}
+.dd-search{width:100%;border:none;border-bottom:1px solid var(--line);background:transparent;
+  padding:12px 15px;font:inherit;font-size:.88rem;color:inherit;outline:none}
+.dd-search::placeholder{color:var(--ink3)}
+.dd-list{max-height:252px;overflow-y:auto;padding:5px}
+.dd-list button{display:block;width:100%;text-align:left;padding:9px 12px;border-radius:6px;
+  font-size:.89rem;color:var(--ink2);transition:background .2s,color .2s}
+.dd-list button:hover{background:color-mix(in srgb,var(--accent2) 12%,transparent);color:var(--ink)}
+.dd-list button.sel{background:var(--accent2);color:var(--bg);font-weight:600}
+.dd-list .none{padding:14px;font-size:.85rem;color:var(--ink3);text-align:center}
+.mini{border:1px solid var(--line);border-radius:999px;padding:9px 15px;font-size:.8rem;
+  font-weight:600;color:var(--ink2);transition:all .35s var(--ease)}
+.mini:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-2px)}
+.mini.on{background:var(--accent2);border-color:var(--accent2);color:var(--bg)}
+.sl .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+.sl .k{font-size:.9rem;font-weight:600}
+.sl .v{font-family:'Petrona',serif;font-size:1.44rem;font-weight:600;line-height:1}
+.sl .v small{font-size:.85rem;font-style:italic;color:var(--ink3)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:24px;background:transparent;cursor:ew-resize}
+input[type=range]::-webkit-slider-runnable-track{height:2px;background:var(--line)}
+input[type=range]::-moz-range-track{height:2px;background:var(--line)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;
+  background:var(--accent2);margin-top:-7.5px;box-shadow:0 0 0 0 transparent;
+  transition:box-shadow .4s var(--ease),transform .4s var(--ease)}
+input[type=range]::-moz-range-thumb{width:17px;height:17px;border-radius:50%;background:var(--accent2);border:none}
+input[type=range]:hover::-webkit-slider-thumb{box-shadow:0 0 0 8px color-mix(in srgb,var(--accent2) 14%,transparent)}
+input[type=range].quiet::-webkit-slider-thumb{background:var(--ink3)}
+input[type=range].quiet::-moz-range-thumb{background:var(--ink3)}
+.sl .sc{display:flex;justify-content:space-between;font-size:.735rem;color:var(--ink3);margin-top:2px}
+.dial{text-align:center;padding:4px 0 20px}
+.dial .k{font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ink3);font-weight:700}
+.dial .n{font-family:'Petrona',serif;font-size:clamp(4rem,10vw,5.8rem);line-height:.92;
+  letter-spacing:-.035em;color:var(--accent);margin:12px 0 5px;font-weight:600}
+.dial .u{font-size:.93rem;color:var(--ink2)}
+.plain{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:19px 21px;
+  font-size:.94rem;line-height:1.66;color:var(--ink2)}
+.plain b{color:var(--ink);font-weight:600}
+.delta{margin-top:12px;font-size:.865rem;line-height:1.6;color:var(--ink3);
+  opacity:0;transform:translateY(5px);transition:all .5s var(--ease)}
+.delta.on{opacity:1;transform:none}
+.delta b{color:var(--accent2);font-weight:600}
+.cmp{margin-top:24px}
+.cmp .ttl{font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ink3);font-weight:700;margin-bottom:10px}
+.cmp .r{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;
+  border-bottom:1px solid var(--line);font-size:.9rem}
+.cmp .r:last-child{border-bottom:none}
+.cmp .r .n{font-family:'Petrona',serif;font-size:1.1rem;font-weight:600}
+.cmp .r.you{color:var(--accent2)} .cmp .r.you .n{color:var(--accent2)}
+
+/* ── plot ── */
+.plot{margin-top:34px;border-radius:14px;padding:28px 26px 14px;background:var(--surf);border:1px solid var(--line)}
+.plot h3{font-family:'Petrona',serif;font-size:1.3rem;font-weight:600;margin-bottom:6px}
+.plot .cap{font-size:.855rem;line-height:1.6;color:var(--ink3);max-width:68ch;margin-bottom:16px}
+.plot .tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+.plot input[type=search]{border:1px solid var(--line);background:transparent;border-radius:999px;
+  padding:9px 15px;font:inherit;font-size:.8rem;font-weight:600;color:var(--ink2);min-width:210px;
+  transition:all .35s var(--ease)}
+.plot input[type=search]:hover,.plot input[type=search]:focus{border-color:var(--ink);color:var(--ink);outline:none}
+.plot input[type=search]::placeholder{color:var(--ink2);font-weight:600}
+.legend{display:none;flex-wrap:wrap;gap:14px;margin:0 0 14px;font-size:.78rem;color:var(--ink2)}
+.legend.on{display:flex}
+.legend i{width:11px;height:11px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:-1px}
+.keyline{display:flex;flex-wrap:wrap;gap:16px;margin:0 0 14px;font-size:.78rem;color:var(--ink3)}
+.keyline b{color:var(--ink2);font-weight:600}
+.keyline .ring{width:13px;height:13px;border-radius:50%;border:2px solid var(--accent2);
+  display:inline-block;margin-right:6px;vertical-align:-2px}
+.plot svg{display:block;width:100%;height:auto;overflow:visible}
+.ax{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+#tip{position:fixed;z-index:950;background:var(--ink);color:var(--bg);padding:10px 13px;border-radius:7px;
+  font-size:.81rem;pointer-events:none;opacity:0;transition:opacity .22s;line-height:1.5}
+#tip b{font-family:'Petrona',serif;font-size:.95rem;display:block;margin-bottom:2px;font-weight:600}
+
+/* ── verdict table ── */
+.verd{margin-top:32px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.verd .r{display:flex;align-items:center;gap:16px;padding:17px 22px;background:var(--surf);
+  border-bottom:1px solid var(--line);flex-wrap:wrap}
+.verd .r:last-child{border-bottom:none}
+.verd .r .h{flex:1;font-size:.97rem;min-width:200px}
+.verd .r .n{font-family:'Petrona',serif;font-size:1.14rem;color:var(--ink3);font-variant-numeric:tabular-nums}
+.verd .r .st{font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;
+  padding:5px 11px;border-radius:5px;white-space:nowrap;
+  background:color-mix(in srgb,var(--ink3) 20%,transparent);color:var(--ink2)}
+.verd .r.kept .n{color:var(--accent)}
+.verd .r.kept .st{background:color-mix(in srgb,var(--accent) 20%,transparent);color:var(--accent)}
+
+/* ── ladder ── */
+.ladder{margin-top:30px}
+.ladder .st{display:flex;align-items:center;gap:15px;padding:14px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.ladder .st:last-child{border-bottom:none}
+.ladder .lb{flex:1;font-size:.95rem;min-width:190px}
+.ladder .lb small{display:block;color:var(--ink3);font-size:.79rem;margin-top:2px}
+.ladder .track{flex:1.5;min-width:160px;height:8px;background:color-mix(in srgb,var(--ink) 9%,transparent);border-radius:4px;position:relative;overflow:hidden}
+.ladder .track i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:4px;
+  transform-origin:left;transform:scaleX(0);
+  transition:transform calc(var(--1s)*1.3) var(--ease)}
+.ladder.go .track i{transform:scaleX(1)}
+.ladder .vv{font-family:'Petrona',serif;font-size:1.15rem;font-weight:600;width:64px;text-align:right;color:var(--accent)}
+
+/* ── qa, sources, authors, limits ── */
+.qa{margin-top:28px}
+.qa details{border-bottom:1px solid var(--line);padding:18px 0}
+.qa summary{cursor:pointer;font-weight:600;font-size:1.02rem;list-style:none;display:flex;
+  justify-content:space-between;align-items:center;gap:14px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";font-family:'Petrona',serif;font-size:1.45rem;color:var(--accent);
+  transition:transform .4s var(--ease);line-height:1}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa p{margin-top:12px;font-size:.95rem;line-height:1.72;color:var(--ink2);max-width:68ch}
+.srcs{margin-top:26px}
+.srcs .s{display:grid;grid-template-columns:170px 1fr auto;gap:18px;align-items:baseline;
+  padding:16px 0;border-bottom:1px solid var(--line)}
+@media(max-width:700px){.srcs .s{grid-template-columns:1fr;gap:6px}}
+.srcs .s:last-child{border-bottom:none}
+.srcs .nm{font-weight:600;font-size:.94rem}
+.srcs .ds{font-size:.87rem;line-height:1.6;color:var(--ink3)}
+.srcs .tg{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);white-space:nowrap}
+.lim .l{padding:16px 0;border-bottom:1px solid var(--line);font-size:.96rem;line-height:1.7;color:var(--ink2)}
+.lim .l:last-child{border-bottom:none}
+.lim .l b{color:var(--ink);font-weight:600}
+.auth{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin-top:30px}
+.ac{border-radius:12px;padding:26px 22px;background:var(--surf);border:1px solid var(--line);
+  transition:transform .5s var(--ease)}
+.ac:hover{transform:translateY(-3px)}
+.ac .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;margin-bottom:15px;
+  font-family:'Petrona',serif;font-weight:600;font-size:1.05rem;color:var(--bg)}
+.ac h4{font-size:1.02rem;font-weight:600;margin-bottom:5px}
+.ac p.role{font-size:.83rem;color:var(--ink3);font-style:italic}
+footer{padding:52px 0 76px;border-top:1px solid var(--line)}
+footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
+.rv{opacity:0;transform:translateY(16px)}
+.rv.in{opacity:1;transform:none;transition:opacity calc(var(--1s)*.9) var(--ease),transform calc(var(--1s)*.9) var(--ease)}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<div class="grain"></div>
+<div id="tip" role="status" aria-live="polite"></div>
+<div id="egg" role="status"></div>
+
+<nav>
+  <div class="in">
+    <button class="mk" id="mk" title="go on, click it">Slow <i>Cooked</i></button>
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-p="model" role="tab" aria-selected="true">Model</button>
+      <button class="tab" data-p="write" role="tab" aria-selected="false">Write-up</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ MODEL ═══════════ -->
+<div class="page on" id="p-model">
+  <div class="wrap">
+    <header class="hero">
+      <h1 class="big">Niger grows more iron than its women need. Half are <em>anemic anyway.</em></h1>
+      <p class="sub">We spent three weeks trying to blame food trade for that. It wasn't trade. This is the model that found what it actually was, and you can operate it yourself.</p>
+      <div class="go">
+        <a class="pill" href="#instrument"><b>Operate the model</b>
+          <svg width="17" height="11" viewBox="0 0 18 11" fill="none"><path d="M12.5 1L17 5.5 12.5 10M0 5.5h16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="mq"><div class="mq-t" id="mq"></div></div>
+    </header>
+
+    <section class="blk" id="instrument">
+      <div class="section-label">The instrument</div>
+      <h2 class="section-title">Build a country's plate, and the model tells you <em>what it costs</em></h2>
+      <p class="body">This is the regression from our analysis, running live. It learned from 167 countries. Give it a diet and an income and it estimates how many women aged 15 to 49 would be anemic there.</p>
+      <p class="body"><b>Start with a real country, then change one thing at a time.</b> The interesting part isn't the number it gives you. It's which sliders move it, and which ones barely do anything at all.</p>
+
+      <div class="machine rv">
+        <div class="m-top">
+          <span class="t">The model</span>
+          <span class="h">Ordinary least squares · 167 countries · explains 46% of the variation. The rest is healthcare, genetics, malaria and geography.</span>
+        </div>
+        <div class="m-grid">
+          <div class="m-l">
+            <div class="step">
+              <div class="hd"><i>01</i><h4>Start somewhere real</h4></div>
+              <p class="ex">Load an actual country's numbers so you have a baseline you can trust before you start changing things.</p>
+              <div class="row">
+                <div class="dd" id="dd">
+                  <button class="dd-btn" id="ddBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span id="ddVal">Niger</span>
+                    <svg width="11" height="7" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </button>
+                  <div class="dd-panel" role="listbox">
+                    <input class="dd-search" id="ddSearch" type="search" placeholder="Search 161 countries" aria-label="Search countries">
+                    <div class="dd-list" id="ddList"></div>
+                  </div>
+                </div>
+                <button class="mini" id="bWorst">Worst anemia</button>
+                <button class="mini" id="bBeat">Beats its income</button>
+                <button class="mini" id="bRand">Surprise me</button>
+              </div>
+            </div>
+            <div class="step sl">
+              <div class="hd"><i>02</i><h4>How starchy is the diet?</h4></div>
+              <p class="ex">Share of daily calories from cereals, roots and tubers: bread, rice, maize, cassava. Low means a varied plate. High means most calories come from one or two staples.</p>
+              <div class="top"><span class="k">Starch share of calories</span><span class="v" id="vS">45<small>%</small></span></div>
+              <input type="range" id="sS" min="13" max="86" step="0.5" value="45" aria-label="Starch share of calories">
+              <div class="sc"><span>13% · Netherlands</span><span>86% · DR Congo</span></div>
+            </div>
+            <div class="step sl">
+              <div class="hd"><i>03</i><h4>How much food is imported?</h4></div>
+              <p class="ex">Share of the food supply bought from abroad. This was our original hypothesis and the control we expected to matter most. Move it and watch the number closely.</p>
+              <div class="top"><span class="k">Imported share of food</span><span class="v" id="vI">40<small>%</small></span></div>
+              <input type="range" id="sI" min="0" max="100" step="1" value="40" class="quiet" aria-label="Imported share of food">
+              <div class="sc"><span>0% · grows everything</span><span>100% · buys everything</span></div>
+            </div>
+            <div class="step sl">
+              <div class="hd"><i>04</i><h4>How rich is the country?</h4></div>
+              <p class="ex">GDP per person, adjusted for what money actually buys locally. Income matters enormously, which is exactly why we had to hold it still to see whether diet mattered on its own.</p>
+              <div class="top"><span class="k">Income per person</span><span class="v" id="vG">$16,000</span></div>
+              <input type="range" id="sG" min="1500" max="120000" step="500" value="16000" aria-label="Income per person">
+              <div class="sc"><span>$1,500 · Burundi</span><span>$120,000 · Luxembourg</span></div>
+            </div>
+          </div>
+          <div class="m-r">
+            <div class="dial">
+              <span class="k">The model estimates</span>
+              <div class="n" id="out">27.4</div>
+              <span class="u">women in every 100, aged 15 to 49, would be anemic</span>
+            </div>
+            <div class="plain" id="read"></div>
+            <div class="delta" id="delta"></div>
+            <div class="cmp"><div class="ttl">For comparison</div><div id="cmpList"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plot rv">
+        <h3>Every country we could measure</h3>
+        <p class="cap">Horizontal: how much of the diet is starch. Vertical: how many women are anemic. <b>Click any dot to load that country into the model.</b></p>
+        <div class="tools">
+          <input type="search" id="find" list="clist" placeholder="Type or pick a country" aria-label="Find a country on the plot">
+          <datalist id="clist"></datalist>
+          <button class="mini" id="tIncome">Colour by income</button>
+          <button class="mini" id="tNames">Show names</button>
+          <button class="mini" id="tLine">Trend line</button>
+        </div>
+        <div class="legend" id="incLegend">
+          <span><i style="background:#B0632F"></i>Under $6,000</span>
+          <span><i style="background:#DABE00"></i>$6,000 to $16,000</span>
+          <span><i style="background:#8AC566"></i>$16,000 to $40,000</span>
+          <span><i style="background:#038DA2"></i>Over $40,000</span>
+          <span style="color:var(--ink3)">GDP per person, PPP</span>
+        </div>
+        <div class="keyline">
+          <span><span class="ring"></span><b>The ring</b> is your current slider setting, not a country</span>
+          <span><b>161 countries</b> plotted. Start typing to search, or use the dropdown above.</span>
+        </div>
+        <svg id="sc" viewBox="0 0 900 470" role="img" aria-label="Starch share against anemia prevalence across 161 countries"></svg>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ═══════════ WRITE-UP ═══════════ -->
+<div class="page" id="p-write">
+  <div class="wrap">
+
+    <section class="blk" id="w-question">
+      <div class="section-label">01 · The question</div>
+      <h2 class="section-title">Half the world's calories cross a border. Nobody checks <em>what's in them</em></h2>
+      <p class="body">We started with a specific question: <b>which countries have traded their way into a starch-rich, micronutrient-poor food supply, and does it show up in women's anemia?</b></p>
+      <p class="body">The logic seemed sound. Starch, sugar and oil ship well and don't spoil. Vegetables, eggs and fish don't. So the global food trade selects, relentlessly and without anyone deciding it, for calories over nutrition. Cereals, oil and sugar alone are <b>57% of the average person's diet</b>. If trade pushes diets toward starch, and starch-heavy diets are low in absorbable iron, then women in trade-dependent countries should be more anemic.</p>
+      <p class="body">That is a clean, testable chain. We tested it four separate ways, and it broke.</p>
+      <div class="chips">
+        <div class="chip"><b>178</b><span>countries, 2010 to 2023</span></div>
+        <div class="chip"><b>82%</b><span>grow denser food than they buy</span></div>
+        <div class="chip"><b>24mg</b><span>of iron a day in Niger, above the requirement</span></div>
+        <div class="chip"><b>47%</b><span>of Nigerien women anemic anyway</span></div>
+      </div>
+    </section>
+
+    <section class="blk" id="w-start">
+      <div class="section-label">02 · Where to begin</div>
+      <h2 class="section-title">Pick your <em>starting point</em></h2>
+      <p class="body">We know not everyone reads the same way. Pick what describes you and we'll point you to the right section.</p>
+      <div class="opener">
+        <div class="op" data-op="curious">
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.9 9.1l-1.7 4.1-4.1 1.7 1.7-4.1z"/></svg></div>
+          <div class="lb">Genuinely curious</div>
+          <div class="ds">You saw “the world trades calories, not nutrition” and wanted to know what that actually means</div>
+        </div>
+        <div class="op" data-op="data">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l3.5-4 3 2.5L20 7"/></svg></div>
+          <div class="lb">Data person</div>
+          <div class="ds">You want the methodology, the coefficients, and whether the controls actually hold up</div>
+        </div>
+        <div class="op" data-op="skeptic">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 8v4.5M12 16v.2"/></svg></div>
+          <div class="lb">The skeptic</div>
+          <div class="ds">You think country-level correlations between diet and disease are too coarse to mean much</div>
+        </div>
+      </div>
+      <div class="op-out" id="opOut"></div>
+    </section>
+
+    <section class="blk" id="w-wrong">
+      <div class="section-label">03 · What we got wrong</div>
+      <h2 class="section-title">We came looking for a trade story. The data <em>refused</em></h2>
+      <p class="body">Import dependence does not predict anemia in women. Not across countries, not within a single country tracked over thirteen years, and not three years ahead of time. The correlation is <b>−0.18</b>, and the sign points the wrong way: countries buying the most food from abroad trend slightly <em>healthier</em>.</p>
+      <p class="body">The most import-dependent economies on earth are Belgium and the Netherlands. The starchiest diet belongs to DR Congo, which imports 7.2% of its food and grows the rest. <b>Starch and trade are negatively correlated globally.</b> The countries eating the most starch are the ones trading least.</p>
+      <div class="nums">
+        <div class="num"><span class="bn">0.184</span><span class="bl">correlation between import dependence and anemia, and it points the wrong way</span></div>
+        <div class="num"><span class="bn">7.2%</span><span class="bl">of DR Congo's food is imported, and it has the starchiest diet on earth</span></div>
+        <div class="num"><span class="bn">98%</span><span class="bl">of Belgium's food is imported, and its women are among the least anemic</span></div>
+      </div>
+      <div class="callout">If trade were driving this, the countries buying the most food would be the sickest. <b>They are the healthiest.</b> Trade dependence is nutritionally safe when a country is rich enough to also import variety, and risky only where imports reinforce a diet that was already starch-heavy.</div>
+      <p class="body">We are publishing this because it is the finding, and because a reader who can't see what we ruled out has no way to weigh what we kept.</p>
+      <div class="verd">
+        <div class="r"><span class="h">Import dependence against anemia, across countries</span><span class="n">−0.184</span><span class="st">Failed</span></div>
+        <div class="r"><span class="h">Import share against starch share</span><span class="n">−0.448</span><span class="st">Wrong direction</span></div>
+        <div class="r"><span class="h">Diet change within a country, tracked 13 years</span><span class="n">p &gt; 0.05</span><span class="st">Failed</span></div>
+        <div class="r"><span class="h">Diet composition as a 3-year leading signal</span><span class="n">p 0.22–0.72</span><span class="st">Failed</span></div>
+        <div class="r"><span class="h">Commodity price of iron-rich food against anemia</span><span class="n">n.s.</span><span class="st">Failed</span></div>
+        <div class="r kept"><span class="h">Starch share of diet against anemia</span><span class="n">+0.315</span><span class="st">Survived</span></div>
+      </div>
+    </section>
+
+    <section class="blk" id="w-held">
+      <div class="section-label">04 · What held</div>
+      <h2 class="section-title">You can hit the iron target and <em>still be anemic</em></h2>
+      <p class="body">Niger supplies <b>24.2 mg of iron</b> per person per day. The requirement is 18. On paper Niger is fed. <b>47% of its women are anemic.</b></p>
+      <p class="body">Because 81% of that iron comes from cereals and beans, where the body absorbs very little of it. Iron from meat, fish and eggs is absorbed several times more efficiently, and across all countries the <em>share</em> of iron from animal sources predicts anemia far better than the total does. The label counts milligrams. The body counts what it can take up.</p>
+      <div class="nums">
+        <div class="num"><span class="bn">24.2mg</span><span class="bl">of iron supplied per person per day in Niger, against a requirement of 18</span></div>
+        <div class="num"><span class="bn">81%</span><span class="bl">of it from cereals and beans, where the body absorbs very little</span></div>
+        <div class="num"><span class="bn">47%</span><span class="bl">of Nigerien women anemic regardless</span></div>
+      </div>
+      <div class="callout">The label counts milligrams. <b>The body counts what it can actually take up.</b> Iron from meat, fish and eggs absorbs several times more efficiently than iron from grain, which is why the share of iron from animal sources predicts anemia far better than the total ever does.</div>
+      <p class="body">So we stopped asking where food came from and started asking what was in it. <b>Starch share of diet against anemia holds at +0.315.</b> Then we spent the rest of the time trying to kill it.</p>
+      <div class="ladder" id="ladder">
+        <div class="st"><span class="lb">The raw relationship<small>168 countries, income controlled</small></span>
+          <span class="track"><i style="width:100%;animation-delay:.04s"></i></span><span class="vv">+0.315</span></div>
+        <div class="st"><span class="lb">Add malaria<small>a genuine independent predictor of anemia</small></span>
+          <span class="track"><i style="width:86%;animation-delay:.12s"></i></span><span class="vv">+0.271</span></div>
+        <div class="st"><span class="lb">Add water and sanitation<small>sample falls to 123 countries</small></span>
+          <span class="track"><i style="width:81%;animation-delay:.2s"></i></span><span class="vv">+0.256</span></div>
+        <div class="st"><span class="lb">Add fertility and stunting<small>sample falls to 70</small></span>
+          <span class="track"><i style="width:75%;animation-delay:.28s"></i></span><span class="vv">+0.235</span></div>
+        <div class="st"><span class="lb">Add iron supplementation<small>on the 53 lower-income countries that report it</small></span>
+          <span class="track"><i style="width:76%;animation-delay:.36s"></i></span><span class="vv">+0.241</span></div>
+      </div>
+      <p class="body" style="margin-top:26px">It shrinks. It never reaches zero. <b>Five rival explanations, and the effect is still standing.</b> Malaria is real and it absorbs 14% of the starch effect, leaving the rest intact. Handing out iron pills does not explain it away either.</p>
+    </section>
+
+    <section class="blk" id="w-method">
+      <div class="section-label">05 · How we did it</div>
+      <h2 class="section-title">The method, in the order it <em>actually happened</em></h2>
+      <p class="body">Every FAOSTAT file has the same shape: country, item, element, year, value. One row is one fact. We joined five sources on country and year, then ran the same test repeatedly while adding rival explanations one at a time.</p>
+      <div class="nums">
+        <div class="num"><span class="bn">167</span><span class="bl">countries in the fitted model</span></div>
+        <div class="num"><span class="bn">0.463</span><span class="bl">R squared, so 46% of the variation explained</span></div>
+        <div class="num"><span class="bn">5.435</span><span class="bl">z score on the starch coefficient, p below 0.001</span></div>
+        <div class="num"><span class="bn">5</span><span class="bl">rival explanations added one at a time</span></div>
+      </div>
+      <div class="qa">
+        <details open><summary>The model, written out</summary>
+          <p>anemia% = 40.02 + 5.07 × import share + 31.98 × starch share + 0.49 × micronutrient adequacy − 3.15 × log(GDP per capita). Fitted on 167 countries. R² = 0.463. The starch coefficient has z = 5.435 and p &lt; 0.001, with a confidence interval of 20.45 to 43.52, nowhere near zero.</p></details>
+        <details><summary>Why we controlled for income first</summary>
+          <p>Income correlates with starch share at −0.759. Richer countries eat less starch and have less anemia, so any raw starch-anemia relationship could simply be poverty wearing a costume. Holding income constant was the first thing we did, not the last.</p></details>
+        <details><summary>Why we then tested within countries over time</summary>
+          <p>Comparing different countries risks confusing “starchy” with “poor” or “African” or “rural”. Panel fixed effects compare each country only against itself, cancelling every permanent trait. <b>Nothing survived that test.</b> The honest reading is that the relationship is structural rather than a lever: it tells you who is at risk today, not that changing diet tomorrow would fix it.</p></details>
+        <details><summary>Why iron quantity isn't the answer</summary>
+          <p>Raw iron supply in milligrams per day does not predict anemia once income is controlled (p = 0.75). It cannot distinguish heme iron from meat, which absorbs readily, from non-heme iron in cereals, which largely doesn't. Composition beats totals.</p></details>
+        <details><summary>What we did about missing data</summary>
+          <p>Twenty countries are absent from the FAO data entirely, including Mali, Chad and Somalia. Six more have no World Bank anemia figure. We report on what remains and say so rather than imputing. Since the missing countries carry some of the world's worst anemia, our estimates are likely conservative.</p></details>
+      </div>
+    </section>
+
+    <section class="blk" id="w-sources">
+      <div class="section-label">06 · Sources</div>
+      <h2 class="section-title">Where every number <em>came from</em></h2>
+      <p class="body">Five sources, joined on country and year. Nothing on this site is illustrative.</p>
+      <div class="srcs">
+        <div class="s"><span class="nm">FAOSTAT · Food Balance Sheets</span><span class="ds">Production, imports, exports and food supply by country, item and year. Used to build starch share of calories and import dependence.</span><span class="tg">2010 to 2023</span></div>
+        <div class="s"><span class="nm">FAOSTAT · Food Security Indicators</span><span class="ds">Anemia in women 15 to 49, cereal import dependency, stunting, and water and sanitation access. The outcome variable and three of the five controls.</span><span class="tg">2010 to 2023</span></div>
+        <div class="s"><span class="nm">FAOSTAT · Supply-Utilization Accounts</span><span class="ds">Iron supply in mg per capita per day, split across 17 food groups. Used to test whether iron quantity predicts anemia. It doesn't.</span><span class="tg">2010 to 2023</span></div>
+        <div class="s"><span class="nm">World Bank</span><span class="ds">GDP per capita PPP as the income control, anemia prevalence as a cross-check, and the Pink Sheet commodity price series for the forecast.</span><span class="tg">1960 to 2026</span></div>
+        <div class="s"><span class="nm">WHO and DHS</span><span class="ds">Malaria incidence per 1,000 and iron supplementation coverage, added as rival explanations in the control ladder.</span><span class="tg">2021 to 2022</span></div>
+      </div>
+    </section>
+
+    <section class="blk" id="w-limits">
+      <div class="section-label">07 · Limits</div>
+      <h2 class="section-title">What this <em>cannot tell you</em></h2>
+      <div class="lim">
+        <div class="l"><b>This is national food supply, not what any individual woman ate.</b> In many of these countries food is not shared equally inside a household, and we have no data that reaches the table.</div>
+        <div class="l"><b>Twenty countries are missing from the FAO data entirely,</b> including Mali, Chad and Somalia, which carry some of the world's worst anemia. Six more have no World Bank anemia figure.</div>
+        <div class="l"><b>The relationship is structural, not a lever.</b> Across countries, starchier diets go with more anemia. Track one country over thirteen years and its own diet changes do not move its own anemia.</div>
+        <div class="l"><b>The model explains 46% of the variation.</b> The rest is healthcare, genetics, fortification and geography. South Asia alone carries 11 extra points that income and diet together cannot account for.</div>
+        <div class="l"><b>Anemia has causes that are not food.</b> Malaria is a genuine independent predictor. It absorbs 14% of the starch effect and leaves the rest intact.</div>
+        <div class="l"><b>Nothing here is causal.</b> Every relationship on this site is an association, measured carefully and reported with its controls.</div>
+      </div>
+    </section>
+
+    <section class="blk" id="w-who">
+      <div class="section-label">08 · The team</div>
+      <h2 class="section-title">Who <em>cooked this</em></h2>
+      <p class="body">Four people, three weeks, five datasets and a hypothesis we had to let go of. The name turned out to describe the method: low heat, long time, and a willingness to let something fall apart before it's ready.</p>
+      <div class="auth">
+        <div class="ac"><div class="av" style="background:#038DA2">MM</div><h4>Mansi Modi</h4><p class="role">Title to come</p></div>
+        <div class="ac"><div class="av" style="background:#B0632F">AN</div><h4>Amia Nagpal</h4><p class="role">Title to come</p></div>
+        <div class="ac"><div class="av" style="background:#8F5C8C">GN</div><h4>Gargee Nimdeo</h4><p class="role">Title to come</p></div>
+        <div class="ac"><div class="av" style="background:#5E8C7D">AH</div><h4>Alexandra Harlan</h4><p class="role">Title to come</p></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><b>Slow Cooked</b> · Women in Data Datathon 2026, “What's Cooking?” · Built on FAOSTAT, World Bank, WHO and DHS data, 2010 to 2023.</p>
+  </div>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const R=(a,b)=>a+Math.random()*(b-a);
+const slow=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const B={int:40.02,imp:5.07,star:31.98,adq:0.49,lg:-3.15};
+const predict=(s,i,g,adq=1.5)=>B.int+B.imp*(i/100)+B.star*(s/100)+B.adq*adq+B.lg*Math.log(g);
+let D=[],base=null;
+
+const cur={acc:[176,99,47]};
+function paint(){}
+
+/* ── tabs ── */
+function go(p){
+  document.querySelectorAll('.page').forEach(x=>x.classList.toggle('on',x.id==='p-'+p));
+  document.querySelectorAll('.tab').forEach(t=>{const on=t.dataset.p===p;
+    t.classList.toggle('on',on);t.setAttribute('aria-selected',on);});
+  scrollTo({top:0,behavior:'instant'});
+  if(ld)ld.classList.remove('go');
+}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>go(t.dataset.p));
+addEventListener('scroll',paint,{passive:true});
+addEventListener('resize',paint);
+
+/* ── pick your starting point ── */
+const OUT={
+ curious:'Start at <a href="#w-wrong">what we got wrong</a>. It is the shortest way into why this project exists, and it needs no statistics at all.',
+ data:'Go straight to <a href="#w-method">the method</a> for the coefficients and controls, then <a href="#w-held">the control ladder</a> to see what survives each rival explanation. The <a href="#instrument">model</a> is live if you want to poke at it.',
+ skeptic:'Fair. Read <a href="#w-limits">the limits</a> first  we say there that the within-country test fails and that nothing here is causal. Then <a href="#w-held">the ladder</a>, which is our answer to exactly your objection.'};
+document.querySelectorAll('.op').forEach(o=>o.onclick=()=>{
+  document.querySelectorAll('.op').forEach(x=>x.classList.toggle('picked',x===o));
+  const out=$('opOut');out.innerHTML=OUT[o.dataset.op];out.classList.add('on');
+});
+
+/* ── instrument ── */
+function tick(el,to,dp=1,dur=640){
+  const from=parseFloat(el.dataset.v||to)||0;el.dataset.v=to;const t0=performance.now();
+  (function f(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,4);
+    el.textContent=(from+(to-from)*e).toFixed(dp);if(p<1)requestAnimationFrame(f);})(t0);
+}
+const band=v=>v<20?"a mild public-health problem by WHO's definition":v<30?"a moderate public-health problem":v<40?"a severe public-health problem":"among the worst burdens in the world";
+const sS=$('sS'),sI=$('sI'),sG=$('sG');
+function run(moved){
+  const s=+sS.value,i=+sI.value,g=+sG.value;
+  $('vS').innerHTML=s.toFixed(0)+'<small>%</small>';
+  $('vI').innerHTML=i.toFixed(0)+'<small>%</small>';
+  $('vG').textContent='$'+g.toLocaleString();
+  const p=Math.max(2,Math.min(78,predict(s,i,g)));
+  tick($('out'),p);
+  $('read').innerHTML='In a country like this the model expects <b>about '+p.toFixed(0)+
+    ' in every 100 women</b> to be anemic. WHO would call that '+band(p)+'.';
+  if(base&&moved){
+    const d=p-base.pred;
+    if(Math.abs(d)>.15){
+      const span=Math.abs(predict(s,100,g)-predict(s,0,g));
+      $('delta').innerHTML='That is <b>'+(d>0?'+':'')+d.toFixed(1)+' points</b> against '+base.c+
+        ' as it really is. Sweeping the import slider across its entire range moves this by only <b>'+span.toFixed(1)+' points</b>.';
+      $('delta').classList.add('on');
+    }
+  }
+  const y=$('you');if(y){y.setAttribute('cx',X(s));y.setAttribute('cy',Y(p));}
+}
+[sS,sI,sG].forEach(el=>el.addEventListener('input',()=>run(true)));
+function load(name){
+  const d=D.find(x=>x.c===name)||D[0];
+  sS.value=d.s;sI.value=Math.min(100,Math.max(0,d.i??40));sG.value=Math.min(120000,Math.max(1500,d.g||16000));
+  base={c:d.c,pred:predict(+sS.value,+sI.value,+sG.value)};
+  if(DD1)DD1.setLabel(d.c);$('delta').classList.remove('on');run(false);
+  const resid=d.a-base.pred;
+  $('read').innerHTML='In a country like this the model expects <b>about '+base.pred.toFixed(0)+
+    ' in every 100 women</b> to be anemic. In '+d.c+' the real figure is <b>'+d.a+'</b>. '+
+    (resid>2?'That gap is what diet and income cannot explain: healthcare, genetics, malaria, and how food is shared inside a household.'
+     :resid<-2?'It is doing better than its diet and income predict, so something there is working.'
+     :'The model lands close, which is about as well as it ever does.');
+  const near=D.filter(x=>x.c!==d.c).sort((a,b)=>Math.abs(a.a-d.a)-Math.abs(b.a-d.a)).slice(0,3);
+  $('cmpList').innerHTML='<div class="r you"><span>'+d.c+' · as it really is</span><span class="n">'+d.a+'</span></div>'+
+    near.map(x=>'<div class="r"><span>'+x.c+'</span><span class="n">'+x.a+'</span></div>').join('');
+  sel(d.c);
+  if(DD1)DD1.render();
+}
+function makeDD(ids,onPick,getLabel){
+  const dd=$(ids.root),btn=$(ids.btn),val=$(ids.val),list=$(ids.list),search=$(ids.search);
+  function render(f=''){
+    const t=f.trim().toLowerCase();
+    const rows=[...D].sort((a,b)=>a.c.localeCompare(b.c)).filter(d=>!t||d.c.toLowerCase().includes(t));
+    list.innerHTML=rows.length
+      ? rows.map(d=>`<button role="option" data-c="${d.c}"${d.c===selected?' class="sel"':''}>${d.c}</button>`).join('')
+      : '<div class="none">No country matches that.</div>';
+  }
+  function open(o){
+    dd.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);
+    if(o){search.value='';render();setTimeout(()=>search.focus(),60);
+      const c=list.querySelector('.sel');if(c)c.scrollIntoView({block:'center'});}
+  }
+  btn.onclick=()=>open(!dd.classList.contains('open'));
+  search.addEventListener('input',e=>render(e.target.value));
+  list.addEventListener('click',e=>{const b=e.target.closest('button[data-c]');if(!b)return;
+    onPick(b.dataset.c);open(false);});
+  document.addEventListener('click',e=>{if(!dd.contains(e.target))open(false);});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')open(false);});
+  return {render,setLabel:t=>{val.textContent=t;}};
+}
+let DD1;
+$('bWorst').onclick=()=>load(D[0].c);
+$('bBeat').onclick=()=>load('Guatemala');
+$('bRand').onclick=()=>load(D[(Math.random()*D.length)|0].c);
+
+/* ── interactive scatter ── */
+const W=900,H=470,PAD={l:66,r:22,t:18,b:58};
+const X=v=>PAD.l+(v-10)/80*(W-PAD.l-PAD.r);
+const Y=v=>H-PAD.b-(v-5)/60*(H-PAD.t-PAD.b);
+let optIncome=false,optNames=false,optLine=true,q='',selected='Niger';
+const inc=g=>g<6000?'#B0632F':g<16000?'#DABE00':g<40000?'#8AC566':'#038DA2';
+function draw(){
+  if(!D.length)return;
+  const named=['Niger','India','Gabon','Guatemala','Australia','Mauritania'];
+  const ink='#043647',ink3='#8C8279',acc='#B0632F';
+  let g='';
+  for(let v=20;v<=80;v+=20)g+=`<line x1="${X(v)}" y1="${PAD.t}" x2="${X(v)}" y2="${H-PAD.b}" stroke="rgba(4,54,71,.08)"/><text class="ax" fill="${ink3}" x="${X(v)}" y="${H-PAD.b+20}" text-anchor="middle">${v}%</text>`;
+  for(let v=10;v<=60;v+=10)g+=`<line x1="${PAD.l}" y1="${Y(v)}" x2="${W-PAD.r}" y2="${Y(v)}" stroke="rgba(4,54,71,.08)"/><text class="ax" fill="${ink3}" x="${PAD.l-12}" y="${Y(v)+3}" text-anchor="end">${v}%</text>`;
+  if(optLine){
+    const n=D.length,mx=D.reduce((a,d)=>a+d.s,0)/n,my=D.reduce((a,d)=>a+d.a,0)/n;
+    const b=D.reduce((a,d)=>a+(d.s-mx)*(d.a-my),0)/D.reduce((a,d)=>a+(d.s-mx)**2,0),a0=my-b*mx;
+    g+=`<line x1="${X(13)}" y1="${Y(a0+b*13)}" x2="${X(86)}" y2="${Y(a0+b*86)}" stroke="${acc}" stroke-width="1.7" opacity=".65" stroke-dasharray="6 5"/>`;
+  }
+  const placed=[];
+  D.forEach((d,k)=>{
+    const hit=q&&d.c.toLowerCase().includes(q);
+    const isSel=d.c===selected, hi=named.includes(d.c);
+    const r=isSel?7.5:hit?7:hi?6:4.1;
+    const fill=optIncome?inc(d.g||0):(isSel||hi?acc:ink);
+    const op=q?(hit?1:.09):(isSel?1:hi?.92:.3);
+    g+=`<circle cx="${X(d.s)}" cy="${Y(d.a)}" r="${r}" fill="${fill}" opacity="${op}" data-i="${k}" style="cursor:pointer"/>`;
+    if((optNames&&(hi||hit))||isSel){
+      let lx=X(d.s)+r+6, ly=Y(d.a)+4, anchor='start';
+      if(lx>W-PAD.r-70){lx=X(d.s)-r-6;anchor='end';}
+      let guard=0;
+      while(placed.some(p=>Math.abs(p.x-lx)<74&&Math.abs(p.y-ly)<13)&&guard++<6) ly+=13;
+      placed.push({x:lx,y:ly});
+      g+=`<text x="${lx}" y="${ly}" text-anchor="${anchor}" font-size="11" font-weight="600" fill="${ink}" opacity="${q&&!hit?.15:.9}">${d.c}</text>`;
+    }
+  });
+  g+=`<circle id="you" r="11" fill="none" stroke="#038DA2" stroke-width="2.2" cx="${X(+sS.value)}" cy="${Y(Math.max(2,Math.min(78,predict(+sS.value,+sI.value,+sG.value))))}" style="transition:cx .6s var(--ease),cy .6s var(--ease)"/>`;
+  const cx=PAD.l+(W-PAD.l-PAD.r)/2, cy=PAD.t+(H-PAD.t-PAD.b)/2;
+  g+=`<text class="ax" fill="${ink3}" x="${cx}" y="${H-10}" text-anchor="middle">Starch share of the diet</text>`;
+  g+=`<text class="ax" fill="${ink3}" x="${-cy}" y="14" transform="rotate(-90)" text-anchor="middle">Anemia in women</text>`;
+  $('sc').innerHTML=g;
+}
+function sel(c){selected=c;draw();}
+(function bind(){
+  const svg=$('sc');
+  svg.addEventListener('pointerover',e=>{const c=e.target.closest('circle[data-i]');if(!c)return;
+    const d=D[+c.dataset.i];
+    $('tip').innerHTML='<b>'+d.c+'</b>'+d.s+'% starch · '+d.a+'% anemic<br>'+(d.fe??'')+' mg iron · $'+(d.g||0).toLocaleString()+'<br><span style="opacity:.6">click to load</span>';
+    $('tip').style.opacity=1;});
+  svg.addEventListener('pointermove',e=>{$('tip').style.left=Math.min(innerWidth-250,e.clientX+15)+'px';$('tip').style.top=(e.clientY-12)+'px';});
+  svg.addEventListener('pointerout',()=>$('tip').style.opacity=0);
+  svg.addEventListener('click',e=>{const c=e.target.closest('circle[data-i]');if(!c)return;load(D[+c.dataset.i].c);});
+})();
+
+$('tIncome').onclick=e=>{optIncome=!optIncome;e.target.classList.toggle('on',optIncome);$('incLegend').classList.toggle('on',optIncome);draw();};
+$('tNames').onclick=e=>{optNames=!optNames;e.target.classList.toggle('on',optNames);draw();};
+$('tLine').onclick=e=>{optLine=!optLine;e.target.classList.toggle('on',optLine);draw();};
+$('tLine').classList.add('on');
+
+/* ── one fixed background, everywhere: motes rising, with rare drifting streaks ── */
+(function(){
+  const c=$('fx'),x=c.getContext('2d');let w,h,M=[],S=[];
+  function size(){const d=Math.min(devicePixelRatio||1,2);
+    w=innerWidth;h=innerHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);}
+  function init(){size();
+    M=Array.from({length:46},()=>({x:R(0,w),y:R(0,h),r:R(.6,1.9),vy:R(-.09,-.3),vx:R(-.05,.05),
+      a:R(.12,.42),ph:R(0,7),tw:R(.008,.024)}));
+    S=[];}
+  init();addEventListener('resize',init);
+  (function loop(){
+    x.clearRect(0,0,w,h);
+    const col=cur.acc.join(',');
+    M.forEach(m=>{
+      if(!slow){m.y+=m.vy;m.x+=m.vx;m.ph+=m.tw;}
+      if(m.y<-4){m.y=h+4;m.x=R(0,w);}
+      if(m.x<-4)m.x=w+4; if(m.x>w+4)m.x=-4;
+      const a=m.a*(.5+.5*Math.sin(m.ph));
+      x.beginPath();x.arc(m.x,m.y,m.r,0,7);x.fillStyle=`rgba(${col},${a.toFixed(3)})`;x.fill();
+    });
+    if(!slow){
+      if(S.length<2&&Math.random()<.004)
+        S.push({x:R(w*.1,w*.9),y:R(h*.15,h*.85),vx:R(-.9,.9),vy:R(-.5,-1.1),life:1,len:R(16,34)});
+      S=S.filter(s=>{
+        s.x+=s.vx;s.y+=s.vy;s.life-=.006;
+        if(s.life<=0)return false;
+        const g=x.createLinearGradient(s.x,s.y,s.x-s.vx*s.len,s.y-s.vy*s.len);
+        g.addColorStop(0,`rgba(${col},${(s.life*.5).toFixed(3)})`);
+        g.addColorStop(1,`rgba(${col},0)`);
+        x.strokeStyle=g;x.lineWidth=1.1;x.lineCap='round';
+        x.beginPath();x.moveTo(s.x,s.y);x.lineTo(s.x-s.vx*s.len,s.y-s.vy*s.len);x.stroke();
+        return true;});
+    }
+    requestAnimationFrame(loop);
+  })();
+})();
+
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+/* easter egg */
+(function(){
+  const LINES=["Do you smell what the Slow Cooked is cooking?",
+               "Finally… Slow Cooked has come back to the datathon.",
+               "It doesn't matter what you had for dinner.",
+               "Know your role and eat your greens."];
+  let n=0,t;
+  $('mk').addEventListener('click',()=>{
+    const e=$('egg');e.textContent=LINES[n%LINES.length];n++;
+    e.classList.add('on');clearTimeout(t);t=setTimeout(()=>e.classList.remove('on'),2600);});
+})();
+
+const ld=$('ladder');
+const lo=new IntersectionObserver(es=>es.forEach(e=>{
+  e.target.classList.toggle('go',e.isIntersecting);}),{threshold:.25});
+if(ld)lo.observe(ld);
+
+fetch('country_data.json').then(r=>r.json()).then(j=>{
+  D=j;
+  $('clist').innerHTML=[...D].sort((a,b)=>a.c.localeCompare(b.c)).map(d=>`<option>${d.c}</option>`).join('');
+  DD1=makeDD({root:'dd',btn:'ddBtn',val:'ddVal',list:'ddList',search:'ddSearch'},load);
+  $('find').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();draw();});
+  const line=D.slice(0,30).map(d=>`<span>${d.c} <b>${d.a}%</b></span>`).join('');
+  $('mq').innerHTML=line+line;
+  load('Niger');paint();
+}).catch(()=>{
+  $('read').innerHTML='<b>country_data.json must sit beside this file.</b> Open the page through a local server rather than double-clicking it.';
+});
+</script>
+</body>
+</html>
