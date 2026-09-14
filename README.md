@@ -1,4 +1,4 @@
-# Slow Cooked — the world trades calories, not nutrition
+# Slow Cooked - the world trades calories, not nutrition
 
 An interactive companion to our submission for the **Women in Data Datathon 2026**, theme *What's Cooking?*
 
@@ -30,7 +30,7 @@ We tested that four separate ways. It failed all four.
 
 The starch effect holds after malaria (+0.271), water and sanitation (+0.256), fertility and stunting (+0.235) and iron supplementation (+0.241). Five rival explanations, and it never reaches zero.
 
-**The paradox that frames it:** Niger supplies 24.2 mg of iron per person per day against a requirement of 18, and 47% of its women are anemic — because 81% of that iron comes from cereals and beans, where the body absorbs very little of it. Quantity is not the problem. Form is.
+**The paradox that frames it:** Niger supplies 24.2 mg of iron per person per day against a requirement of 18, and 47% of its women are anemic - because 81% of that iron comes from cereals and beans, where the body absorbs very little of it. Quantity is not the problem. Form is.
 
 ---
 
@@ -40,7 +40,7 @@ Two tabs in one page.
 
 **Model** — the cross-sectional regression running live in the browser. Load any of 161 countries, then move three sliders and watch the predicted anemia rate change. The import slider is deliberately greyed out: sweeping it across its entire range moves the estimate by under one point, while starch moves it by twenty-three. That contrast is the finding, discovered by hand rather than asserted.
 
-Below it, a scatter of all 161 countries — click any dot to load it into the model, search by name, colour by income band, toggle names and the trend line.
+Below it, a scatter of all 161 countries - click any dot to load it into the model, search by name, colour by income band, toggle names and the trend line.
 
 **Write-up** — eight sections: the question, *Pick your starting point*, what we got wrong, what held, the method, the sources, the limits, and the team.
 
