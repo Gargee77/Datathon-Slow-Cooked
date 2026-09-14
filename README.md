@@ -36,13 +36,15 @@ The starch effect holds after malaria (+0.271), water and sanitation (+0.256), f
 
 ## What's in the site
 
-Two tabs in one page.
+Three tabs in one page.
 
 **Model** — the cross-sectional regression running live in the browser. Load any of 161 countries, then move three sliders and watch the predicted anemia rate change. The import slider is deliberately greyed out: sweeping it across its entire range moves the estimate by under one point, while starch moves it by twenty-three. That contrast is the finding, discovered by hand rather than asserted.
 
 Below it, a scatter of all 161 countries - click any dot to load it into the model, search by name, colour by income band, toggle names and the trend line.
 
 **Write-up** — eight sections: the question, *Pick your starting point*, what we got wrong, what held, the method, the sources, the limits, and the team.
+
+**Findings** - ten sections carrying the full analysis: the premise tested, the twelve starch-trap countries, what the trap costs women, the nine explanations that were tested, movement over time, the 2030 outlook, the damped projections, the recommendations, sources and limits, and the correlation matrix. Eight charts and thirteen tables.
 
 ## The model
 
@@ -102,9 +104,12 @@ Vercel serves `index.html` at the root and `country_data.json` alongside it.
 ## Files
 
 ```
-index.html          the entire site: markup, styles, and logic
+index.html          the entire site: markup, styles, logic, and both datasets
+                    embedded, so it opens straight from disk with no server
 country_data.json   161 countries · starch share, import dependence, anemia,
                     iron supply, GDP, malaria, 2030 projections
+findings.json       import-share trend, food groups, density gaps, the trap
+                    classification and the damped projections
 ```
 
 ## Notes

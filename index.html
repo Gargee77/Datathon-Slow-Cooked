@@ -7,18 +7,18 @@
 <meta name="description" content="178 countries, 2010 to 2023. We tried four ways to blame food trade for anemia in women. One thing survived. Women in Data Datathon 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,300..800;1,300..800&family=Archivo:wght@400..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300..800&family=Spectral:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 <style>
 :root{
   --1s:1s;
   --ease:cubic-bezier(.19,1,.22,1);
-  --bg:#F5F2EC; --surf:#FAF8F3; --ink:#043647; --ink2:#52463D; --ink3:#8C8279;
-  --line:rgba(4,54,71,.14); --accent:#B0632F; --accent2:#038DA2;
+  --bg:#151A22; --surf:#1B212C; --ink:#EDF0F1; --ink2:#9AA8AC; --ink3:#78858B;
+  --line:rgba(237,240,241,.14); --accent:#E23A57; --accent2:#3FC7B8;
 }
 @media(prefers-reduced-motion:reduce){:root{--1s:1ms}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo',system-ui,sans-serif;
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Spectral',Georgia,serif;
   font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 h1,h2,h3,h4,p{margin:0}
@@ -38,24 +38,24 @@ a{color:inherit;text-decoration:none}
 .page,nav,footer{position:relative;z-index:2}
 
 /* ── nav ── */
-nav{position:sticky;top:0;z-index:500;backdrop-filter:blur(12px);border-bottom:1px solid rgba(4,54,71,.14);
-  background:rgba(245,242,236,.9);transition:background .5s var(--ease),border-color .5s var(--ease),color .5s var(--ease)}
+nav{position:sticky;top:0;z-index:500;backdrop-filter:blur(12px);border-bottom:1px solid rgba(237,240,241,.14);
+  background:rgba(21,26,34,.9);transition:background .5s var(--ease),border-color .5s var(--ease),color .5s var(--ease)}
 nav .in{max-width:1320px;margin:0 auto;padding:13px 40px;display:flex;align-items:center;gap:20px}
-.mk{font-family:'Petrona',serif;font-weight:600;font-size:1.08rem;letter-spacing:-.01em;
+.mk{font-family:'Unbounded',system-ui,sans-serif;font-weight:600;font-size:1.08rem;letter-spacing:-.01em;
   padding:0;cursor:pointer}
 #egg{position:fixed;left:50%;top:74px;transform:translate(-50%,-14px);z-index:800;
   background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;
-  font-family:'Petrona',serif;font-size:.98rem;font-style:italic;white-space:nowrap;
+  font-family:'Unbounded',system-ui,sans-serif;font-size:.86rem;letter-spacing:-.01em;white-space:nowrap;
   opacity:0;visibility:hidden;transition:opacity .5s var(--ease),transform .5s var(--ease),visibility .5s;
-  box-shadow:0 16px 32px -20px rgba(4,54,71,.7)}
+  box-shadow:0 16px 32px -20px rgba(0,0,0,.6)}
 #egg.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
 @media(max-width:560px){#egg{font-size:.85rem;padding:10px 15px}}
-.mk i{font-style:italic;color:var(--accent)}
+.mk i{font-style:italic;color:var(--accent2)}
 .tabs{margin-left:auto;display:flex;gap:3px;padding:3px;border-radius:999px;
   background:color-mix(in srgb,var(--ink) 7%,transparent)}
 .tab{padding:8px 18px;border-radius:999px;font-size:.85rem;font-weight:600;color:var(--ink2);
   transition:background .4s var(--ease),color .4s var(--ease)}
-.tab.on{background:var(--accent);color:var(--bg)}
+.tab.on{background:var(--ink);color:var(--bg)}
 @media(max-width:540px){.mk{font-size:.96rem}.tab{padding:7px 13px;font-size:.79rem}}
 .page{display:none} .page.on{display:block}
 
@@ -65,23 +65,23 @@ section.blk{padding:44px 0 40px}
 .section-label{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
   color:var(--accent2);margin-bottom:14px;display:flex;align-items:center;gap:14px}
 .section-label::after{content:'';flex:1;height:1px;background:var(--line)}
-.section-title{font-family:'Petrona',serif;font-weight:600;
-  font-size:clamp(2.3rem,5.4vw,4rem);line-height:1.03;letter-spacing:-.028em;
-  max-width:19ch;margin-bottom:18px}
-.section-title em{font-style:italic;color:var(--accent)}
+.section-title{font-family:'Unbounded',system-ui,sans-serif;font-weight:600;
+  font-size:clamp(1.7rem,3.5vw,2.7rem);line-height:1.12;letter-spacing:-.01em;
+  max-width:24ch;margin-bottom:18px}
+.section-title em{font-style:normal;color:var(--accent)}
 p.body{font-size:1.07rem;line-height:1.74;max-width:66ch;color:var(--ink2)}
 p.body+p.body{margin-top:15px}
 p.body b{font-weight:600;color:var(--ink)}
 
 /* ── hero ── */
 .hero{min-height:74svh;display:flex;flex-direction:column;justify-content:center;padding:70px 0 0}
-h1.big{font-family:'Petrona',serif;font-weight:600;font-size:clamp(2.6rem,6.8vw,5.3rem);
-  line-height:1.01;letter-spacing:-.03em;max-width:17ch}
-h1.big em{font-style:italic;color:var(--accent)}
+h1.big{font-family:'Unbounded',system-ui,sans-serif;font-weight:600;font-size:clamp(2rem,4.5vw,3.5rem);
+  line-height:1.12;letter-spacing:-.01em;max-width:21ch}
+h1.big em{font-style:normal;color:var(--accent)}
 .hero .sub{margin-top:28px;font-size:clamp(1.04rem,1.7vw,1.24rem);line-height:1.62;color:var(--ink2);max-width:54ch}
 .hero .go{margin-top:42px;display:flex;gap:13px;flex-wrap:wrap}
 .pill{display:flex;align-items:center;gap:12px;padding:15px 24px;border-radius:999px;
-  background:var(--accent);color:var(--bg);border:1px solid var(--accent);
+  background:var(--accent);color:var(--ink);border:1px solid var(--accent);
   transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .pill:hover{transform:translateY(-3px);box-shadow:0 18px 32px -24px color-mix(in srgb,var(--ink) 70%,transparent)}
 .pill b{font-weight:600;font-size:.97rem}
@@ -92,8 +92,8 @@ h1.big em{font-style:italic;color:var(--accent)}
           mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
 .mq-t{display:flex;width:max-content;animation:slide 82s linear infinite}
 .mq:hover .mq-t{animation-play-state:paused}
-.mq-t span{font-family:'Petrona',serif;font-size:1.04rem;padding:0 21px;white-space:nowrap;color:var(--ink3)}
-.mq-t span b{font-style:italic;font-weight:400;color:var(--accent)}
+.mq-t span{font-family:'Unbounded',system-ui,sans-serif;font-size:1.04rem;padding:0 21px;white-space:nowrap;color:var(--ink3)}
+.mq-t span b{font-style:italic;font-weight:400;color:var(--ink)}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* ── number cards + callout, after the write-up's own pattern ── */
@@ -101,7 +101,7 @@ h1.big em{font-style:italic;color:var(--accent)}
 .num{background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:22px 20px;
   transition:transform .5s var(--ease),border-color .4s}
 .num:hover{transform:translateY(-3px);border-color:var(--accent)}
-.num .bn{font-family:'Petrona',serif;font-size:2.4rem;line-height:1;font-weight:600;color:var(--accent);display:block}
+.num .bn{font-family:'Unbounded',system-ui,sans-serif;font-size:2.4rem;line-height:1;font-weight:600;color:var(--accent2);display:block}
 .num .bl{font-size:.82rem;line-height:1.5;color:var(--ink3);display:block;margin-top:10px}
 .callout{background:var(--surf);border:1px solid var(--line);border-left:3px solid var(--accent2);
   border-radius:8px;padding:20px 24px;margin:26px 0;font-size:.98rem;line-height:1.7;color:var(--ink2)}
@@ -111,7 +111,7 @@ h1.big em{font-style:italic;color:var(--accent)}
 .card{background:var(--surf);border:1px solid var(--line);border-radius:12px}
 .chips{display:flex;gap:11px;flex-wrap:wrap;margin-top:34px}
 .chip{border-radius:11px;padding:17px 20px;min-width:152px;flex:1 1 152px;background:var(--surf);border:1px solid var(--line)}
-.chip b{font-family:'Petrona',serif;font-size:2.05rem;display:block;line-height:1;font-weight:600;color:var(--accent)}
+.chip b{font-family:'Unbounded',system-ui,sans-serif;font-size:2.05rem;display:block;line-height:1;font-weight:600;color:var(--accent2)}
 .chip span{font-size:.79rem;display:block;margin-top:8px;line-height:1.45;color:var(--ink3)}
 
 /* ── pick your starting point ── */
@@ -134,7 +134,7 @@ h1.big em{font-style:italic;color:var(--accent)}
 .machine{margin-top:44px;border-radius:14px;overflow:hidden;background:var(--surf);border:1px solid var(--line)}
 .m-top{padding:18px 30px;border-bottom:1px solid var(--line);display:flex;
   justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
-.m-top .t{font-family:'Petrona',serif;font-size:1.4rem;font-weight:600}
+.m-top .t{font-family:'Unbounded',system-ui,sans-serif;font-size:1.4rem;font-weight:600}
 .m-top .h{font-size:.8rem;color:var(--ink3);max-width:72ch;line-height:1.5}
 .m-grid{display:grid;grid-template-columns:1.06fr .94fr}
 
@@ -149,7 +149,7 @@ h1.big em{font-style:italic;color:var(--accent)}
 @media(max-width:720px){.m-r{border-left:none;border-top:1px solid var(--line)}}
 .step{margin-bottom:30px}.step:last-child{margin-bottom:0}
 .step .hd{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
-.step .hd i{font-family:'Petrona',serif;font-style:italic;color:var(--accent);font-size:1rem;font-weight:600}
+.step .hd i{font-family:'Unbounded',system-ui,sans-serif;color:var(--accent2);font-size:.82rem;font-weight:600}
 .step .hd h4{font-size:1rem;font-weight:600}
 .step .ex{font-size:.855rem;line-height:1.6;color:var(--ink3);margin-bottom:14px;max-width:45ch}
 .row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
@@ -164,7 +164,7 @@ h1.big em{font-style:italic;color:var(--accent)}
 .dd.open .dd-btn svg{transform:rotate(180deg)}
 .dd-panel{position:absolute;top:calc(100% + 7px);left:0;width:252px;z-index:60;
   background:var(--surf);border:1px solid var(--line);border-radius:10px;overflow:hidden;
-  box-shadow:0 22px 44px -26px rgba(4,54,71,.55);
+  box-shadow:0 22px 44px -26px rgba(0,0,0,.55);
   opacity:0;visibility:hidden;transform:translateY(-6px);
   transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s}
 .dd.open .dd-panel{opacity:1;visibility:visible;transform:none}
@@ -177,13 +177,17 @@ h1.big em{font-style:italic;color:var(--accent)}
 .dd-list button:hover{background:color-mix(in srgb,var(--accent2) 12%,transparent);color:var(--ink)}
 .dd-list button.sel{background:var(--accent2);color:var(--bg);font-weight:600}
 .dd-list .none{padding:14px;font-size:.85rem;color:var(--ink3);text-align:center}
+.dd-btn.dd-pill{padding:9px 15px;border-radius:999px;font-size:.8rem;font-weight:600;
+  color:var(--ink2);background:transparent;min-width:0;gap:9px}
+.dd-btn.dd-pill svg{width:9px;height:6px}
+.dd-btn.dd-pill:hover,.dd.open .dd-btn.dd-pill{border-color:var(--ink);color:var(--ink)}
 .mini{border:1px solid var(--line);border-radius:999px;padding:9px 15px;font-size:.8rem;
   font-weight:600;color:var(--ink2);transition:all .35s var(--ease)}
 .mini:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-2px)}
 .mini.on{background:var(--accent2);border-color:var(--accent2);color:var(--bg)}
 .sl .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
 .sl .k{font-size:.9rem;font-weight:600}
-.sl .v{font-family:'Petrona',serif;font-size:1.44rem;font-weight:600;line-height:1}
+.sl .v{font-family:'Unbounded',system-ui,sans-serif;font-size:1.44rem;font-weight:600;line-height:1}
 .sl .v small{font-size:.85rem;font-style:italic;color:var(--ink3)}
 input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:24px;background:transparent;cursor:ew-resize}
 input[type=range]::-webkit-slider-runnable-track{height:2px;background:var(--line)}
@@ -198,7 +202,7 @@ input[type=range].quiet::-moz-range-thumb{background:var(--ink3)}
 .sl .sc{display:flex;justify-content:space-between;font-size:.735rem;color:var(--ink3);margin-top:2px}
 .dial{text-align:center;padding:4px 0 20px}
 .dial .k{font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ink3);font-weight:700}
-.dial .n{font-family:'Petrona',serif;font-size:clamp(4rem,10vw,5.8rem);line-height:.92;
+.dial .n{font-family:'Unbounded',system-ui,sans-serif;font-size:clamp(4rem,10vw,5.8rem);line-height:.92;
   letter-spacing:-.035em;color:var(--accent);margin:12px 0 5px;font-weight:600}
 .dial .u{font-size:.93rem;color:var(--ink2)}
 .plain{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:19px 21px;
@@ -213,12 +217,12 @@ input[type=range].quiet::-moz-range-thumb{background:var(--ink3)}
 .cmp .r{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;
   border-bottom:1px solid var(--line);font-size:.9rem}
 .cmp .r:last-child{border-bottom:none}
-.cmp .r .n{font-family:'Petrona',serif;font-size:1.1rem;font-weight:600}
+.cmp .r .n{font-family:'Unbounded',system-ui,sans-serif;font-size:1.1rem;font-weight:600}
 .cmp .r.you{color:var(--accent2)} .cmp .r.you .n{color:var(--accent2)}
 
 /* ── plot ── */
 .plot{margin-top:34px;border-radius:14px;padding:28px 30px 14px;background:var(--surf);border:1px solid var(--line)}
-.plot h3{font-family:'Petrona',serif;font-size:1.3rem;font-weight:600;margin-bottom:6px}
+.plot h3{font-family:'Unbounded',system-ui,sans-serif;font-size:1.3rem;font-weight:600;margin-bottom:6px}
 .plot .cap{font-size:.855rem;line-height:1.6;color:var(--ink3);max-width:68ch;margin-bottom:16px}
 .plot .tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
 .plot input[type=search]{border:1px solid var(--line);background:transparent;border-radius:999px;
@@ -237,7 +241,7 @@ input[type=range].quiet::-moz-range-thumb{background:var(--ink3)}
 .ax{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 #tip{position:fixed;z-index:950;background:var(--ink);color:var(--bg);padding:10px 13px;border-radius:7px;
   font-size:.81rem;pointer-events:none;opacity:0;transition:opacity .22s;line-height:1.5}
-#tip b{font-family:'Petrona',serif;font-size:.95rem;display:block;margin-bottom:2px;font-weight:600}
+#tip b{font-family:'Unbounded',system-ui,sans-serif;font-size:.95rem;display:block;margin-bottom:2px;font-weight:600}
 
 /* ── verdict table ── */
 .verd{margin-top:32px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
@@ -245,7 +249,7 @@ input[type=range].quiet::-moz-range-thumb{background:var(--ink3)}
   border-bottom:1px solid var(--line);flex-wrap:wrap}
 .verd .r:last-child{border-bottom:none}
 .verd .r .h{flex:1;font-size:.97rem;min-width:200px}
-.verd .r .n{font-family:'Petrona',serif;font-size:1.14rem;color:var(--ink3);font-variant-numeric:tabular-nums}
+.verd .r .n{font-family:'Unbounded',system-ui,sans-serif;font-size:1.14rem;color:var(--ink3);font-variant-numeric:tabular-nums}
 .verd .r .st{font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;
   padding:5px 11px;border-radius:5px;white-space:nowrap;
   background:color-mix(in srgb,var(--ink3) 20%,transparent);color:var(--ink2)}
@@ -259,11 +263,11 @@ input[type=range].quiet::-moz-range-thumb{background:var(--ink3)}
 .ladder .lb{flex:1;font-size:.95rem;min-width:190px}
 .ladder .lb small{display:block;color:var(--ink3);font-size:.79rem;margin-top:2px}
 .ladder .track{flex:1.5;min-width:160px;height:8px;background:color-mix(in srgb,var(--ink) 9%,transparent);border-radius:4px;position:relative;overflow:hidden}
-.ladder .track i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:4px;
+.ladder .track i{position:absolute;inset:0 auto 0 0;background:var(--accent2);border-radius:4px;
   transform-origin:left;transform:scaleX(0);
   transition:transform calc(var(--1s)*1.3) var(--ease)}
 .ladder.go .track i{transform:scaleX(1)}
-.ladder .vv{font-family:'Petrona',serif;font-size:1.15rem;font-weight:600;width:64px;text-align:right;color:var(--accent)}
+.ladder .vv{font-family:'Unbounded',system-ui,sans-serif;font-size:1.15rem;font-weight:600;width:64px;text-align:right;color:var(--accent2)}
 
 /* ── qa, sources, authors, limits ── */
 .qa{margin-top:28px}
@@ -271,7 +275,7 @@ input[type=range].quiet::-moz-range-thumb{background:var(--ink3)}
 .qa summary{cursor:pointer;font-weight:600;font-size:1.02rem;list-style:none;display:flex;
   justify-content:space-between;align-items:center;gap:14px}
 .qa summary::-webkit-details-marker{display:none}
-.qa summary::after{content:"+";font-family:'Petrona',serif;font-size:1.45rem;color:var(--accent);
+.qa summary::after{content:"+";font-family:'Unbounded',system-ui,sans-serif;font-size:1.45rem;color:var(--accent2);
   transition:transform .4s var(--ease);line-height:1}
 .qa details[open] summary::after{transform:rotate(45deg)}
 .qa p{margin-top:12px;font-size:.95rem;line-height:1.72;color:var(--ink2);max-width:68ch}
@@ -291,7 +295,7 @@ input[type=range].quiet::-moz-range-thumb{background:var(--ink3)}
   transition:transform .5s var(--ease)}
 .ac:hover{transform:translateY(-3px)}
 .ac .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;margin-bottom:15px;
-  font-family:'Petrona',serif;font-weight:600;font-size:1.05rem;color:var(--bg)}
+  font-family:'Unbounded',system-ui,sans-serif;font-weight:600;font-size:1.05rem;color:var(--bg)}
 .ac h4{font-size:1.02rem;font-weight:600;margin-bottom:5px}
 .ac p.role{font-size:.83rem;color:var(--ink3);font-style:italic}
 footer{padding:52px 0 76px;border-top:1px solid var(--line)}
@@ -303,10 +307,14 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
      instrument is there. Leftover height is spent as breathing room, not padding. */
   .machine{min-height:calc(100svh - 94px);display:flex;flex-direction:column}
   /* only the whitespace flexes with screen height - every font size stays as designed */
-  .m-top{padding:clamp(10px,2vh,22px) 30px}
+  /* the header shares the grid below it, so the subtitle starts exactly on the divider */
+  .m-top{padding:clamp(10px,2vh,22px) 0;display:grid;grid-template-columns:1.4fr 1fr;align-items:end;gap:0}
+  .m-top .t{padding-left:30px}
+  .m-top .h{max-width:none;padding-right:30px}
   .m-l,.m-r{padding:clamp(14px,2.6vh,30px) 30px}
-  .step .ex{margin-bottom:clamp(8px,1.6vh,14px)}
-  .sl .top{margin-bottom:clamp(5px,1vh,9px)}
+  .step .ex{margin-bottom:clamp(8px,2.4vh,28px)}
+  .sl .top{margin-bottom:clamp(5px,1.7vh,16px)}
+  .sl .sc{margin-top:clamp(2px,.9vh,10px)}
   .dial{padding:4px 0 clamp(8px,2vh,20px)}
   .dial .n{font-size:clamp(3.6rem,10.2vh,5.8rem);margin:clamp(6px,1.4vh,12px) 0 5px}
   .plain{padding:clamp(10px,2vh,19px) 21px}
@@ -317,10 +325,79 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
   .m-grid{grid-template-columns:1.4fr 1fr;flex:1;min-height:0}
   /* four steps as a 2x2 field rather than one tall stack - each step keeps its
      own layout, they just sit beside each other instead of below */
-  .m-l{display:grid;grid-template-columns:1fr 1fr;column-gap:30px;row-gap:clamp(12px,2.6vh,26px);align-content:space-between}
-  .m-l .step{margin-bottom:0}
+  .m-l{display:grid;grid-template-columns:1fr 1fr;column-gap:30px;row-gap:clamp(14px,3.4vh,34px);align-content:space-evenly}
+  /* each step fills its cell and its control sits on the cell floor, so the
+     controls of the two steps in a row always line up with each other */
+  .m-l .step{margin-bottom:0;display:flex;flex-direction:column}
+  .m-l .step .row{margin-top:auto}
+  .m-l .sl .top{margin-top:auto}
   .m-r{display:flex;flex-direction:column;justify-content:center}
 }
+
+/* ── findings tab: tables, small multiples, recommendation cards ── */
+.fd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin-top:26px}
+.fd-card{background:var(--surf);border:1px solid var(--line);border-radius:11px;padding:20px 22px}
+.fd-card h5{font-family:'Spectral',Georgia,serif;font-size:.96rem;font-weight:600;margin-bottom:7px;color:var(--ink)}
+.fd-card p{font-size:.86rem;line-height:1.62;color:var(--ink3)}
+.fd-chart{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:20px 22px 14px;margin-top:26px}
+.fd-chart .ct{font-size:.95rem;font-weight:600;margin-bottom:3px}
+.fd-chart .cs{font-size:.8rem;color:var(--ink3);margin-bottom:14px;line-height:1.5}
+.fd-chart svg{width:100%;height:auto;display:block;overflow:visible}
+.fd-note{font-size:.78rem;color:var(--ink3);line-height:1.6;margin-top:11px}
+.fd-key{display:flex;gap:18px;flex-wrap:wrap;font-size:.78rem;color:var(--ink3);margin-top:10px;align-items:center}
+.fd-key span{display:flex;align-items:center;gap:7px}
+.fd-key i{width:11px;height:11px;border-radius:3px;display:inline-block}
+table.fd{width:100%;border-collapse:collapse;margin-top:22px;font-size:.87rem}
+table.fd th{text-align:left;font-size:.71rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink3);font-weight:700;padding:0 12px 9px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+table.fd td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line);color:var(--ink2);vertical-align:baseline}
+table.fd td:first-child{color:var(--ink);font-weight:600}
+table.fd td.n{text-align:right;font-family:'Unbounded',system-ui,sans-serif;font-size:.83rem;white-space:nowrap}
+table.fd tr:last-child td{border-bottom:none}
+table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(--accent2);
+  margin-right:8px;vertical-align:middle;opacity:.75}
+.fd-two{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:22px}
+@media(max-width:820px){.fd-two{grid-template-columns:1fr}}
+.fd-label{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);font-weight:700;margin-bottom:6px}
+.fd-facts{border:1px solid var(--line);border-radius:11px;background:var(--surf);padding:18px 20px}
+.fd-facts .hd{font-family:'Unbounded',system-ui,sans-serif;font-size:1.02rem;font-weight:600;
+  padding-bottom:9px;border-bottom:2px solid var(--ink);margin-bottom:4px}
+.fd-facts .sv{font-size:.76rem;color:var(--ink3);padding-bottom:9px;border-bottom:1px solid var(--line)}
+.fd-facts .r{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:.87rem}
+.fd-facts .r:last-of-type{border-bottom:none}
+.fd-facts .r b{font-weight:600;color:var(--ink)}
+.fd-facts .ft{font-size:.78rem;color:var(--ink3);margin-top:10px;font-style:italic}
+.fd-rec{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.fd-rec:last-child{border-bottom:none}
+.fd-rec .no{font-family:'Unbounded',system-ui,sans-serif;font-size:1.5rem;font-weight:600;
+  color:var(--accent2);line-height:1;min-width:38px}
+.fd-rec .who{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px}
+.fd-rec h5{font-family:'Spectral',Georgia,serif;font-size:1.05rem;font-weight:600;margin-bottom:7px}
+.fd-rec p{font-size:.88rem;line-height:1.66;color:var(--ink2)}
+.fd-rec p+p{margin-top:6px}
+.fd-seg{display:grid;grid-template-columns:auto 1fr;gap:0 20px;margin-top:24px}
+.fd-seg .tag{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  color:var(--bg);background:var(--accent2);border-radius:5px;padding:5px 9px;height:max-content;white-space:nowrap}
+.fd-seg .tag.act{background:var(--accent);color:var(--ink)}
+.fd-seg .bd{padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.fd-seg .bd:last-child{border-bottom:none}
+.fd-seg .bd h5{font-size:.97rem;font-weight:600;margin-bottom:5px}
+.fd-seg .bd .cl{font-size:.85rem;color:var(--ink2);line-height:1.6}
+.fd-seg .bd .ac2{font-size:.8rem;color:var(--ink3);margin-top:5px}
+.cmx{border-collapse:collapse;margin-top:20px;font-size:.78rem}
+.cmx td,.cmx th{padding:7px 9px;text-align:center;border:1px solid var(--line)}
+.cmx th{font-size:.7rem;color:var(--ink3);font-weight:600;text-align:left}
+.cmx td.v{font-family:'Unbounded',system-ui,sans-serif;font-size:.74rem;color:var(--ink)}
+.fd-sowhat{background:color-mix(in srgb,var(--accent2) 9%,transparent);border:1px solid color-mix(in srgb,var(--accent2) 26%,transparent);
+  border-radius:10px;padding:16px 20px;margin-top:26px;font-size:.93rem;line-height:1.66;color:var(--ink2)}
+.fd-sowhat b{color:var(--ink);font-weight:600}
+
+#p-find section.blk{scroll-margin-top:78px}
+.fd-nav{display:flex;flex-wrap:wrap;gap:8px;padding:24px 0 4px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.fd-nav a{font-size:.79rem;padding:7px 13px;border:1px solid var(--line);border-radius:999px;
+  color:var(--ink3);transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease)}
+.fd-nav a:hover{color:var(--bg);background:var(--accent2);border-color:var(--accent2)}
+.fd-nav .lead{font-size:.79rem;color:var(--ink3);padding:7px 6px 7px 0;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
 </style>
 </head>
 <body>
@@ -334,6 +411,7 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
     <button class="mk" id="mk" title="go on, click it">Slow <i>Cooked</i></button>
     <div class="tabs" role="tablist">
       <button class="tab on" data-p="model" role="tab" aria-selected="true">Model</button>
+      <button class="tab" data-p="find" role="tab" aria-selected="false">Findings</button>
       <button class="tab" data-p="write" role="tab" aria-selected="false">Write-up</button>
     </div>
   </div>
@@ -361,7 +439,7 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
       <div class="machine rv" id="instrument" style="scroll-margin-top:74px">
         <div class="m-top">
           <span class="t">The model</span>
-          <span class="h">Ordinary least squares · 167 countries · explains 46% of the variation. The rest is healthcare, genetics, malaria and geography.</span>
+          <span class="h">Ordinary least squares · 167 countries · explains 46% of the variation.<br>The rest is healthcare, genetics, malaria and geography.</span>
         </div>
         <div class="m-grid">
           <div class="m-l">
@@ -423,26 +501,466 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
         <h3>Every country we could measure</h3>
         <p class="cap">Horizontal: how much of the diet is starch. Vertical: how many women are anemic. <b>Click any dot to load that country into the model.</b></p>
         <div class="tools">
-          <input type="search" id="find" list="clist" placeholder="Type or pick a country" aria-label="Find a country on the plot">
-          <datalist id="clist"></datalist>
-          <button class="mini" id="tIncome">Colour by income</button>
+          <div class="dd" id="fdd">
+            <button class="dd-btn dd-pill" id="fddBtn" aria-haspopup="listbox" aria-expanded="false">
+              <span id="fddVal">Find a country</span>
+              <svg viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </button>
+            <div class="dd-panel" role="listbox">
+              <input class="dd-search" id="fddSearch" type="search" placeholder="Search 161 countries" aria-label="Search countries">
+              <div class="dd-list" id="fddList"></div>
+            </div>
+          </div>
+          <button class="mini" id="tIncome">Color by income</button>
           <button class="mini" id="tNames">Show names</button>
           <button class="mini" id="tLine">Trend line</button>
         </div>
         <div class="legend" id="incLegend">
-          <span><i style="background:#B0632F"></i>Under $6,000</span>
-          <span><i style="background:#DABE00"></i>$6,000 to $16,000</span>
-          <span><i style="background:#8AC566"></i>$16,000 to $40,000</span>
-          <span><i style="background:#038DA2"></i>Over $40,000</span>
+          <span><i style="background:#FF7A6B"></i>Under $6,000</span>
+          <span><i style="background:#FFC24B"></i>$6,000 to $16,000</span>
+          <span><i style="background:#A8E05F"></i>$16,000 to $40,000</span>
+          <span><i style="background:#6BD6FF"></i>Over $40,000</span>
           <span style="color:var(--ink3)">GDP per person, PPP</span>
         </div>
         <div class="keyline">
           <span><span class="ring"></span><b>The ring</b> is your current slider setting, not a country</span>
-          <span><b>161 countries</b> plotted. Start typing to search, or use the dropdown above.</span>
+          <span><b>161 countries</b> plotted. Pick one from the dropdown to pull it out of the crowd.</span>
         </div>
         <svg id="sc" viewBox="0 0 900 470" role="img" aria-label="Starch share against anemia prevalence across 161 countries"></svg>
       </div>
     </section>
+  </div>
+</div>
+
+<!-- ═══════════ FINDINGS ═══════════ -->
+<div class="page" id="p-find">
+  <div class="wrap">
+
+    <div class="fd-nav">
+      <span class="lead">Jump to</span>
+      <a href="#f-premise">The premise</a>
+      <a href="#f-trap">Who is trapped</a>
+      <a href="#f-women">What it costs women</a>
+      <a href="#f-verdict">What held up</a>
+      <a href="#f-moves">Movement</a>
+      <a href="#f-2030">2030 outlook</a>
+      <a href="#f-project">The projection</a>
+      <a href="#f-act">What to do</a>
+      <a href="#f-sources">Sources &amp; limits</a>
+      <a href="#f-corr">Correlations</a>
+    </div>
+
+    <section class="blk" id="f-premise">
+      <div class="section-label">01 · The premise</div>
+      <h2 class="section-title">Before blaming trade, we checked the premise was <em>even true</em></h2>
+      <p class="body">The question assumes two things: that half the world's calories now cross a border, and that the traveling half is the less nourishing one. Both are testable, and neither had been checked on this data. So that is where the analysis starts.</p>
+      <p class="body">Across 178 countries we divided imported calories by total calories supplied, then averaged country by country, year by year. <b>The share rose from 43.0% in 2010 to 50.4% in 2023</b>, about +0.64 points a year, without a single reversal (r = 0.98). The average national diet crossed the halfway line in 2020.</p>
+
+      <div class="fd-chart">
+        <div class="ct">Share of dietary calories that are imported</div>
+        <div class="cs">Unweighted mean across 178 countries, 2010 to 2023. The dashed line is the halfway mark.</div>
+        <svg id="fcTrend" viewBox="0 0 900 300" role="img" aria-label="Imported share of calories rising from 43 percent in 2010 to 50.4 percent in 2023"></svg>
+      </div>
+
+      <p class="body">Weighting by population gives the same direction, +0.40 points a year, while population-weighted starch share actually <em>fell</em> by 0.14 points a year. More trade has not meant starchier diets on its own. The damage is where the two overlap.</p>
+
+      <p class="body">The second claim holds too, and for a mundane reason: <b>the world ships what keeps.</b> Sugar, oil and grain survive a month at sea. Leafy greens and eggs do not.</p>
+
+      <div class="fd-chart">
+        <div class="ct">How traded each food group is, and how much iron it carries</div>
+        <div class="cs">Sorted by import share. Two measures on shared rows: the bar is how much of that group is imported, the dot is its iron density.</div>
+        <svg id="fcGroups" viewBox="0 0 900 400" role="img" aria-label="Food groups by import share and iron per thousand calories"></svg>
+        <div class="fd-key"><span><i style="background:var(--accent2)"></i>Import share of the group's calories</span><span><i style="background:var(--accent);border-radius:50%"></i>Iron, mg per 1,000 kcal</span></div>
+      </div>
+
+      <p class="body">Cereals, oils and sugar are <b>60% of the average country's calories but only 37% of its iron</b>. Vegetables are 2% of calories and deliver 13% of the iron and 26% of the vitamin A.</p>
+
+      <p class="body">No FAO file labels a calorie as imported and then reports its nutrients, so that measure had to be built. Each food group's calories and nutrients get split by that group's own import share, the pieces are summed, and the two halves are compared per 1,000 kcal against a woman's daily requirement.</p>
+
+      <div class="fd-two">
+        <div class="fd-facts">
+          <div class="fd-label">Imported</div>
+          <div class="hd">Nutrition Facts</div>
+          <div class="sv">Serving size 1,000 kcal of imported food</div>
+          <div class="r"><span>Iron</span><b>4.6 mg</b></div>
+          <div class="r"><span>Zinc</span><b>3.4 mg</b></div>
+          <div class="r"><span>Vitamin A</span><b>187 µg</b></div>
+          <div class="r"><span>Vitamin C</span><b>27 mg</b></div>
+          <div class="r"><span>Vitamin B12</span><b>0.48 µg</b></div>
+          <div class="ft">Mostly cereals, oils, sugar</div>
+        </div>
+        <div class="fd-facts">
+          <div class="fd-label">Home-grown</div>
+          <div class="hd">Nutrition Facts</div>
+          <div class="sv">Serving size 1,000 kcal of domestic food</div>
+          <div class="r"><span>Iron</span><b>5.6 mg</b></div>
+          <div class="r"><span>Zinc</span><b>4.2 mg</b></div>
+          <div class="r"><span>Vitamin A</span><b>294 µg</b></div>
+          <div class="r"><span>Vitamin C</span><b>67 mg</b></div>
+          <div class="r"><span>Vitamin B12</span><b>0.41 µg</b></div>
+          <div class="ft">Mostly vegetables, pulses, roots, eggs</div>
+        </div>
+      </div>
+      <p class="fd-note">Pooled across 178 national food supplies, latest year. Home-grown calories win on four of five micronutrients. Only B12 goes the other way, because meat and dairy travel too.</p>
+
+      <div class="fd-chart">
+        <div class="ct">Density gap: domestic minus imported nutrient density</div>
+        <div class="cs">Number of countries per 20-point bin, measured as percent of daily requirement delivered per 1,000 kcal.</div>
+        <svg id="fcGap" viewBox="0 0 900 290" role="img" aria-label="Histogram of the nutrient density gap between domestic and imported calories"></svg>
+        <div class="fd-key"><span><i style="background:var(--accent2)"></i>Home-grown denser</span><span><i style="background:var(--ink3)"></i>Imported denser, for example Argentina and the Netherlands</span></div>
+      </div>
+
+      <p class="body"><b>146 of 178 countries show a positive gap</b>, median +33% of daily need per 1,000 kcal. Protein says the same: 26.7 g per 1,000 kcal imported against 32.9 g home-grown, thinner in 131 of 177 countries. By starch it is stronger still, with imported calories starchier in 84% of countries.</p>
+
+      <div class="fd-sowhat"><b>So the premise is real.</b> Trade has pushed half the world's plate across a border, and what crosses is the thinner half. But trade alone does not make a diet starchy: import share is <em>negatively</em> linked to starch share, r = &minus;0.45. The story only exists where the two overlap.</div>
+    </section>
+
+    <section class="blk" id="f-trap">
+      <div class="section-label">02 · Who is trapped</div>
+      <h2 class="section-title">Twelve countries have traded their way into a <em>starch trap</em></h2>
+      <p class="body">The trap is defined as three conditions at once: top third for imported calories, top third for starch share, and bottom third for micronutrient supply. All three, or it does not count.</p>
+      <p class="body">Each condition on its own points at the wrong countries. High imports alone catches Macao, the Netherlands and Belgium, who buy a diverse, low-starch diet from abroad. High starch alone catches DR Congo, 83% starch and 7% imported, which grows its own staples, so trade is not the route. <b>Only the intersection isolates the countries the question is actually about.</b></p>
+
+      <div class="fd-chart">
+        <div class="ct">Starch share against import share, colored by anemia in women 15 to 49</div>
+        <div class="cs">One dot per country, latest year. Dashed lines are the top-tercile thresholds: starch 50.2%, imports 63.7%. Ringed dots are in the trap.</div>
+        <svg id="fcTrap" viewBox="-16 0 916 470" role="img" aria-label="Scatter of starch share against import share identifying the twelve starch trap countries"></svg>
+        <div class="fd-key"><span><i style="background:#6BD6FF"></i>Anemia 10%</span><span><i style="background:var(--accent)"></i>Anemia 60%</span><span><i style="border:2px solid var(--ink);background:none;border-radius:50%"></i>In the starch trap</span></div>
+      </div>
+
+      <table class="fd">
+        <thead><tr><th>Country</th><th>Calories imported</th><th>Starch share</th><th>Micronutrient index</th><th>Anemia, women</th></tr></thead>
+        <tbody id="fdTrapBody"></tbody>
+      </table>
+      <p class="fd-note">Micronutrient index is the average of iron, zinc and vitamins A, B12 and C as a multiple of need; the bottom tercile is 1.50 or below. Sorted by anemia. The list is identical in the latest-available and 2023-only snapshots.</p>
+
+      <div class="fd-grid">
+        <div class="fd-card"><h5>Djibouti imports 97.8% of its calories</h5><p>And the food it buys carries about a third of the protein density of what it grows.</p></div>
+        <div class="fd-card"><h5>Yemen has the thinnest supply of all 178</h5><p>A micronutrient index of 0.66: about half the iron women need, a third of the vitamin A, under a tenth of the B12.</p></div>
+        <div class="fd-card"><h5>Mauritania pairs 70% imports with 54.5% anemia</h5><p>The second-highest rate anywhere in the panel.</p></div>
+      </div>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">What is actually <em>on the boat</em></h3>
+      <p class="body">Tracing imports item by item for the heaviest-burden countries: <b>more than nine tenths of what they buy is classed as starchy.</b> Rice, wheat and maize, with palm oil and sugar alongside.</p>
+      <table class="fd">
+        <thead><tr><th>Country</th><th>Group</th><th>Imports that are starchy</th><th>Leading starchy imports</th><th>Anemia</th></tr></thead>
+        <tbody>
+          <tr><td>Liberia</td><td>Trap</td><td class="n">96.0%</td><td>Rice (100%) · palm oil (57%)</td><td class="n">42.5%</td></tr>
+          <tr><td>Afghanistan</td><td>Watch list</td><td class="n">95.9%</td><td>Wheat (46%) · palm oil (100%)</td><td class="n">45.4%</td></tr>
+          <tr><td>Haiti</td><td>Watch list</td><td class="n">93.7%</td><td>Rice (83%) · wheat (100%)</td><td class="n">45.9%</td></tr>
+          <tr><td>Gambia</td><td>Trap</td><td class="n">92.3%</td><td>Rice (100%) · sugar (59%)</td><td class="n">46.1%</td></tr>
+          <tr><td>Lesotho</td><td>Trap</td><td class="n">91.3%</td><td>Maize (88%) · wheat (100%)</td><td class="n">34.2%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="fd-sowhat">The trap concentrates in small, arid or land-constrained economies in West and Southern Africa, plus Yemen, Iraq, Bhutan and Timor-Leste. <b>The next question is whether the women living there pay for it.</b></div>
+    </section>
+
+    <section class="blk" id="f-women">
+      <div class="section-label">03 · What it costs women</div>
+      <h2 class="section-title">Median anemia is 32.8% inside the trap and <em>24.7% outside it</em></h2>
+      <p class="body">That gap survives the obvious objections, and the full control ladder is laid out in the write-up rather than repeated here. What follows is the evidence sitting underneath it.</p>
+      <p class="body">The sharpest test is the poverty test. Inside the 53 lower-income DHS countries, <b>income stops predicting anemia entirely</b> (&minus;1.19, not significant) while starch keeps almost its full-sample effect, +0.298 against +0.315. Diet composition carries signal exactly where income has none.</p>
+
+      <div class="chips">
+        <div class="chip"><b>19.4%</b><span>median anemia, least starchy third</span></div>
+        <div class="chip"><b>34.2%</b><span>median anemia, starchiest third, 1.8× higher</span></div>
+        <div class="chip"><b>+3.2 pts</b><span>anemia per +10 points of starch, income held fixed</span></div>
+      </div>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Malaria splits the high-anemia countries <em>in two</em></h3>
+      <p class="body">Malaria destroys red blood cells, so it causes anemia whatever anyone eats. If it were quietly driving the trap countries' anemia, the diet story would collapse. It is not. <b>Of the seven trap countries with a malaria figure, six have low rates.</b> The countries combining very high anemia with heavy malaria sit outside the trap entirely.</p>
+      <div class="fd-two">
+        <div>
+          <div class="fd-label">In the trap</div>
+          <table class="fd"><thead><tr><th>Country</th><th>Malaria per 1,000</th><th>Anemia</th></tr></thead>
+          <tbody>
+            <tr><td>Iraq</td><td class="n">0</td><td class="n">27.1%</td></tr>
+            <tr><td>Timor-Leste</td><td class="n">0</td><td class="n">29.7%</td></tr>
+            <tr><td>Botswana</td><td class="n">0.7</td><td class="n">30.9%</td></tr>
+            <tr><td>Eswatini</td><td class="n">1.5</td><td class="n">28.3%</td></tr>
+            <tr><td>Namibia</td><td class="n">9.6</td><td class="n">24.9%</td></tr>
+            <tr><td>Mauritania</td><td class="n">26</td><td class="n">54.5%</td></tr>
+            <tr><td>Liberia</td><td class="n">216</td><td class="n">42.5%</td></tr>
+          </tbody></table>
+        </div>
+        <div>
+          <div class="fd-label">High anemia, outside the trap</div>
+          <table class="fd"><thead><tr><th>Country</th><th>Malaria per 1,000</th><th>Anemia</th></tr></thead>
+          <tbody>
+            <tr><td>Mozambique</td><td class="n">313</td><td class="n">47.0%</td></tr>
+            <tr><td>Niger</td><td class="n">304</td><td class="n">47.1%</td></tr>
+            <tr><td>Côte d'Ivoire</td><td class="n">284</td><td class="n">51.4%</td></tr>
+            <tr><td>Gabon</td><td class="n">189</td><td class="n">59.9%</td></tr>
+            <tr><td>India</td><td class="n">2.5</td><td class="n">53.7%</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <p class="fd-note">Malaria incidence, 2021 only. Gambia, Lesotho, Bhutan, Djibouti and Yemen have no value, which is not the same as having no malaria. Liberia is the one trap country where malaria is clearly part of the picture; India has neither a trade nor a malaria explanation.</p>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Iron on the label is not iron <em>in the blood</em></h3>
+      <p class="body">Iron from meat, fish and eggs is absorbed efficiently. Iron from cereals and beans largely is not. So the total in a food supply says much less than the form it arrives in. <b>Across countries, total iron supply barely tracks anemia at r = &minus;0.21, while the animal-source share tracks it 2.7 times more strongly at r = &minus;0.55.</b></p>
+      <table class="fd">
+        <thead><tr><th>Country</th><th>Iron supplied, mg/day</th><th>From animal sources</th><th>Anemia, women</th><th>GDP per person</th></tr></thead>
+        <tbody id="fdIronBody"></tbody>
+      </table>
+      <p class="fd-note">Guatemala is one fifth as rich as Australia and has lower anemia. Income is not destiny. Between 2010 and 2023 the typical country's iron supply rose from 15.4 to 16.0 mg a day, and rose in 102 of 162 countries. Anemia rose anyway in 73 of those 102.</p>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Why this lands on <em>women</em></h3>
+      <p class="body">A national food supply is an average, and women frequently do not get the average. Iron needs peak in the reproductive years, the nutrient-dense foods cost the most, and women are the ones most likely to go without them.</p>
+      <div class="chips">
+        <div class="chip"><b>98/135</b><span>countries where women are more food-insecure than men</span></div>
+        <div class="chip"><b>1.8×</b><span>cost of animal-source foods against starchy staples</span></div>
+        <div class="chip"><b>123/162</b><span>countries where anemia in women rose since 2010</span></div>
+      </div>
+      <div class="fd-sowhat">Starchier food supplies go with markedly more anemic women, and not simply because those countries are poorer or have more malaria. <b>Global anemia is also moving the wrong way</b>, so this is not a problem solving itself.</div>
+    </section>
+
+    <section class="blk" id="f-verdict">
+      <div class="section-label">04 · What held up</div>
+      <h2 class="section-title">Nine explanations were tested. Four held, <em>five collapsed</em></h2>
+      <p class="body">Across three notebooks and fifteen scripts the team tried roughly nine explanations for why anemia sits where it does. Keeping the failures visible is the point: the ones that collapsed are what rules out the easy story.</p>
+
+      <div class="fd-two">
+        <div>
+          <div class="fd-label" style="color:var(--accent2)">Held up</div>
+          <div class="fd-card" style="margin-bottom:12px"><h5>Imported calories are thinner</h5><p>Domestic calories are denser in 146 of 178 countries.</p></div>
+          <div class="fd-card" style="margin-bottom:12px"><h5>Starch share predicts anemia across countries</h5><p>+0.315, still +0.235 with every control, and it survives the poverty test.</p></div>
+          <div class="fd-card" style="margin-bottom:12px"><h5>Malaria is a major co-driver</h5><p>r = 0.525 with anemia. Adding it cuts the income coefficient from &minus;2.85 to &minus;0.35.</p></div>
+          <div class="fd-card"><h5>Iron form matters more than iron amount</h5><p>Animal-source share r = &minus;0.55 against total iron r = &minus;0.21.</p></div>
+        </div>
+        <div>
+          <div class="fd-label" style="color:var(--accent)">Did not hold</div>
+          <div class="fd-card" style="margin-bottom:12px"><h5>Import dependence on its own</h5><p>r = &minus;0.18 with anemia. Belgium and Bahrain both import over 96% of their calories; their anemia rates are 15% and 38%.</p></div>
+          <div class="fd-card" style="margin-bottom:12px"><h5>Change within a country over time</h5><p>Country and year fixed effects across 2,276 country-years: no diet variable significant, all p &gt; 0.13.</p></div>
+          <div class="fd-card" style="margin-bottom:12px"><h5>Diet as a three-year early warning</h5><p>Lagged fixed-effects model, p = 0.22 to 0.72.</p></div>
+          <div class="fd-card" style="margin-bottom:12px"><h5>Food prices as the channel</h5><p>Local staple prices are falling in Lesotho and Mauritania. Iron-dense foods got cheaper relative to cereals in 9 of 10 checkable countries.</p></div>
+          <div class="fd-card"><h5>Iron on paper, or iron shipped abroad</h5><p>Total iron supply does not predict anemia once income is fixed (p = 0.75), and neither does exporting iron-rich harvests (p = 0.45).</p></div>
+        </div>
+      </div>
+
+      <div class="fd-chart">
+        <div class="ct">The starch effect as controls are added</div>
+        <div class="cs">Coefficient on starch share, in points of anemia per point of starch, with 95% confidence intervals.</div>
+        <svg id="fcForest" viewBox="0 0 900 330" role="img" aria-label="Forest plot of the starch coefficient as each control is added"></svg>
+        <div class="fd-key"><span><i style="background:var(--accent)"></i>All countries, n varies with control coverage</span><span><i style="background:var(--accent2)"></i>The same 53 lower-income countries in every model</span></div>
+      </div>
+      <p class="fd-note">With iron supplementation added, the 53-country interval just touches zero (p ≈ 0.07), so the effect size holds but the sample is small. This is the same ladder as the write-up, shown here with its uncertainty.</p>
+
+      <p class="body">Some of the worst burdens sit outside the trap altogether. <b>India</b> has 53.7% anemia and imports only 6.8% of its calories, mostly edible oils, sugar and pulses, even though it is the world's largest vegetable-oil importer. <b>Gabon</b> has the worst rate in the panel at 59.9%, on $18,700 per person, with imports below the threshold. Their drivers are domestic diets, malaria, sanitation and health access, not trade.</p>
+    </section>
+
+    <section class="blk" id="f-moves">
+      <div class="section-label">05 · Movement</div>
+      <h2 class="section-title">Fixing the diet did not fix the anemia, and growth did not <em>fix either</em></h2>
+      <p class="body">If diet were a quick lever, a trap country cutting its starch should watch anemia fall. Two trap countries moved in opposite directions, and they show why the within-country test came up empty.</p>
+      <div class="fd-two">
+        <div class="fd-card"><h5>Lesotho</h5>
+          <p>Starch share falling 1.04 points a year, the fastest diet improvement of any trap country.</p>
+          <p style="margin-top:8px;color:var(--accent)"><b>Anemia rising 0.81 points a year anyway.</b> 34.2% today, 39.4% forecast by 2030.</p></div>
+        <div class="fd-card"><h5>Gambia</h5>
+          <p>Starch share falling only 0.17 points a year, barely moving at all.</p>
+          <p style="margin-top:8px;color:var(--accent2)"><b>The only trap country where anemia is falling</b>, down 0.68 points a year. 46.1% today, 41.9% by 2030.</p></div>
+      </div>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Getting richer is <em>not an exit</em></h3>
+      <p class="body">Income is falling in several of the countries flagged here, most sharply Afghanistan, where GDP per person dropped by nearly a third. But growth is no escape either: Bhutan and Botswana both grew fast and are both still in the trap.</p>
+      <table class="fd">
+        <thead><tr><th>Country</th><th>Group</th><th>GDP per person, 2010</th><th>2023</th><th>Change</th></tr></thead>
+        <tbody id="fdGdpBody"></tbody>
+      </table>
+      <div class="fd-sowhat"><b>Trade is not the villain. It is the amplifier.</b> Importing is safe when a country can afford to import diversity. It becomes a trap where imports reinforce a plate that was already starchy.</div>
+    </section>
+
+    <section class="blk" id="f-2030">
+      <div class="section-label">06 · The 2030 outlook</div>
+      <h2 class="section-title">We built a forecast, back-tested it, and replaced it with a <em>watch list</em></h2>
+      <p class="body">Fitting each country's 2010 to 2023 line and extending it to 2030 named Haiti and Cabo Verde as new trap countries. Then the back-test ran: fit up to 2016, 2017 and so on, predict the years after, compare. <b>The straight-line trend did worse than assuming nothing changes at all</b>, 4.45 points of error against 3.73 on import share.</p>
+      <p class="body">The model that survived damps the trend to 10% of its slope. Under it <b>no country confidently crosses by 2030</b>, and the uncertainty is about ±6.7 points on imports and ±4.4 on starch. So rather than name winners, the analysis measures how far each country sits from its last unmet condition, in cross-country standard deviations.</p>
+      <table class="fd">
+        <thead><tr><th>Country</th><th>Distance to trap</th><th>Still missing</th><th>Conditions met</th><th>Observed drift</th></tr></thead>
+        <tbody id="fdWatchBody"></tbody>
+      </table>
+      <p class="fd-note">"Closes in about N years" is the remaining gap divided by observed drift, where that drift is statistically significant. That is arithmetic on history, not a validated forecast. A wider lens finds 47 countries moving toward the trap on both fronts at once, including Samoa, Papua New Guinea, the Philippines and Namibia.</p>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Where diets are still getting <em>starchier</em></h3>
+      <p class="body">Globally starch is slowly leaving the plate, falling in 102 of 156 countries. In three trap countries and one watch-list country it is still climbing.</p>
+      <table class="fd">
+        <thead><tr><th>Country</th><th>Group</th><th>Starch share, latest</th><th>Trend a year</th><th>2030 on trend</th></tr></thead>
+        <tbody>
+          <tr><td>Liberia</td><td>Trap</td><td class="n">72.0%</td><td class="n">+0.65</td><td class="n">77.0%</td></tr>
+          <tr><td>Eswatini</td><td>Trap</td><td class="n">56.9%</td><td class="n">+0.46</td><td class="n">59.1%</td></tr>
+          <tr><td>Haiti</td><td>Watch list</td><td class="n">57.9%</td><td class="n">+0.42</td><td class="n">58.5%</td></tr>
+          <tr><td>Mauritania</td><td>Trap</td><td class="n">52.6%</td><td class="n">+0.29</td><td class="n">56.2%</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Where anemia itself is <em>heading</em></h3>
+      <p class="body">Four forecasting models were tested on held-out 2019 to 2023 data. A per-country trend anchored at the last observation won with 1.14 points of error, beating naive persistence (1.45), fitted-line extrapolation (1.37), a random forest (1.49 to 2.22) and cross-sectional regression (about 8.0).</p>
+      <table class="fd">
+        <thead><tr><th>Country</th><th>Anemia, latest</th><th>Trend/yr</th><th>2030</th><th>Why it matters</th></tr></thead>
+        <tbody>
+          <tr><td>Mauritius</td><td class="n">32.8%</td><td class="n">+1.01</td><td class="n">39.3%</td><td>Fastest rise in the panel, 87% import dependent</td></tr>
+          <tr><td>Lesotho</td><td class="n">34.2%</td><td class="n">+0.81</td><td class="n">39.4%</td><td>In the trap and rising fast</td></tr>
+          <tr><td>Afghanistan</td><td class="n">45.4%</td><td class="n">+0.81</td><td class="n">50.6%</td><td>Watch list, imports climbing toward the line</td></tr>
+          <tr><td>Haiti</td><td class="n">45.9%</td><td class="n">+0.29</td><td class="n">47.8%</td><td>Watch list, third closest to the trap</td></tr>
+          <tr><td>Mauritania</td><td class="n">54.5%</td><td class="n">+0.10</td><td class="n">55.2%</td><td>Highest anemia of any trap country</td></tr>
+          <tr><td>India</td><td class="n">53.7%</td><td class="n">+0.29</td><td class="n">55.6%</td><td>Not trade-driven. One lens is never enough</td></tr>
+        </tbody>
+      </table>
+      <p class="fd-note">WHO bands: 20 to 39.9% is moderate, 40% or more is severe. Twenty countries sit at the severe level today and eighteen are projected to in 2030, with only Myanmar newly crossing in. 118 of 156 countries still have a rising trend.</p>
+
+      <div class="fd-sowhat">Can trade composition serve as an early warning? <b>As a screen, yes</b>, it reliably flags who is structurally exposed. <b>As a timer, no.</b> Shifts in a country's import mix do not precede shifts in its anemia. Use it to decide where to look, then track anemia directly.</div>
+    </section>
+
+    <section class="blk" id="f-project">
+      <div class="section-label">07 · The projection</div>
+      <h2 class="section-title">The two countries the naive forecast named, and <em>why we stopped trusting it</em></h2>
+      <p class="body">Haiti already meets the starch and micronutrient conditions and needs about three more import points. Cabo Verde meets the import and micronutrient conditions and hovers 1.3 points under the starch line. The straight-line fit sends both across; the damped model that survived the back-test does not.</p>
+      <div class="fd-two">
+        <div class="fd-chart" style="margin-top:0">
+          <div class="ct">Haiti · imported share of calories</div>
+          <div class="cs">Solid is observed. Dashed with a band is the damped projection.</div>
+          <svg id="fcHaiti" viewBox="0 0 440 260" role="img" aria-label="Haiti imported share observed and projected to 2030"></svg>
+        </div>
+        <div class="fd-chart" style="margin-top:0">
+          <div class="ct">Cabo Verde · starch share of calories</div>
+          <div class="cs">Solid is observed. Dashed with a band is the damped projection.</div>
+          <svg id="fcCabo" viewBox="0 0 440 260" role="img" aria-label="Cabo Verde starch share observed and projected to 2030"></svg>
+        </div>
+      </div>
+      <p class="fd-note">The red line is the trap threshold: 63.7% for imports, 50.2% for starch. The band is the back-test error, about ±6.7 points on imports and ±4.4 on starch by 2030, which is why neither country counts as a confident crossing.</p>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Local staple prices <em>today</em></h3>
+      <p class="body">Whatever world prices do, local markets are calmer right now. Staple prices are falling in six of the eight trap and watch-list countries with current readings, which is part of why food prices failed as the channel.</p>
+      <table class="fd">
+        <thead><tr><th>Country</th><th>Group</th><th>Change against a year earlier</th></tr></thead>
+        <tbody id="fdWfpBody"></tbody>
+      </table>
+      <p class="fd-note">Average year-on-year change across each country's tracked staples, readings from June 2026. Too old to count as current: El Salvador +72.5% (Aug 2022), Lebanon +263% (Feb 2023), Liberia +11% (Oct 2020), Haiti &minus;6.5% (Feb 2025).</p>
+    </section>
+
+    <section class="blk" id="f-act">
+      <div class="section-label">08 · What to do</div>
+      <h2 class="section-title">The risk is structural, concentrated and gendered, so the <em>fixes</em> should be too</h2>
+      <p class="body">One policy does not fit all. Sorting countries by why they are at risk is what decides which action reaches them.</p>
+      <div class="fd-seg">
+        <span class="tag act">Act now</span>
+        <div class="bd"><h5>In the starch trap</h5><div class="cl">Lesotho · Gambia · Mauritania · Liberia · Yemen · Djibouti · Botswana · Eswatini · Namibia · Iraq · Bhutan · Timor-Leste</div><div class="ac2">Fix the imported basket. Actions 1, 2, 4, 5</div></div>
+        <span class="tag">Prevent</span>
+        <div class="bd"><h5>On the watch list</h5><div class="cl">Morocco · Cabo Verde · Haiti · El Salvador · Comoros · Afghanistan</div><div class="ac2">Monitor, and hold the last unmet condition. Actions 3, 5</div></div>
+        <span class="tag">Diversify</span>
+        <div class="bd"><h5>Home-grown starch</h5><div class="cl">DR Congo · Madagascar · Ethiopia · India · Cambodia</div><div class="ac2">Trade is not the route here. The local diet is. Actions 3, 4</div></div>
+        <span class="tag">Treat causes</span>
+        <div class="bd"><h5>High anemia, other drivers</h5><div class="cl">Gabon · Côte d'Ivoire · Niger · Mozambique</div><div class="ac2">Malaria at 190 to 312 cases per 1,000, sanitation, health access. Actions 4, 6</div></div>
+        <span class="tag">Low priority</span>
+        <div class="bd"><h5>Imports, but diverse</h5><div class="cl">Belgium · Netherlands · Luxembourg · Malta</div><div class="ac2">High imports, but a varied, low-starch plate.</div></div>
+      </div>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">The price case for acting <em>now</em></h3>
+      <p class="body">Trap countries buy most of their grain abroad, so world prices reach them through the import bill. If the last decade repeats, wheat rises 17 to 57% by 2030 depending on grade and method, maize 20 to 41%, rice 14 to 19%. <b>Chicken is the exception, falling about 14%</b>, which would make one well-absorbed source of iron cheaper.</p>
+
+      <div class="fd-chart">
+        <div class="ct">World export prices of iron-relevant foods, projected to 2030</div>
+        <div class="cs">Two simple projections per food. Where the two markers sit far apart, the methods disagree and the cautious one is the better number to quote.</div>
+        <svg id="fcPrice" viewBox="0 0 900 340" role="img" aria-label="Projected change in world export prices to 2030 by food"></svg>
+        <div class="fd-key"><span><i style="background:var(--accent2)"></i>Trend fitted to 2015 to 2025</span><span><i style="background:var(--accent);border-radius:50%"></i>Average yearly growth</span></div>
+      </div>
+      <p class="fd-note">Global export prices in US dollars, not adjusted for inflation, projected from their 2023 to 2025 average. These show where prices go if the last decade continues; they are not forecasts of what any country will pay. Local staple prices are calmer today, falling in six of the eight trap and watch-list countries with current data, and prices showed no measurable link to anemia. Read this as budget pressure on import-dependent governments, not as a cause.</p>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Six things that would <em>actually help</em></h3>
+      <div class="fd-rec"><div class="no">1</div><div>
+        <div class="who">Governments of trap countries · port and standards authorities</div>
+        <h5>Fortify the imported staples at the border</h5>
+        <p>Make iron, folic acid and vitamin A fortification a condition of import for wheat flour, rice, maize and edible oil, which are the exact calories trap countries import most. The imported half then delivers micronutrients instead of diluting them.</p>
+        <p>Supply is concentrated enough for this to work: the top three exporters ship 68 to 78% of traded rice, 61 to 66% of maize and 83 to 86% of palm oil. First movers would be Gambia and Liberia, where rice is about 100% imported, Lesotho on maize and wheat, and Djibouti on nearly everything.</p></div></div>
+      <div class="fd-rec"><div class="no">2</div><div>
+        <div class="who">Trade and finance ministries · public procurement</div>
+        <h5>Rebalance the import basket toward iron-rich food</h5>
+        <p>Cut tariffs and VAT on pulses, dried fish, eggs and milk powder, and use state procurement and food-aid contracts to buy them rather than only grain. Spread purchases across suppliers so one shock cannot empty the shelf.</p>
+        <p>Chicken is the one iron-rich import projected to get cheaper, about 14% by 2030. Watch concentration risk: 78% of traded lentils come from three exporters.</p></div></div>
+      <div class="fd-rec"><div class="no">3</div><div>
+        <div class="who">Agriculture ministries · development partners</div>
+        <h5>Invest in home-grown nutrition, not just imports</h5>
+        <p>Fund home and school gardens, cold chains and extension services for vegetables, pulses, small livestock and eggs, and screen trade policy so cheap imports do not crowd out local crops.</p>
+        <p>For Morocco, Cabo Verde and Haiti, this is the way to hold the last unmet threshold.</p></div></div>
+      <div class="fd-rec"><div class="no">4</div><div>
+        <div class="who">Health and social-protection ministries · NGOs</div>
+        <h5>Put women 15 to 49 first, directly</h5>
+        <p>National averages hide who goes without. Reach women directly with weekly iron and folic acid supplementation through antenatal care, schools and workplaces, and add cash or vouchers earmarked for eggs, fish, meat and pulses.</p>
+        <p>Measure intake by sex, not by household.</p></div></div>
+      <div class="fd-rec"><div class="no">5</div><div>
+        <div class="who">FAO · WHO · WFP · national statistics offices</div>
+        <h5>Run the starch-trap screen every year</h5>
+        <p>The three conditions can be recomputed annually from the Food Balance Sheets FAO already publishes. Flag any country within 0.25 standard deviations of its last threshold for a nutrition review: today that is Morocco, Cabo Verde, Haiti and El Salvador.</p>
+        <p>Pair the screen with the anchored anemia forecast, and confirm the timing with anemia data itself.</p></div></div>
+      <div class="fd-rec"><div class="no">6</div><div>
+        <div class="who">Health ministries · researchers</div>
+        <h5>Treat the non-food causes, and close the data gaps</h5>
+        <p>Where anemia is high but trade is not the route, pair nutrition work with malaria control and with water and sanitation.</p>
+        <p>Split anemia by cause with IHME GBD data, pull a malaria time series rather than a single year, and study fortification mandates as a natural experiment.</p></div></div>
+    </section>
+
+    <section class="blk" id="f-sources">
+      <div class="section-label">09 · Sources and limits</div>
+      <h2 class="section-title">Every number above traces to a file. Here is what to read <em>before citing one</em></h2>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:10px">What this analysis <em>cannot</em> tell you</h3>
+      <div class="fd-grid">
+        <div class="fd-card"><h5>Supply is not intake</h5><p>FAO data is national per-capita food supply, not what women actually eat, and it cannot see who gets what inside a household.</p></div>
+        <div class="fd-card"><h5>Associations, not causes</h5><p>The starch to anemia link is cross-country. The within-country and lagged tests found nothing.</p></div>
+        <div class="fd-card"><h5>The density gap is compositional</h5><p>It reflects which food groups get traded, not whether imported wheat is worse than local wheat. Vitamins A and C dominate it.</p></div>
+        <div class="fd-card"><h5>Missing countries</h5><p>FAO balance sheets omit several of the worst: Mali 56.5%, Benin 50.0%, Chad 46.5%, Togo 41.5%, Burundi 39.0%. Every relationship here is likely a floor.</p></div>
+        <div class="fd-card"><h5>A modelled outcome</h5><p>The World Bank anemia series is partly model-interpolated between surveys, which blunts year-to-year signal. DHS measured anemia covers 49 countries.</p></div>
+        <div class="fd-card"><h5>A hand-built crosswalk</h5><p>99 FBS item codes were mapped to 15 SUA food groups by the team, not by FAO. Every decision is documented in the pipeline doc.</p></div>
+        <div class="fd-card"><h5>Many tests</h5><p>Around nine variables were tried. Malaria and starch are large enough to be unlikely flukes, but they deserve held-out validation.</p></div>
+        <div class="fd-card"><h5>Malaria is a single year</h5><p>2021 only, and missing for five trap countries, so it explains differences between countries and not change over time.</p></div>
+        <div class="fd-card"><h5>Price projections are extrapolations</h5><p>World US-dollar prices, not adjusted for inflation, and not what any country actually pays.</p></div>
+      </div>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Public <em>datasets</em></h3>
+      <table class="fd">
+        <thead><tr><th>Dataset</th><th>Used for</th><th>Coverage</th></tr></thead>
+        <tbody>
+          <tr><td>FAOSTAT Food Balance Sheets</td><td>Imports, production and calories by item, giving import share and starch share</td><td>4.82M rows · 178 countries · 2010 to 2023</td></tr>
+          <tr><td>FAOSTAT Supply Utilization Accounts</td><td>Iron, zinc, vitamins A, B12 and C, and protein by food group</td><td>743K rows · 179 countries</td></tr>
+          <tr><td>World Bank WDI, anemia</td><td>The outcome variable, women 15 to 49 (SH.ANM.ALLW.ZS)</td><td>2010 to 2023</td></tr>
+          <tr><td>World Bank WDI, GDP per capita PPP</td><td>Income control (NY.GDP.PCAP.PP.KD)</td><td>2010 to 2023</td></tr>
+          <tr><td>World Bank and WHO GHO</td><td>Malaria, water, sanitation, fertility, stunting, anemia uncertainty bounds</td><td>195 countries</td></tr>
+          <tr><td>DHS Program</td><td>Measured anemia and iron supplementation for the poverty test</td><td>49 to 59 countries</td></tr>
+          <tr><td>FAOSTAT Food Security Indicators and Cost of a Healthy Diet</td><td>Gendered food insecurity and food-group costs</td><td>118 to 135 countries</td></tr>
+          <tr><td>FAOSTAT Detailed Trade Matrix</td><td>Exporter concentration and supplier dependency</td><td>Bilateral flows</td></tr>
+          <tr><td>WFP Global Market Monitor and World Bank Pink Sheet</td><td>Local and global food-price checks</td><td>81 countries · 1960 to 2026</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">The <em>pipeline</em> behind it</h3>
+      <table class="fd">
+        <thead><tr><th>File</th><th>What it produces</th></tr></thead>
+        <tbody>
+          <tr><td>analysis/scripts/00&ndash;14_*.py</td><td>Crosswalk, features, density gap, classification, forecasts, validation, proximity, confounders</td></tr>
+          <tr><td>analysis/trade_and_nutrition_analysis.ipynb</td><td>End-to-end narrative notebook, steps 1 to 6</td></tr>
+          <tr><td>country_snapshot_classified.csv</td><td>Trap classification, scatter, correlations</td></tr>
+          <tr><td>nutrient_density_gap_latest.csv</td><td>Imported against domestic nutrient labels, density histogram</td></tr>
+          <tr><td>global_import_share_trend.csv · global_trend_stats.txt</td><td>The import-share trend</td></tr>
+          <tr><td>regression_cross_section_2023.txt · regression_with_confounders.txt</td><td>The starch effect and its controls</td></tr>
+          <tr><td>regression_panel_fe_summary.csv · regression_early_warning_lag3_summary.csv</td><td>Within-country and early-warning tests</td></tr>
+          <tr><td>forecast_2030*.csv · forecast_validation.txt · trap_proximity*.csv</td><td>The 2030 outlook and watch list</td></tr>
+          <tr><td>master_panel*.csv · data/external/*</td><td>Country-year panel, WHO and DHS merges, coverage reports</td></tr>
+          <tr><td>malaria_incidence_2021 · iron_export_anemia_country_year · anemia_trend_forecast_2030</td><td>Malaria split, iron-supply trend, anemia outlook</td></tr>
+          <tr><td>iron_food_price_forecast_2030 · wfp_country_iron_food_price_signal</td><td>Price outlook and local price signal</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="blk" id="f-corr">
+      <div class="section-label">10 · Supporting detail</div>
+      <h2 class="section-title">The full correlation picture, since the obvious chain <em>does not run straight</em></h2>
+      <p class="body">More imports, starchier diet, more anemia: that chain is the intuition this project started from, and the matrix is where it visibly breaks. Import share is negatively linked to starch share and barely linked to anemia at all. Starch share is the variable that tracks anemia, though it is tangled with income.</p>
+      <div style="overflow-x:auto"><table class="cmx" id="fdCorr"></table></div>
+      <p class="fd-note">Pearson r, 2023 snapshot, 178 countries. Warm is positive, cool is negative, and intensity is strength. Sources, method notes and the full list of limits sit in the write-up.</p>
+    </section>
+
   </div>
 </div>
 
@@ -592,10 +1110,10 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
       <h2 class="section-title">Who <em>cooked this</em></h2>
       <p class="body">Four people, three weeks, five datasets and a hypothesis we had to let go of. The name turned out to describe the method: low heat, long time, and a willingness to let something fall apart before it's ready.</p>
       <div class="auth">
-        <div class="ac"><div class="av" style="background:#038DA2">MM</div><h4>Mansi Modi</h4><p class="role">Title to come</p></div>
-        <div class="ac"><div class="av" style="background:#B0632F">AN</div><h4>Amia Nagpal</h4><p class="role">Title to come</p></div>
-        <div class="ac"><div class="av" style="background:#8F5C8C">GN</div><h4>Gargee Nimdeo</h4><p class="role">Title to come</p></div>
-        <div class="ac"><div class="av" style="background:#5E8C7D">AH</div><h4>Alexandra Harlan</h4><p class="role">Title to come</p></div>
+        <div class="ac"><div class="av" style="background:#FFC24B">MM</div><h4>Mansi Modi</h4><p class="role">Title to come</p></div>
+        <div class="ac"><div class="av" style="background:#3FC7B8">AN</div><h4>Amia Nagpal</h4><p class="role">Title to come</p></div>
+        <div class="ac"><div class="av" style="background:#FF9BB3">GN</div><h4>Gargee Nimdeo</h4><p class="role">Title to come</p></div>
+        <div class="ac"><div class="av" style="background:#A8E05F">AH</div><h4>Alexandra Harlan</h4><p class="role">Title to come</p></div>
       </div>
     </section>
   </div>
@@ -607,6 +1125,8 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
   </div>
 </footer>
 
+<script id="dataCountry" type="application/json">[{"c":"Gabon","s":58.3,"i":25.3,"a":59.9,"fe":14.7,"g":18701.0,"lg":9.836,"m":189.2,"s30":57.2,"a30":58.9,"yr":2023},{"c":"Mauritania","s":52.6,"i":69.7,"a":54.5,"fe":14.0,"g":6276.0,"lg":8.745,"m":26.2,"s30":56.2,"a30":54.3,"yr":2023},{"c":"India","s":53.2,"i":1.1,"a":53.7,"fe":16.9,"g":8871.0,"lg":9.09,"m":2.5,"s30":48.7,"a30":55.3,"yr":2023},{"c":"C\u00f4te d'Ivoire","s":73.6,"i":13.3,"a":51.4,"fe":17.8,"g":6521.0,"lg":8.783,"m":283.6,"s30":75.7,"a30":50.7,"yr":2023},{"c":"Niger","s":55.4,"i":9.3,"a":47.1,"fe":24.2,"g":1713.0,"lg":7.446,"m":304.2,"s30":54.1,"a30":47.4,"yr":2023},{"c":"Mozambique","s":74.5,"i":15.1,"a":47.0,"fe":11.8,"g":1513.0,"lg":7.322,"m":312.4,"s30":67.8,"a30":47.1,"yr":2023},{"c":"Congo","s":58.2,"i":28.9,"a":46.7,"fe":11.4,"g":6172.0,"lg":8.728,"m":232.0,"s30":57.2,"a30":43.1,"yr":2023},{"c":"Pakistan","s":45.0,"i":9.6,"a":46.5,"fe":11.8,"g":5419.0,"lg":8.598,"m":2.1,"s30":40.1,"a30":47.9,"yr":2023},{"c":"Gambia","s":57.5,"i":87.6,"a":46.1,"fe":8.8,"g":2964.0,"lg":7.994,"m":null,"s30":53.1,"a30":40.8,"yr":2023},{"c":"Haiti","s":57.9,"i":44.4,"a":45.9,"fe":9.6,"g":2939.0,"lg":7.986,"m":2.2,"s30":58.5,"a30":47.0,"yr":2023},{"c":"Guinea","s":66.7,"i":14.6,"a":45.7,"fe":14.1,"g":3905.0,"lg":8.27,"m":294.4,"s30":70.7,"a30":44.1,"yr":2023},{"c":"Guinea-Bissau","s":64.6,"i":27.6,"a":45.7,"fe":10.6,"g":2661.0,"lg":7.886,"m":98.7,"s30":64.8,"a30":44.2,"yr":2023},{"c":"Afghanistan","s":72.9,"i":39.0,"a":45.4,"fe":12.2,"g":1984.0,"lg":7.593,"m":6.3,"s30":69.4,"a30":51.2,"yr":2023},{"c":"Sierra Leone","s":73.3,"i":16.3,"a":44.6,"fe":14.0,"g":3035.0,"lg":8.018,"m":305.8,"s30":75.8,"a30":42.3,"yr":2023},{"c":"Burkina Faso","s":57.7,"i":18.5,"a":44.3,"fe":24.8,"g":2486.0,"lg":7.819,"m":378.6,"s30":53.6,"a30":40.6,"yr":2023},{"c":"Angola","s":64.0,"i":8.7,"a":43.8,"fe":13.5,"g":8598.0,"lg":9.059,"m":258.6,"s30":64.3,"a30":41.8,"yr":2023},{"c":"Maldives","s":40.5,"i":96.7,"a":43.4,"fe":15.6,"g":14243.0,"lg":9.564,"m":null,"s30":null,"a30":null,"yr":2020},{"c":"Senegal","s":62.5,"i":33.7,"a":43.1,"fe":14.4,"g":4305.0,"lg":8.367,"m":41.9,"s30":64.9,"a30":37.3,"yr":2023},{"c":"Liberia","s":72.0,"i":55.7,"a":42.5,"fe":10.7,"g":1617.0,"lg":7.388,"m":216.1,"s30":77.0,"a30":41.3,"yr":2023},{"c":"Cabo Verde","s":47.4,"i":88.0,"a":40.6,"fe":16.1,"g":9228.0,"lg":9.13,"m":0.0,"s30":45.0,"a30":38.2,"yr":2023},{"c":"Democratic Republic of the Congo","s":86.1,"i":3.2,"a":40.0,"fe":11.1,"g":1559.0,"lg":7.352,"m":338.0,"s30":86.2,"a30":35.3,"yr":2023},{"c":"Myanmar","s":64.2,"i":1.4,"a":39.7,"fe":16.4,"g":5364.0,"lg":8.587,"m":6.3,"s30":67.8,"a30":38.7,"yr":2023},{"c":"Sao Tome and Principe","s":54.7,"i":24.3,"a":39.7,"fe":10.1,"g":5541.0,"lg":8.62,"m":12.2,"s30":71.3,"a30":37.3,"yr":2023},{"c":"Cameroon","s":62.4,"i":6.9,"a":38.9,"fe":19.9,"g":4875.0,"lg":8.492,"m":270.6,"s30":65.9,"a30":38.6,"yr":2023},{"c":"United Republic of Tanzania","s":62.5,"i":6.2,"a":38.8,"fe":15.9,"g":3621.0,"lg":8.194,"m":133.3,"s30":60.5,"a30":38.9,"yr":2023},{"c":"Cambodia","s":71.6,"i":5.5,"a":38.0,"fe":12.2,"g":6695.0,"lg":8.809,"m":0.4,"s30":77.9,"a30":36.1,"yr":2023},{"c":"Nigeria","s":62.7,"i":2.6,"a":37.9,"fe":16.7,"g":7843.0,"lg":8.967,"m":299.3,"s30":61.8,"a30":33.6,"yr":2023},{"c":"Bangladesh","s":71.6,"i":15.5,"a":37.6,"fe":13.8,"g":8242.0,"lg":9.017,"m":0.5,"s30":67.6,"a30":38.3,"yr":2023},{"c":"Guyana","s":38.5,"i":16.8,"a":37.5,"fe":24.7,"g":49312.0,"lg":10.806,"m":31.5,"s30":36.1,"a30":37.0,"yr":2023},{"c":"Tajikistan","s":46.4,"i":19.0,"a":37.3,"fe":17.9,"g":4472.0,"lg":8.406,"m":0.0,"s30":39.0,"a30":36.7,"yr":2023},{"c":"Madagascar","s":81.7,"i":8.8,"a":37.2,"fe":10.1,"g":1630.0,"lg":7.396,"m":166.3,"s30":81.0,"a30":39.4,"yr":2023},{"c":"Ghana","s":76.5,"i":5.8,"a":36.0,"fe":18.0,"g":6809.0,"lg":8.826,"m":212.5,"s30":78.4,"a30":31.1,"yr":2023},{"c":"Azerbaijan","s":51.1,"i":22.8,"a":35.6,"fe":18.6,"g":21311.0,"lg":9.967,"m":0.0,"s30":43.6,"a30":34.7,"yr":2023},{"c":"Turkmenistan","s":49.3,"i":14.0,"a":34.8,"fe":15.7,"g":17686.0,"lg":9.781,"m":null,"s30":45.2,"a30":34.2,"yr":2023},{"c":"Oman","s":28.2,"i":83.3,"a":34.4,"fe":21.8,"g":37794.0,"lg":10.54,"m":0.0,"s30":23.7,"a30":33.8,"yr":2023},{"c":"Lesotho","s":65.2,"i":70.5,"a":34.2,"fe":11.8,"g":2592.0,"lg":7.86,"m":null,"s30":55.8,"a30":37.9,"yr":2023},{"c":"Lebanon","s":39.5,"i":48.5,"a":34.0,"fe":14.8,"g":11330.0,"lg":9.335,"m":null,"s30":43.1,"a30":36.3,"yr":2023},{"c":"Bhutan","s":63.9,"i":64.9,"a":33.8,"fe":20.1,"g":14610.0,"lg":9.589,"m":null,"s30":null,"a30":null,"yr":2023},{"c":"Nepal","s":63.7,"i":12.3,"a":33.2,"fe":25.4,"g":4861.0,"lg":8.489,"m":0.0,"s30":59.0,"a30":33.9,"yr":2023},{"c":"Jordan","s":40.4,"i":62.3,"a":33.0,"fe":13.4,"g":10309.0,"lg":9.241,"m":null,"s30":39.9,"a30":36.1,"yr":2023},{"c":"Kyrgyzstan","s":42.1,"i":20.9,"a":32.9,"fe":17.4,"g":6576.0,"lg":8.791,"m":null,"s30":38.3,"a30":31.6,"yr":2023},{"c":"Mauritius","s":38.8,"i":87.3,"a":32.8,"fe":17.8,"g":26471.0,"lg":10.184,"m":null,"s30":35.1,"a30":39.0,"yr":2023},{"c":"Egypt","s":65.6,"i":28.0,"a":32.7,"fe":17.6,"g":16691.0,"lg":9.723,"m":null,"s30":64.2,"a30":32.9,"yr":2023},{"c":"Solomon Islands","s":61.4,"i":15.2,"a":32.6,"fe":12.7,"g":2340.0,"lg":7.758,"m":204.1,"s30":55.9,"a30":33.3,"yr":2023},{"c":"Malawi","s":64.8,"i":0.7,"a":32.4,"fe":17.4,"g":1649.0,"lg":7.408,"m":280.5,"s30":58.0,"a30":34.4,"yr":2023},{"c":"Kenya","s":49.4,"i":27.4,"a":32.2,"fe":13.8,"g":5692.0,"lg":8.647,"m":88.7,"s30":44.6,"a30":33.7,"yr":2023},{"c":"Algeria","s":46.8,"i":36.4,"a":31.6,"fe":19.4,"g":15159.0,"lg":9.626,"m":0.0,"s30":48.1,"a30":31.0,"yr":2023},{"c":"Malaysia","s":38.1,"i":16.2,"a":31.3,"fe":15.5,"g":32858.0,"lg":10.4,"m":0.0,"s30":35.4,"a30":30.5,"yr":2023},{"c":"South Africa","s":47.4,"i":22.3,"a":31.2,"fe":13.7,"g":13695.0,"lg":9.525,"m":0.5,"s30":43.8,"a30":32.7,"yr":2023},{"c":"Botswana","s":50.1,"i":90.4,"a":30.9,"fe":18.3,"g":18932.0,"lg":9.849,"m":0.7,"s30":49.0,"a30":31.9,"yr":2023},{"c":"Kazakhstan","s":29.6,"i":28.3,"a":30.5,"fe":20.0,"g":34703.0,"lg":10.455,"m":null,"s30":28.1,"a30":30.6,"yr":2023},{"c":"Syrian Arab Republic","s":53.3,"i":22.6,"a":30.5,"fe":14.3,"g":4455.0,"lg":8.402,"m":0.0,"s30":53.3,"a30":30.7,"yr":2022},{"c":"Uzbekistan","s":44.4,"i":20.8,"a":30.4,"fe":19.7,"g":10514.0,"lg":9.26,"m":0.0,"s30":39.5,"a30":26.8,"yr":2023},{"c":"Vanuatu","s":38.4,"i":14.2,"a":30.4,"fe":14.8,"g":3783.0,"lg":8.238,"m":2.4,"s30":45.7,"a30":32.1,"yr":2023},{"c":"Georgia","s":42.5,"i":62.8,"a":30.2,"fe":15.5,"g":22591.0,"lg":10.025,"m":null,"s30":39.3,"a30":29.1,"yr":2023},{"c":"Fiji","s":42.8,"i":56.6,"a":29.9,"fe":17.6,"g":13195.0,"lg":9.488,"m":null,"s30":40.3,"a30":29.6,"yr":2023},{"c":"Timor-Leste","s":59.6,"i":64.0,"a":29.7,"fe":13.8,"g":4331.0,"lg":8.374,"m":0.0,"s30":55.5,"a30":29.1,"yr":2023},{"c":"Morocco","s":57.8,"i":48.2,"a":29.5,"fe":19.6,"g":8915.0,"lg":9.096,"m":0.0,"s30":57.6,"a30":28.4,"yr":2023},{"c":"Comoros","s":54.7,"i":49.4,"a":29.3,"fe":13.8,"g":3399.0,"lg":8.131,"m":12.9,"s30":53.8,"a30":30.6,"yr":2022},{"c":"Libya","s":31.1,"i":47.6,"a":29.3,"fe":18.7,"g":12477.0,"lg":9.432,"m":null,"s30":31.7,"a30":28.7,"yr":2023},{"c":"T\u00fcrkiye","s":38.5,"i":37.2,"a":29.3,"fe":26.6,"g":35069.0,"lg":10.465,"m":null,"s30":35.4,"a30":28.3,"yr":2023},{"c":"Papua New Guinea","s":45.7,"i":12.3,"a":28.8,"fe":14.3,"g":4206.0,"lg":8.344,"m":123.5,"s30":49.0,"a30":29.7,"yr":2023},{"c":"Lao People's Democratic Republic","s":66.4,"i":4.4,"a":28.6,"fe":25.3,"g":8372.0,"lg":9.033,"m":1.6,"s30":63.6,"a30":26.3,"yr":2023},{"c":"Republic of Moldova","s":36.5,"i":12.5,"a":28.5,"fe":16.2,"g":15981.0,"lg":9.679,"m":null,"s30":35.4,"a30":28.9,"yr":2023},{"c":"Eswatini","s":56.9,"i":74.6,"a":28.3,"fe":15.4,"g":10182.0,"lg":9.228,"m":1.5,"s30":59.1,"a30":28.9,"yr":2023},{"c":"United Arab Emirates","s":36.8,"i":129.5,"a":28.2,"fe":15.6,"g":70240.0,"lg":11.16,"m":0.0,"s30":32.7,"a30":27.8,"yr":2023},{"c":"Kuwait","s":38.8,"i":92.7,"a":27.7,"fe":18.3,"g":47790.0,"lg":10.775,"m":null,"s30":37.5,"a30":28.3,"yr":2023},{"c":"Tunisia","s":46.6,"i":40.2,"a":27.7,"fe":21.7,"g":12651.0,"lg":9.445,"m":null,"s30":44.7,"a30":27.4,"yr":2023},{"c":"Zimbabwe","s":45.7,"i":17.6,"a":27.5,"fe":14.8,"g":5218.0,"lg":8.56,"m":27.5,"s30":49.9,"a30":25.8,"yr":2023},{"c":"Uganda","s":64.1,"i":7.4,"a":27.2,"fe":14.4,"g":2791.0,"lg":7.934,"m":268.6,"s30":68.2,"a30":27.5,"yr":2023},{"c":"Iraq","s":57.0,"i":68.1,"a":27.1,"fe":14.5,"g":13202.0,"lg":9.488,"m":0.0,"s30":55.4,"a30":25.8,"yr":2023},{"c":"Zambia","s":69.4,"i":2.2,"a":27.1,"fe":12.2,"g":3673.0,"lg":8.209,"m":241.0,"s30":71.5,"a30":26.3,"yr":2023},{"c":"Indonesia","s":53.9,"i":5.8,"a":26.7,"fe":14.2,"g":13890.0,"lg":9.539,"m":1.6,"s30":44.0,"a30":24.6,"yr":2023},{"c":"Kiribati","s":31.6,"i":11.6,"a":26.3,"fe":14.5,"g":3108.0,"lg":8.042,"m":null,"s30":28.9,"a30":26.9,"yr":2022},{"c":"Bosnia and Herzegovina","s":36.7,"i":37.8,"a":26.0,"fe":29.6,"g":19805.0,"lg":9.894,"m":null,"s30":33.5,"a30":27.3,"yr":2023},{"c":"Bulgaria","s":28.2,"i":29.6,"a":25.8,"fe":12.2,"g":33074.0,"lg":10.406,"m":null,"s30":23.2,"a30":27.4,"yr":2023},{"c":"Montenegro","s":27.2,"i":87.8,"a":25.8,"fe":18.3,"g":27243.0,"lg":10.213,"m":null,"s30":25.8,"a30":27.6,"yr":2023},{"c":"Slovenia","s":35.5,"i":178.2,"a":25.7,"fe":16.1,"g":47986.0,"lg":10.779,"m":null,"s30":35.4,"a30":27.5,"yr":2023},{"c":"Iran (Islamic Republic of)","s":50.4,"i":25.6,"a":25.5,"fe":14.8,"g":17045.0,"lg":9.744,"m":null,"s30":51.9,"a30":27.0,"yr":2023},{"c":"Panama","s":40.7,"i":45.7,"a":25.5,"fe":14.0,"g":35873.0,"lg":10.488,"m":1.4,"s30":40.9,"a30":25.5,"yr":2023},{"c":"Slovakia","s":25.4,"i":67.6,"a":25.3,"fe":11.8,"g":39502.0,"lg":10.584,"m":null,"s30":19.3,"a30":26.6,"yr":2023},{"c":"Bolivia (Plurinational State of)","s":50.5,"i":4.1,"a":24.9,"fe":13.0,"g":11616.0,"lg":9.36,"m":2.5,"s30":51.3,"a30":23.9,"yr":2023},{"c":"Namibia","s":52.0,"i":62.4,"a":24.9,"fe":16.7,"g":10126.0,"lg":9.223,"m":9.6,"s30":50.8,"a30":26.5,"yr":2023},{"c":"Serbia","s":49.8,"i":8.1,"a":24.9,"fe":22.0,"g":25735.0,"lg":10.156,"m":null,"s30":51.0,"a30":26.5,"yr":2023},{"c":"Albania","s":26.1,"i":23.1,"a":24.7,"fe":20.1,"g":20502.0,"lg":9.928,"m":null,"s30":21.2,"a30":26.8,"yr":2023},{"c":"Estonia","s":19.7,"i":57.3,"a":24.7,"fe":15.5,"g":41285.0,"lg":10.628,"m":null,"s30":7.7,"a30":26.2,"yr":2023},{"c":"Czechia","s":22.7,"i":52.7,"a":24.6,"fe":12.8,"g":47558.0,"lg":10.77,"m":null,"s30":18.1,"a30":25.9,"yr":2023},{"c":"Uruguay","s":34.1,"i":63.3,"a":24.5,"fe":14.6,"g":31101.0,"lg":10.345,"m":null,"s30":32.2,"a30":26.7,"yr":2023},{"c":"Romania","s":35.8,"i":44.1,"a":24.3,"fe":16.4,"g":40117.0,"lg":10.6,"m":null,"s30":34.9,"a30":25.3,"yr":2023},{"c":"Hungary","s":27.6,"i":27.7,"a":24.1,"fe":12.9,"g":40333.0,"lg":10.605,"m":null,"s30":23.9,"a30":25.5,"yr":2023},{"c":"Russian Federation","s":36.9,"i":4.1,"a":24.1,"fe":16.5,"g":39881.0,"lg":10.594,"m":null,"s30":37.1,"a30":25.6,"yr":2023},{"c":"Lithuania","s":28.9,"i":50.3,"a":23.7,"fe":15.1,"g":46334.0,"lg":10.744,"m":null,"s30":25.4,"a30":25.4,"yr":2023},{"c":"Qatar","s":41.0,"i":89.6,"a":23.6,"fe":20.7,"g":116159.0,"lg":11.663,"m":null,"s30":null,"a30":null,"yr":2023},{"c":"Argentina","s":34.6,"i":12.9,"a":23.5,"fe":17.7,"g":27230.0,"lg":10.212,"m":0.0,"s30":30.3,"a30":24.6,"yr":2023},{"c":"Poland","s":31.5,"i":22.3,"a":23.4,"fe":15.0,"g":43673.0,"lg":10.684,"m":null,"s30":28.3,"a30":24.7,"yr":2023},{"c":"Croatia","s":25.0,"i":46.2,"a":23.3,"fe":15.7,"g":41320.0,"lg":10.629,"m":null,"s30":20.5,"a30":24.1,"yr":2023},{"c":"Paraguay","s":52.1,"i":4.2,"a":23.2,"fe":14.7,"g":15832.0,"lg":9.67,"m":0.0,"s30":57.7,"a30":24.3,"yr":2023},{"c":"Ethiopia","s":73.8,"i":4.0,"a":23.1,"fe":23.8,"g":2758.0,"lg":7.922,"m":45.6,"s30":73.2,"a30":24.6,"yr":2023},{"c":"Colombia","s":37.9,"i":27.8,"a":22.4,"fe":14.6,"g":18407.0,"lg":9.82,"m":9.1,"s30":36.9,"a30":23.1,"yr":2023},{"c":"Dominican Republic","s":31.6,"i":35.4,"a":22.4,"fe":17.8,"g":23282.0,"lg":10.055,"m":0.1,"s30":29.4,"a30":23.0,"yr":2023},{"c":"Suriname","s":42.2,"i":38.3,"a":22.2,"fe":11.6,"g":19021.0,"lg":9.853,"m":0.2,"s30":43.0,"a30":22.8,"yr":2023},{"c":"Belarus","s":26.0,"i":3.5,"a":22.1,"fe":20.3,"g":27782.0,"lg":10.232,"m":null,"s30":24.6,"a30":23.9,"yr":2023},{"c":"Micronesia (Federated States of)","s":28.9,"i":11.9,"a":22.1,"fe":13.0,"g":3841.0,"lg":8.254,"m":null,"s30":null,"a30":null,"yr":2023},{"c":"Trinidad and Tobago","s":40.1,"i":91.6,"a":22.1,"fe":14.7,"g":31197.0,"lg":10.348,"m":null,"s30":42.9,"a30":23.1,"yr":2023},{"c":"Samoa","s":35.4,"i":38.5,"a":21.9,"fe":15.2,"g":7385.0,"lg":8.907,"m":null,"s30":42.4,"a30":22.9,"yr":2023},{"c":"Jamaica","s":38.4,"i":53.9,"a":21.5,"fe":17.1,"g":11399.0,"lg":9.341,"m":null,"s30":38.7,"a30":22.1,"yr":2023},{"c":"North Macedonia","s":35.9,"i":29.9,"a":21.5,"fe":22.4,"g":23455.0,"lg":10.063,"m":null,"s30":33.2,"a30":23.4,"yr":2023},{"c":"Latvia","s":28.2,"i":149.1,"a":21.4,"fe":16.1,"g":37278.0,"lg":10.526,"m":null,"s30":24.7,"a30":22.2,"yr":2023},{"c":"Belize","s":36.6,"i":24.0,"a":21.3,"fe":15.9,"g":12371.0,"lg":9.423,"m":0.0,"s30":36.5,"a30":22.0,"yr":2023},{"c":"Brazil","s":30.5,"i":5.3,"a":21.3,"fe":15.7,"g":19080.0,"lg":9.856,"m":3.5,"s30":28.8,"a30":19.6,"yr":2023},{"c":"Peru","s":49.8,"i":25.6,"a":21.0,"fe":14.5,"g":15342.0,"lg":9.638,"m":1.8,"s30":48.1,"a30":21.2,"yr":2023},{"c":"Grenada","s":17.0,"i":118.0,"a":20.9,"fe":18.5,"g":17093.0,"lg":9.746,"m":null,"s30":4.9,"a30":21.2,"yr":2023},{"c":"Sri Lanka","s":60.9,"i":19.0,"a":20.9,"fe":14.3,"g":13065.0,"lg":9.478,"m":0.0,"s30":60.9,"a30":18.1,"yr":2023},{"c":"Thailand","s":50.6,"i":28.6,"a":20.7,"fe":13.7,"g":21245.0,"lg":9.964,"m":0.2,"s30":49.3,"a30":19.1,"yr":2023},{"c":"Tonga","s":28.2,"i":25.0,"a":20.7,"fe":23.2,"g":7031.0,"lg":8.858,"m":null,"s30":null,"a30":null,"yr":2023},{"c":"Viet Nam","s":52.1,"i":32.1,"a":20.5,"fe":22.7,"g":13535.0,"lg":9.513,"m":0.0,"s30":49.3,"a30":21.1,"yr":2023},{"c":"Ecuador","s":39.3,"i":22.2,"a":20.2,"fe":9.1,"g":14321.0,"lg":9.569,"m":0.2,"s30":44.6,"a30":20.7,"yr":2023},{"c":"Barbados","s":33.2,"i":85.3,"a":20.1,"fe":19.6,"g":20865.0,"lg":9.946,"m":null,"s30":32.8,"a30":20.7,"yr":2023},{"c":"Saint Lucia","s":32.4,"i":75.0,"a":19.9,"fe":14.4,"g":23636.0,"lg":10.071,"m":null,"s30":32.1,"a30":21.0,"yr":2023},{"c":"Ukraine","s":42.1,"i":1.7,"a":19.4,"fe":15.9,"g":15917.0,"lg":9.675,"m":null,"s30":44.6,"a30":22.3,"yr":2023},{"c":"Mongolia","s":27.7,"i":33.6,"a":19.1,"fe":23.7,"g":16223.0,"lg":9.694,"m":null,"s30":21.7,"a30":17.5,"yr":2023},{"c":"Bahamas","s":12.9,"i":80.7,"a":18.8,"fe":19.1,"g":35221.0,"lg":10.469,"m":null,"s30":18.4,"a30":19.3,"yr":2023},{"c":"Honduras","s":41.4,"i":40.1,"a":18.8,"fe":11.9,"g":6468.0,"lg":8.775,"m":null,"s30":43.6,"a30":20.6,"yr":2023},{"c":"Saint Vincent and the Grenadines","s":27.9,"i":101.7,"a":18.8,"fe":24.1,"g":17858.0,"lg":9.79,"m":null,"s30":19.5,"a30":19.1,"yr":2023},{"c":"Armenia","s":39.0,"i":40.0,"a":18.7,"fe":20.0,"g":19403.0,"lg":9.873,"m":null,"s30":36.6,"a30":17.6,"yr":2023},{"c":"Saint Kitts and Nevis","s":26.1,"i":73.7,"a":18.4,"fe":14.2,"g":26897.0,"lg":10.2,"m":null,"s30":24.6,"a30":18.8,"yr":2021},{"c":"Saudi Arabia","s":44.6,"i":79.1,"a":17.6,"fe":21.2,"g":64482.0,"lg":11.074,"m":null,"s30":46.3,"a30":15.7,"yr":2023},{"c":"Denmark","s":23.4,"i":28.2,"a":17.0,"fe":16.1,"g":68994.0,"lg":11.142,"m":null,"s30":19.0,"a30":18.4,"yr":2023},{"c":"Sweden","s":28.5,"i":48.0,"a":16.8,"fe":16.4,"g":62123.0,"lg":11.037,"m":null,"s30":31.0,"a30":18.5,"yr":2023},{"c":"Austria","s":25.3,"i":67.3,"a":16.7,"fe":16.0,"g":64536.0,"lg":11.075,"m":null,"s30":26.1,"a30":18.3,"yr":2023},{"c":"Switzerland","s":22.6,"i":61.9,"a":16.6,"fe":14.0,"g":85383.0,"lg":11.355,"m":null,"s30":23.2,"a30":18.7,"yr":2023},{"c":"Netherlands (Kingdom of the)","s":24.7,"i":151.8,"a":16.5,"fe":17.1,"g":70199.0,"lg":11.159,"m":null,"s30":25.4,"a30":18.5,"yr":2023},{"c":"Cyprus","s":32.0,"i":77.1,"a":16.4,"fe":15.9,"g":51675.0,"lg":10.853,"m":null,"s30":31.6,"a30":17.8,"yr":2023},{"c":"Italy","s":30.8,"i":64.0,"a":16.4,"fe":16.0,"g":52843.0,"lg":10.875,"m":null,"s30":30.3,"a30":18.1,"yr":2023},{"c":"Norway","s":25.7,"i":73.2,"a":16.3,"fe":17.8,"g":94365.0,"lg":11.455,"m":null,"s30":23.8,"a30":17.8,"yr":2023},{"c":"Rwanda","s":62.2,"i":8.5,"a":16.1,"fe":17.4,"g":3168.0,"lg":8.061,"m":null,"s30":70.2,"a30":16.1,"yr":2023},{"c":"Chile","s":37.0,"i":47.7,"a":15.7,"fe":15.3,"g":29600.0,"lg":10.296,"m":null,"s30":34.6,"a30":18.5,"yr":2023},{"c":"Malta","s":30.2,"i":87.3,"a":15.7,"fe":16.3,"g":60460.0,"lg":11.01,"m":null,"s30":34.5,"a30":17.2,"yr":2023},{"c":"Republic of Korea","s":33.0,"i":56.3,"a":15.7,"fe":21.3,"g":54029.0,"lg":10.897,"m":null,"s30":25.1,"a30":15.2,"yr":2023},{"c":"China, mainland","s":49.8,"i":12.3,"a":15.6,"fe":33.3,"g":22687.0,"lg":10.03,"m":null,"s30":47.7,"a30":14.7,"yr":2023},{"c":"Greece","s":26.8,"i":36.6,"a":15.6,"fe":16.6,"g":36701.0,"lg":10.511,"m":null,"s30":24.4,"a30":16.8,"yr":2023},{"c":"Spain","s":25.6,"i":59.4,"a":15.6,"fe":15.2,"g":47323.0,"lg":10.765,"m":null,"s30":24.4,"a30":17.0,"yr":2023},{"c":"Luxembourg","s":24.9,"i":131.2,"a":15.4,"fe":19.4,"g":130049.0,"lg":11.776,"m":null,"s30":26.6,"a30":17.2,"yr":2023},{"c":"Belgium","s":22.3,"i":165.9,"a":15.0,"fe":19.3,"g":63042.0,"lg":11.052,"m":null,"s30":19.6,"a30":16.5,"yr":2023},{"c":"Portugal","s":29.5,"i":84.2,"a":15.0,"fe":17.8,"g":41768.0,"lg":10.64,"m":null,"s30":26.9,"a30":16.1,"yr":2023},{"c":"United States of America","s":22.9,"i":9.6,"a":15.0,"fe":15.5,"g":74352.0,"lg":11.217,"m":null,"s30":21.6,"a30":16.7,"yr":2023},{"c":"Iceland","s":21.8,"i":84.2,"a":14.7,"fe":21.6,"g":69268.0,"lg":11.146,"m":null,"s30":23.8,"a30":16.0,"yr":2023},{"c":"Israel","s":30.1,"i":66.9,"a":14.6,"fe":19.9,"g":47671.0,"lg":10.772,"m":null,"s30":26.8,"a30":15.5,"yr":2023},{"c":"El Salvador","s":47.2,"i":63.8,"a":14.4,"fe":16.8,"g":11404.0,"lg":9.342,"m":null,"s30":47.3,"a30":15.8,"yr":2023},{"c":"Canada","s":28.5,"i":27.2,"a":14.0,"fe":16.3,"g":58088.0,"lg":10.97,"m":null,"s30":27.2,"a30":17.1,"yr":2023},{"c":"Germany","s":23.7,"i":58.6,"a":14.0,"fe":13.9,"g":63140.0,"lg":11.053,"m":null,"s30":21.3,"a30":16.1,"yr":2023},{"c":"Ireland","s":26.6,"i":78.6,"a":14.0,"fe":20.8,"g":117660.0,"lg":11.676,"m":null,"s30":23.1,"a30":14.8,"yr":2023},{"c":"Costa Rica","s":32.8,"i":70.9,"a":13.7,"fe":12.6,"g":26379.0,"lg":10.18,"m":null,"s30":31.5,"a30":14.7,"yr":2023},{"c":"Finland","s":29.9,"i":26.1,"a":13.6,"fe":17.8,"g":56052.0,"lg":10.934,"m":null,"s30":28.4,"a30":15.5,"yr":2023},{"c":"United Kingdom of Great Britain and Northern Ireland","s":30.1,"i":51.1,"a":13.6,"fe":16.7,"g":53423.0,"lg":10.886,"m":null,"s30":30.6,"a30":14.9,"yr":2023},{"c":"Mexico","s":40.9,"i":39.3,"a":13.2,"fe":16.3,"g":21865.0,"lg":9.993,"m":null,"s30":41.6,"a30":14.1,"yr":2023},{"c":"France","s":28.4,"i":29.4,"a":13.1,"fe":16.0,"g":54297.0,"lg":10.902,"m":null,"s30":28.2,"a30":15.3,"yr":2023},{"c":"New Zealand","s":32.1,"i":42.2,"a":12.4,"fe":19.2,"g":49593.0,"lg":10.812,"m":null,"s30":34.1,"a30":13.5,"yr":2023},{"c":"Philippines","s":62.4,"i":20.8,"a":12.0,"fe":14.0,"g":9899.0,"lg":9.2,"m":null,"s30":65.9,"a30":6.8,"yr":2023},{"c":"Australia","s":22.1,"i":16.8,"a":11.1,"fe":18.1,"g":60685.0,"lg":11.013,"m":null,"s30":21.2,"a30":12.5,"yr":2023},{"c":"Guatemala","s":43.1,"i":28.9,"a":10.5,"fe":14.0,"g":12380.0,"lg":9.424,"m":null,"s30":42.7,"a30":9.9,"yr":2023}]</script>
+<script id="dataFindings" type="application/json">{"trend":[[2010,43.05],[2011,43.4],[2012,44.55],[2013,44.5],[2014,46.53],[2015,46.67],[2016,47.43],[2017,48.45],[2018,47.92],[2019,49.64],[2020,50.33],[2021,50.42],[2022,50.76],[2023,50.42]],"groups":[["Cereals and their products",56.2,35.1,32.6,5.17],["Eggs and their products",26.1,1.0,2.2,12.61],["Fats and oils",64.1,13.7,0.2,0.09],["Fish, shellfish and their products",56.1,1.2,1.9,8.84],["Fruits and their products",32.7,3.7,3.7,5.56],["Meat and meat products",44.5,8.8,13.6,8.59],["Milk and milk products",45.5,6.7,1.6,1.33],["Pulses, seeds and nuts and their products",35.2,4.7,10.0,11.8],["Roots, tubers, plantains and their products",13.7,6.3,7.9,6.99],["Sweets and sugars",67.8,11.5,3.9,1.88],["Vegetables and their products",35.3,2.3,12.5,30.69]],"gaps":[-56.5,-45.2,-43.0,-39.4,-35.7,-32.0,-32.0,-25.0,-24.4,-23.4,-23.1,-22.8,-21.8,-21.7,-20.5,-19.1,-18.0,-17.4,-15.4,-15.3,-14.6,-13.0,-12.9,-12.3,-11.4,-9.0,-8.6,-8.6,-5.5,-4.6,-3.9,-1.6,0.3,0.3,1.4,2.9,3.0,3.4,3.7,4.1,4.3,5.4,8.0,8.0,9.1,9.2,9.2,10.5,10.8,11.9,13.1,13.3,13.4,13.9,15.2,15.8,16.9,18.1,19.1,19.2,19.8,19.8,19.9,23.0,23.4,23.8,24.1,24.3,25.5,25.5,25.6,25.7,26.0,26.4,26.6,27.6,28.1,28.5,28.6,28.9,29.6,30.3,30.8,31.0,31.2,31.4,32.1,32.4,32.4,32.7,33.2,34.5,34.6,35.2,35.3,35.8,35.8,35.8,38.1,38.3,38.4,38.4,39.6,39.8,40.2,40.4,41.1,41.7,41.8,42.4,42.4,42.9,43.1,43.3,44.3,44.5,45.8,47.9,48.6,48.7,48.9,49.0,49.5,50.0,50.5,51.5,52.3,54.3,54.9,56.0,56.1,56.3,56.6,56.7,56.9,57.4,60.4,62.0,62.4,63.0,63.7,64.2,65.1,65.4,65.6,66.0,67.5,67.8,68.0,68.5,68.8,70.0,71.2,72.2,72.9,74.4,75.6,75.8,77.6,77.8,77.9,79.2,79.8,80.7,80.9,82.3,82.3,83.3,89.9,101.2,109.8,121.2,124.1,130.7,158.8,167.3,211.5,280.5],"trap":[["Democratic People's Republic of Korea",67.3,21.0,27.3,0],["Cuba",40.0,43.8,20.1,0],["South Africa",47.4,30.0,31.2,0],["Albania",28.1,34.2,24.7,0],["Yemen",53.5,78.4,36.4,1],["Viet Nam",52.3,36.4,20.5,0],["Saint Vincent and the Grenadines",30.1,72.4,18.8,0],["United Arab Emirates",38.2,98.2,28.2,0],["Uruguay",36.3,48.4,24.5,0],["Zambia",69.4,9.3,27.1,0],["Samoa",37.9,68.9,21.9,0],["Uzbekistan",44.4,29.3,30.4,0],["Afghanistan",72.9,49.0,45.4,0],["United States of America",24.1,20.4,15.0,0],["Argentina",34.8,1.7,23.5,0],["Vanuatu",43.9,55.9,30.4,0],["Venezuela (Bolivarian Republic of)",42.0,35.2,25.2,0],["Angola",64.2,17.2,43.8,0],["Gambia",58.0,79.2,46.1,1],["Ukraine",42.7,8.2,19.4,0],["Luxembourg",28.9,97.3,15.4,0],["Germany",24.3,47.8,14.0,0],["Lithuania",29.1,69.4,23.7,0],["Lesotho",65.9,79.3,34.2,1],["Djibouti",52.6,97.8,31.8,1],["Sri Lanka",58.6,34.1,20.9,0],["Saint Lucia",36.5,81.5,19.9,0],["Latvia",28.2,86.4,21.4,0],["Denmark",28.0,56.5,17.0,0],["Liberia",71.6,68.3,42.5,1],["Dominican Republic",26.2,41.0,22.4,0],["Lebanon",40.7,64.6,34.0,0],["Lao People's Democratic Republic",67.0,14.2,28.6,0],["Algeria",46.9,56.9,31.6,0],["Kuwait",40.6,91.0,27.7,0],["Republic of Korea",33.2,63.8,15.7,0],["Libya",32.4,69.0,29.3,0],["Ecuador",37.0,24.1,20.2,0],["Czechia",22.6,53.8,24.6,0],["Morocco",58.1,61.8,29.5,0],["Colombia",35.5,25.9,22.4,0],["Mozambique",75.1,29.9,47.0,0],["Mongolia",33.7,33.1,19.1,0],["Comoros",55.8,53.5,29.9,0],["Montenegro",33.1,76.1,25.8,0],["Myanmar",62.7,5.9,39.7,0],["Cabo Verde",48.9,88.5,40.6,0],["China, Macao SAR",29.8,99.3,null,0],["Malta",35.8,88.3,15.7,0],["Costa Rica",32.6,49.3,13.7,0],["Marshall Islands",31.0,72.5,23.5,0],["Mexico",41.0,30.0,13.2,0],["Maldives",39.2,92.9,43.4,0],["Madagascar",81.7,16.7,37.2,0],["Republic of Moldova",38.2,29.6,28.5,0],["Cyprus",35.3,75.4,16.4,0],["North Macedonia",36.3,57.2,21.5,0],["Mauritania",53.7,70.2,54.5,1],["Saint Kitts and Nevis",27.7,91.3,19.4,0],["Egypt",65.6,34.6,32.7,0],["Indonesia",54.0,19.1,26.7,0],["Hungary",29.3,49.9,24.1,0],["Gabon",51.3,47.8,59.9,0],["Haiti",57.6,60.4,45.9,0],["Croatia",28.4,63.6,23.3,0],["United Kingdom of Great Britain and Northern Ireland",33.2,52.5,13.6,0],["Honduras",40.9,50.1,18.8,0],["Micronesia (Federated States of)",31.8,44.8,22.1,0],["China, Hong Kong SAR",28.6,96.9,null,0],["Guyana",35.7,34.5,37.5,0],["Guatemala",42.1,40.4,10.5,0],["Ghana",68.6,15.3,36.0,0],["Grenada",21.2,81.6,20.9,0],["Greece",28.0,66.9,15.6,0],["Guinea",63.8,25.9,45.7,0],["Guinea-Bissau",63.3,34.4,45.7,0],["Georgia",44.5,64.9,30.2,0],["Kiribati",33.7,59.2,26.9,0],["India",53.2,6.8,53.7,0],["Ireland",27.5,68.3,14.0,0],["Cambodia",72.0,16.7,38.0,0],["Kyrgyzstan",43.7,29.4,32.9,0],["Spain",25.6,62.8,15.6,0],["Kenya",50.9,35.9,32.2,0],["Kazakhstan",30.8,40.5,30.5,0],["Estonia",22.0,57.1,24.7,0],["Jordan",40.5,70.9,33.0,0],["France",28.7,36.4,13.1,0],["Jamaica",37.7,62.7,21.5,0],["Italy",30.8,65.4,16.4,0],["Israel",30.7,58.3,14.6,0],["Finland",35.1,35.1,13.6,0],["Iceland",29.8,57.6,14.7,0],["Iraq",58.6,68.3,27.1,1],["Fiji",41.9,57.4,29.9,0],["Iran (Islamic Republic of)",51.2,27.8,25.5,0],["Ethiopia",73.8,9.4,23.1,0],["Armenia",39.9,56.9,18.7,0],["Mauritius",41.0,88.1,32.8,0],["Malawi",63.5,3.6,32.4,0],["Eswatini",58.3,68.9,28.3,1],["Bangladesh",71.6,21.0,37.6,0],["Sweden",29.6,58.5,16.8,0],["Slovenia",39.4,88.1,25.7,0],["Bulgaria",28.9,59.7,25.8,0],["Slovakia",28.4,77.8,25.3,0],["Bahrain",33.2,96.2,38.4,0],["Seychelles",39.2,89.8,25.8,0],["Suriname",43.8,58.4,22.2,0],["Bahamas",18.4,88.1,18.8,0],["Serbia",51.2,18.8,24.9,0],["El Salvador",47.2,64.8,14.4,0],["Bosnia and Herzegovina",37.9,49.4,26.0,0],["Sierra Leone",73.0,22.4,44.6,0],["Solomon Islands",62.8,45.2,32.6,0],["Belarus",31.8,5.4,22.1,0],["Sao Tome and Principe",42.6,57.8,39.7,0],["Senegal",62.8,47.9,43.1,0],["Burkina Faso",57.8,24.4,44.3,0],["Thailand",50.7,20.2,20.7,0],["Uganda",46.7,14.0,27.2,0],["Antigua and Barbuda",25.4,92.2,20.3,0],["United Republic of Tanzania",62.0,12.5,38.8,0],["China, Taiwan Province of",29.8,60.2,null,0],["Australia",24.0,22.9,11.1,0],["Tuvalu",35.4,63.7,23.2,0],["T\u00fcrkiye",38.9,39.5,29.3,0],["Syrian Arab Republic",58.1,28.5,31.0,0],["Tunisia",47.0,48.4,27.7,0],["Trinidad and Tobago",39.9,91.0,22.1,0],["Tonga",34.0,71.7,20.7,0],["Timor-Leste",62.0,69.2,29.7,1],["Azerbaijan",52.2,31.6,35.6,0],["Turkmenistan",49.3,15.8,34.8,0],["Tajikistan",50.7,40.3,37.3,0],["Belgium",22.4,98.9,15.0,0],["Austria",25.6,57.3,16.7,0],["Congo",57.8,45.6,46.7,0],["Saudi Arabia",44.8,81.9,17.6,0],["Rwanda",56.5,25.2,16.1,0],["New Zealand",33.8,49.8,12.4,0],["Chile",37.8,53.0,15.7,0],["Nauru",27.5,88.7,22.5,0],["Nepal",63.9,17.3,33.2,0],["Norway",31.6,62.6,16.3,0],["China, mainland",49.8,13.9,15.6,0],["Netherlands (Kingdom of the)",24.6,99.0,16.5,0],["Oman",33.1,85.5,34.4,0],["Nicaragua",52.1,38.5,null,0],["Nigeria",62.7,14.1,37.9,0],["Niger",55.4,17.5,47.1,0],["Cameroon",58.8,20.7,38.9,0],["New Caledonia",35.7,84.2,null,0],["Namibia",53.2,67.8,24.9,1],["Democratic Republic of the Congo",82.8,7.2,40.0,0],["Malaysia",38.1,69.9,31.3,0],["C\u00f4te d'Ivoire",70.6,23.8,51.4,0],["Belize",38.6,43.3,21.3,0],["Switzerland",27.4,50.2,16.6,0],["Panama",40.7,48.4,25.5,0],["Russian Federation",37.0,8.9,24.1,0],["Bolivia (Plurinational State of)",48.5,6.6,24.9,0],["Romania",37.0,39.3,24.3,0],["Qatar",43.5,90.2,23.6,0],["French Polynesia",34.4,87.9,null,0],["Brazil",30.5,5.9,21.3,0],["Paraguay",53.2,10.1,23.2,0],["Pakistan",45.0,13.4,46.5,0],["Portugal",32.3,71.0,15.0,0],["Bhutan",65.8,73.0,33.8,1],["Poland",31.5,28.0,23.4,0],["Papua New Guinea",46.0,34.0,28.8,0],["Botswana",51.5,84.0,30.9,1],["Philippines",61.0,33.1,12.0,0],["Peru",50.2,30.8,21.0,0],["Canada",28.5,40.0,14.0,0],["Barbados",34.0,82.0,20.1,0],["Zimbabwe",45.7,32.2,27.5,0]],"trapTable":[["Mauritania",70.2,53.7,1.04,19.9,54.5],["Gambia",79.2,58.0,0.75,25.6,46.1],["Liberia",68.3,71.6,1.19,77.8,42.5],["Yemen",78.4,53.5,0.66,72.2,36.4],["Lesotho",79.3,65.9,0.94,42.4,34.2],["Bhutan",73.0,65.8,1.28,31.0,33.8],["Djibouti",97.8,52.6,1.18,158.8,31.8],["Botswana",84.0,51.5,1.18,82.3,30.9],["Timor-Leste",69.2,62.0,1.22,62.0,29.7],["Eswatini",68.9,58.3,1.2,40.4,28.3],["Iraq",68.3,58.6,1.05,2.9,27.1],["Namibia",67.8,53.2,1.22,26.6,24.9]],"proj":{"haiti":{"obs":[[2010,54.16],[2011,42.79],[2012,46.99],[2013,43.31],[2014,53.26],[2015,55.62],[2016,54.71],[2017,62.39],[2018,56.8],[2019,57.05],[2020,64.4],[2021,57.5],[2022,56.44],[2023,60.42]],"p2030":61.19,"lo":54.47,"hi":67.92,"last":60.42},"cabo":{"obs":[[2010,50.9],[2011,49.87],[2012,50.45],[2013,51.08],[2014,48.43],[2015,49.15],[2016,48.43],[2017,48.72],[2018,50.82],[2019,51.25],[2020,52.1],[2021,53.29],[2022,51.39],[2023,48.86]],"p2030":48.92,"lo":44.56,"hi":53.28,"last":48.86}}}</script>
 <script>
 const $=id=>document.getElementById(id);
 const R=(a,b)=>a+Math.random()*(b-a);
@@ -616,12 +1136,13 @@ const B={int:40.02,imp:5.07,star:31.98,adq:0.49,lg:-3.15};
 const predict=(s,i,g,adq=1.5)=>B.int+B.imp*(i/100)+B.star*(s/100)+B.adq*adq+B.lg*Math.log(g);
 let D=[],base=null;
 
-const cur={acc:[176,99,47]};
+const cur={acc:[63,199,184]};
 function paint(){}
 
 /* ── tabs ── */
 function go(p){
   document.querySelectorAll('.page').forEach(x=>x.classList.toggle('on',x.id==='p-'+p));
+  if(p==='find'&&window.paintFindings)window.paintFindings();
   document.querySelectorAll('.tab').forEach(t=>{const on=t.dataset.p===p;
     t.classList.toggle('on',on);t.setAttribute('aria-selected',on);});
   scrollTo({top:0,behavior:'instant'});
@@ -687,14 +1208,16 @@ function load(name){
   sel(d.c);
   if(DD1)DD1.render();
 }
-function makeDD(ids,onPick,getLabel){
+function makeDD(ids,onPick,getLabel,selGet){
   const dd=$(ids.root),btn=$(ids.btn),val=$(ids.val),list=$(ids.list),search=$(ids.search);
   function render(f=''){
     const t=f.trim().toLowerCase();
     const rows=[...D].sort((a,b)=>a.c.localeCompare(b.c)).filter(d=>!t||d.c.toLowerCase().includes(t));
+    const cur=selGet?selGet():selected;
+    const top=ids.allLabel?`<button role="option" data-c=""${cur?'':' class="sel"'}>${ids.allLabel}</button>`:'';
     list.innerHTML=rows.length
-      ? rows.map(d=>`<button role="option" data-c="${d.c}"${d.c===selected?' class="sel"':''}>${short(d.c)}</button>`).join('')
-      : '<div class="none">No country matches that.</div>';
+      ? top+rows.map(d=>`<button role="option" data-c="${d.c}"${d.c===cur?' class="sel"':''}>${short(d.c)}</button>`).join('')
+      : top+'<div class="none">No country matches that.</div>';
   }
   function open(o){
     dd.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);
@@ -718,19 +1241,20 @@ $('bRand').onclick=()=>load(D[(Math.random()*D.length)|0].c);
 const W=900,H=470,PAD={l:66,r:22,t:18,b:58};
 const X=v=>PAD.l+(v-10)/80*(W-PAD.l-PAD.r);
 const Y=v=>H-PAD.b-(v-5)/60*(H-PAD.t-PAD.b);
-let optIncome=false,optNames=false,optLine=true,q='',selected='Niger';
-const inc=g=>g<6000?'#B0632F':g<16000?'#DABE00':g<40000?'#8AC566':'#038DA2';
+let optIncome=false,optNames=false,optLine=true,q='',qPick='',selected='Niger';
+let DD2;
+const inc=g=>g<6000?'#FF7A6B':g<16000?'#FFC24B':g<40000?'#A8E05F':'#6BD6FF';
 function draw(){
   if(!D.length)return;
   const named=['Niger','India','Gabon','Guatemala','Australia','Mauritania'];
-  const ink='#043647',ink3='#8C8279',acc='#B0632F';
+  const ink='#EDF0F1',ink3='#78858B',acc='#E23A57',line='#3FC7B8';
   let g='';
-  for(let v=20;v<=80;v+=20)g+=`<line x1="${X(v)}" y1="${PAD.t}" x2="${X(v)}" y2="${H-PAD.b}" stroke="rgba(4,54,71,.08)"/><text class="ax" fill="${ink3}" x="${X(v)}" y="${H-PAD.b+20}" text-anchor="middle">${v}%</text>`;
-  for(let v=10;v<=60;v+=10)g+=`<line x1="${PAD.l}" y1="${Y(v)}" x2="${W-PAD.r}" y2="${Y(v)}" stroke="rgba(4,54,71,.08)"/><text class="ax" fill="${ink3}" x="${PAD.l-12}" y="${Y(v)+3}" text-anchor="end">${v}%</text>`;
+  for(let v=20;v<=80;v+=20)g+=`<line x1="${X(v)}" y1="${PAD.t}" x2="${X(v)}" y2="${H-PAD.b}" stroke="rgba(237,240,241,.10)"/><text class="ax" fill="${ink3}" x="${X(v)}" y="${H-PAD.b+20}" text-anchor="middle">${v}%</text>`;
+  for(let v=10;v<=60;v+=10)g+=`<line x1="${PAD.l}" y1="${Y(v)}" x2="${W-PAD.r}" y2="${Y(v)}" stroke="rgba(237,240,241,.10)"/><text class="ax" fill="${ink3}" x="${PAD.l-12}" y="${Y(v)+3}" text-anchor="end">${v}%</text>`;
   if(optLine){
     const n=D.length,mx=D.reduce((a,d)=>a+d.s,0)/n,my=D.reduce((a,d)=>a+d.a,0)/n;
     const b=D.reduce((a,d)=>a+(d.s-mx)*(d.a-my),0)/D.reduce((a,d)=>a+(d.s-mx)**2,0),a0=my-b*mx;
-    g+=`<line x1="${X(13)}" y1="${Y(a0+b*13)}" x2="${X(86)}" y2="${Y(a0+b*86)}" stroke="${acc}" stroke-width="1.7" opacity=".65" stroke-dasharray="6 5"/>`;
+    g+=`<line x1="${X(13)}" y1="${Y(a0+b*13)}" x2="${X(86)}" y2="${Y(a0+b*86)}" stroke="${line}" stroke-width="1.7" opacity=".75" stroke-dasharray="6 5"/>`;
   }
   const placed=[];
   D.forEach((d,k)=>{
@@ -749,7 +1273,7 @@ function draw(){
       g+=`<text x="${lx}" y="${ly}" text-anchor="${anchor}" font-size="11" font-weight="600" fill="${ink}" opacity="${q&&!hit?.15:.9}">${short(d.c)}</text>`;
     }
   });
-  g+=`<circle id="you" r="11" fill="none" stroke="#038DA2" stroke-width="2.2" cx="${X(+sS.value)}" cy="${Y(Math.max(2,Math.min(78,predict(+sS.value,+sI.value,+sG.value))))}" style="transition:cx .6s var(--ease),cy .6s var(--ease)"/>`;
+  g+=`<circle id="you" r="11" fill="none" stroke="#3FC7B8" stroke-width="2.2" cx="${X(+sS.value)}" cy="${Y(Math.max(2,Math.min(78,predict(+sS.value,+sI.value,+sG.value))))}" style="transition:cx .6s var(--ease),cy .6s var(--ease)"/>`;
   const cx=PAD.l+(W-PAD.l-PAD.r)/2, cy=PAD.t+(H-PAD.t-PAD.b)/2;
   g+=`<text class="ax" fill="${ink3}" x="${cx}" y="${H-10}" text-anchor="middle">Starch share of the diet</text>`;
   g+=`<text class="ax" fill="${ink3}" x="${-cy}" y="14" transform="rotate(-90)" text-anchor="middle">Anemia in women</text>`;
@@ -828,17 +1352,343 @@ const lo=new IntersectionObserver(es=>es.forEach(e=>{
   e.target.classList.toggle('go',e.isIntersecting);}),{threshold:.25});
 if(ld)lo.observe(ld);
 
-fetch('country_data.json').then(r=>r.json()).then(j=>{
+(window.__embed=id=>{const n=document.getElementById(id);return n?Promise.resolve(JSON.parse(n.textContent)):null;})&&0;
+(__embed('dataCountry')||fetch('country_data.json').then(r=>r.json())).then(j=>{
   D=j;
-  $('clist').innerHTML=[...D].sort((a,b)=>a.c.localeCompare(b.c)).map(d=>`<option>${short(d.c)}</option>`).join('');
   DD1=makeDD({root:'dd',btn:'ddBtn',val:'ddVal',list:'ddList',search:'ddSearch'},load);
-  $('find').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();draw();});
+  DD2=makeDD({root:'fdd',btn:'fddBtn',val:'fddVal',list:'fddList',search:'fddSearch',allLabel:'All countries'},
+    name=>{qPick=name||'';q=qPick.toLowerCase();
+      DD2.setLabel(name?short(name):'Find a country');draw();},
+    null,()=>qPick);
   const line=D.slice(0,30).map(d=>`<span>${short(d.c)} <b>${d.a}%</b></span>`).join('');
   $('mq').innerHTML=line+line;
   load('Niger');paint();
 }).catch(()=>{
   $('read').innerHTML='<b>country_data.json must sit beside this file.</b> Open the page through a local server rather than double-clicking it.';
 });
+
+/* ═══════════ FINDINGS TAB ═══════════
+   Charts are drawn from findings.json; the small tables are inline.
+   Everything paints once, on first visit to the tab.                        */
+(function(){
+  const SVG='http://www.w3.org/2000/svg';
+  const el=(n,a,p,t)=>{const e=document.createElementNS(SVG,n);
+    for(const k in a)e.setAttribute(k,a[k]);
+    if(t!=null)e.textContent=t; if(p)p.appendChild(e); return e;};
+  const axText=(p,x,y,t,anchor)=>el('text',{x,y,'text-anchor':anchor||'middle',
+    style:'fill:var(--ink3);font-size:11px;font-family:inherit'},p,t);
+
+  /* ---------- 1 · imported share trend ---------- */
+  function trend(D){
+    const svg=document.getElementById('fcTrend'); if(!svg||svg.dataset.done)return;
+    const W=900,H=300,L=52,R=18,T=16,B=34;
+    const xs=v=>L+(v-2010)/(2023-2010)*(W-L-R);
+    const ys=v=>T+(54-v)/(54-40)*(H-T-B);
+    for(let v=42;v<=54;v+=3){
+      el('line',{x1:L,y1:ys(v),x2:W-R,y2:ys(v),stroke:'var(--line)'},svg);
+      axText(svg,L-10,ys(v)+4,v+'%','end');
+    }
+    el('line',{x1:L,y1:ys(50),x2:W-R,y2:ys(50),stroke:'var(--accent)',
+      'stroke-dasharray':'5 5','stroke-width':1.4,opacity:.8},svg);
+    axText(svg,L+6,ys(50)-8,'half the plate','start');
+    let d='';
+    D.trend.forEach((p,i)=>{d+=(i?' L':'M')+xs(p[0])+' '+ys(p[1]);});
+    el('path',{d,fill:'none',stroke:'var(--accent2)','stroke-width':2.4,
+      'stroke-linecap':'round','stroke-linejoin':'round'},svg);
+    D.trend.forEach(p=>{
+      el('circle',{cx:xs(p[0]),cy:ys(p[1]),r:3.4,fill:'var(--accent2)'},svg);
+    });
+    [D.trend[0],D.trend[D.trend.length-1]].forEach((p,i)=>{
+      el('text',{x:xs(p[0])+(i?-6:6),y:ys(p[1])+(i?-14:18),
+        'text-anchor':i?'end':'start',
+        style:'fill:var(--ink);font-size:13px;font-weight:600'},svg,p[1].toFixed(1)+'%');
+    });
+    [2010,2013,2016,2019,2023].forEach(y=>axText(svg,xs(y),H-10,y));
+    svg.dataset.done=1;
+  }
+
+  /* ---------- 2 · food groups: traded vs iron ---------- */
+  function groups(D){
+    const svg=document.getElementById('fcGroups'); if(!svg||svg.dataset.done)return;
+    const rows=D.groups.slice().sort((a,b)=>b[1]-a[1]);
+    const W=900,L=210,R=60,T=10,rh=32,H=T+rows.length*rh+26;
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    const maxIron=Math.max(...rows.map(r=>r[4]));
+    const bx=v=>v/100*(W-L-R);
+    rows.forEach((r,i)=>{
+      const y=T+i*rh+rh/2;
+      el('text',{x:L-14,y:y+4,'text-anchor':'end',
+        style:'fill:var(--ink2);font-size:12px'},svg,r[0].replace(/ and their products| and products/,''));
+      el('rect',{x:L,y:y-7,width:Math.max(bx(r[1]),1),height:14,rx:3,
+        fill:'var(--accent2)',opacity:.85},svg);
+      /* the value sits inside the bar so the iron dot can never land on it */
+      const wide=bx(r[1])>46;
+      el('text',{x:L+bx(r[1])+(wide?-8:8),y:y+4,'text-anchor':wide?'end':'start',
+        style:`fill:${wide?'var(--bg)':'var(--ink3)'};font-size:11px;font-weight:${wide?600:400}`},svg,r[1].toFixed(0)+'%');
+      const ix=L+(r[4]/maxIron)*(W-L-R);
+      el('circle',{cx:ix,cy:y,r:5.5,fill:'var(--accent)'},svg);
+    });
+    el('line',{x1:L,y1:H-22,x2:W-R,y2:H-22,stroke:'var(--line)'},svg);
+    axText(svg,L,H-8,'0');
+    axText(svg,W-R,H-8,'100% imported  ·  '+maxIron.toFixed(0)+' mg iron','end');
+    svg.dataset.done=1;
+  }
+
+  /* ---------- 3 · density gap histogram ---------- */
+  function gap(D){
+    const svg=document.getElementById('fcGap'); if(!svg||svg.dataset.done)return;
+    const W=900,H=290,L=46,R=18,T=14,B=42;
+    const step=20,lo=-60,hi=180;
+    const bins={};
+    for(let b=lo;b<hi;b+=step)bins[b]=0;
+    D.gaps.forEach(v=>{const b=Math.max(lo,Math.min(hi-step,Math.floor(v/step)*step));bins[b]++;});
+    const keys=Object.keys(bins).map(Number).sort((a,b)=>a-b);
+    const max=Math.max(...keys.map(k=>bins[k]));
+    const bw=(W-L-R)/keys.length;
+    const ys=v=>T+(1-v/max)*(H-T-B);
+    for(let v=0;v<=max;v+=Math.ceil(max/4)){
+      el('line',{x1:L,y1:ys(v),x2:W-R,y2:ys(v),stroke:'var(--line)'},svg);
+      axText(svg,L-9,ys(v)+4,v,'end');
+    }
+    keys.forEach((k,i)=>{
+      const h=(bins[k]/max)*(H-T-B);
+      el('rect',{x:L+i*bw+3,y:ys(bins[k]),width:bw-6,height:Math.max(h,0),rx:3,
+        fill:k<0?'var(--ink3)':'var(--accent2)',opacity:k<0?.55:.9},svg);
+      if(i%2===0)axText(svg,L+i*bw+bw/2,H-22,k);
+    });
+    const zx=L+keys.indexOf(0)*bw;
+    el('line',{x1:zx,y1:T,x2:zx,y2:H-B+4,stroke:'var(--ink)','stroke-dasharray':'4 4',opacity:.6},svg);
+    axText(svg,(L+W-R)/2,H-6,'Domestic minus imported nutrient density, % of daily need per 1,000 kcal');
+    svg.dataset.done=1;
+  }
+
+  /* ---------- 4 · the trap scatter ---------- */
+  function trap(D){
+    const svg=document.getElementById('fcTrap'); if(!svg||svg.dataset.done)return;
+    const W=900,H=470,L=56,R=24,T=18,B=48;
+    const xs=v=>L+(v-10)/(90-10)*(W-L-R);
+    const ys=v=>T+(1-(v-0)/100)*(H-T-B);
+    for(let v=20;v<=80;v+=20){
+      el('line',{x1:xs(v),y1:T,x2:xs(v),y2:H-B,stroke:'var(--line)'},svg);
+      axText(svg,xs(v),H-B+18,v+'%');
+    }
+    for(let v=0;v<=100;v+=25){
+      el('line',{x1:L,y1:ys(v),x2:W-R,y2:ys(v),stroke:'var(--line)'},svg);
+      axText(svg,L-10,ys(v)+4,v+'%','end');
+    }
+    /* tercile thresholds */
+    el('line',{x1:xs(50.2),y1:T,x2:xs(50.2),y2:H-B,stroke:'var(--accent)',
+      'stroke-dasharray':'6 5','stroke-width':1.3,opacity:.85},svg);
+    el('line',{x1:L,y1:ys(63.7),x2:W-R,y2:ys(63.7),stroke:'var(--accent)',
+      'stroke-dasharray':'6 5','stroke-width':1.3,opacity:.85},svg);
+    const heat=a=>{
+      if(a==null)return 'var(--ink3)';
+      const t=Math.max(0,Math.min(1,(a-10)/50));
+      const c1=[107,214,255],c2=[226,58,87];
+      return `rgb(${c1.map((v,i)=>Math.round(v+(c2[i]-v)*t)).join(',')})`;
+    };
+    D.trap.forEach(d=>{
+      const [c,st,im,an,tp]=d;
+      el('circle',{cx:xs(st),cy:ys(im),r:tp?6.5:4.4,fill:heat(an),
+        opacity:an==null?.4:.92,stroke:tp?'var(--ink)':'none','stroke-width':tp?1.8:0},svg);
+    });
+    const lab={'Djibouti':[0,-13],'Yemen':[0,-13],'Liberia':[8,4],'Lesotho':[8,4],
+      'Netherlands':[0,-12],'DR Congo':[-8,10],'India':[8,4]};
+    D.trap.forEach(d=>{
+      const L2=lab[d[0]]||(d[0]==='Democratic Republic of the Congo'?[-8,12]:null);
+      if(!L2)return;
+      el('text',{x:xs(d[1])+L2[0],y:ys(d[2])+L2[1],'text-anchor':L2[0]<0?'end':(L2[0]?'start':'middle'),
+        style:'fill:var(--ink);font-size:11px;font-weight:600;paint-order:stroke;stroke:var(--surf);stroke-width:3px'},
+        svg,d[0].replace('Democratic Republic of the Congo','DR Congo'));
+    });
+    axText(svg,(L+W-R)/2,H-8,'Starch share of calories');
+    el('text',{x:-2,y:H/2,transform:`rotate(-90 -2 ${H/2})`,'text-anchor':'middle',
+      style:'fill:var(--ink3);font-size:11px'},svg,'Imported share of calories');
+    svg.dataset.done=1;
+  }
+
+  /* ---------- 5 · price projections ---------- */
+  const PRICE=[["Wheat, US hard red",56.9,32.2],["Maize",40.6,19.9],["Wheat, US soft red",40.1,17.0],
+    ["Soybeans",27.9,14.3],["Beef",27.8,21.2],["Rice, Thai 5%",13.7,18.5],["Groundnuts",12.4,12.3],
+    ["Lamb",-6.7,-15.6],["Chicken",-13.6,-13.8]];
+  function price(){
+    const svg=document.getElementById('fcPrice'); if(!svg||svg.dataset.done)return;
+    const W=900,L=180,R=40,T=12,rh=32,H=T+PRICE.length*rh+30;
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    const lo=-25,hi=65;
+    const xs=v=>L+(v-lo)/(hi-lo)*(W-L-R);
+    for(let v=-20;v<=60;v+=20){
+      el('line',{x1:xs(v),y1:T,x2:xs(v),y2:H-28,stroke:'var(--line)'},svg);
+      axText(svg,xs(v),H-10,(v>0?'+':'')+v+'%');
+    }
+    el('line',{x1:xs(0),y1:T,x2:xs(0),y2:H-28,stroke:'var(--ink3)',opacity:.7},svg);
+    PRICE.forEach((r,i)=>{
+      const y=T+i*rh+rh/2;
+      el('text',{x:L-14,y:y+4,'text-anchor':'end',style:'fill:var(--ink2);font-size:12px'},svg,r[0]);
+      el('line',{x1:xs(Math.min(r[1],r[2])),y1:y,x2:xs(Math.max(r[1],r[2])),y2:y,
+        stroke:'var(--line)','stroke-width':2},svg);
+      el('rect',{x:xs(r[1])-4,y:y-4,width:8,height:8,fill:'var(--accent2)'},svg);
+      el('circle',{cx:xs(r[2]),cy:y,r:5,fill:'var(--accent)'},svg);
+    });
+    svg.dataset.done=1;
+  }
+
+
+  /* ---------- 6 · forest plot of the control ladder ---------- */
+  const FOREST=[["Base: starch + imports + income",.315,.056,168,"a"],["+ malaria",.271,.051,168,"a"],
+    ["+ water and sanitation",.256,.059,123,"a"],["+ fertility and stunting",.235,.099,70,"a"],null,
+    ["53 poorer countries: base",.298,.135,53,"b"],["+ malaria",.259,.127,53,"b"],
+    ["+ iron supplementation",.241,.132,53,"b"]];
+  function forest(){
+    const svg=document.getElementById('fcForest'); if(!svg||svg.dataset.done)return;
+    const W=900,L=250,R=60,T=16,rh=34,H=T+FOREST.length*rh+26;
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    const lo=-.05,hi=.55;
+    const xs=v=>L+(v-lo)/(hi-lo)*(W-L-R);
+    for(let v=0;v<=.5;v+=.1){
+      el('line',{x1:xs(v),y1:T,x2:xs(v),y2:H-26,stroke:'var(--line)'},svg);
+      axText(svg,xs(v),H-8,v.toFixed(1));
+    }
+    el('line',{x1:xs(0),y1:T,x2:xs(0),y2:H-26,stroke:'var(--ink3)','stroke-dasharray':'4 4',opacity:.8},svg);
+    FOREST.forEach((r,i)=>{
+      if(!r)return;
+      const y=T+i*rh+rh/2, col=r[4]==='a'?'var(--accent)':'var(--accent2)';
+      el('text',{x:L-14,y:y+4,'text-anchor':'end',style:'fill:var(--ink2);font-size:12px'},svg,r[0]);
+      el('line',{x1:xs(r[1]-1.96*r[2]),y1:y,x2:xs(r[1]+1.96*r[2]),y2:y,stroke:col,
+        'stroke-width':2,opacity:.55,'stroke-linecap':'round'},svg);
+      el('circle',{cx:xs(r[1]),cy:y,r:5.5,fill:col},svg);
+      el('text',{x:W-R+10,y:y+4,style:'fill:var(--ink);font-size:11px;font-weight:600'},svg,'+'+r[1].toFixed(3));
+      el('text',{x:W-R+10,y:y+16,style:'fill:var(--ink3);font-size:9.5px'},svg,'n='+r[3]);
+    });
+    svg.dataset.done=1;
+  }
+
+  /* ---------- 7 · damped projections ---------- */
+  function proj(id,d,thr,label){
+    const svg=document.getElementById(id); if(!svg||svg.dataset.done)return;
+    const W=440,H=260,L=42,R=16,T=14,B=30;
+    const vals=d.obs.map(o=>o[1]).concat([d.lo,d.hi,thr]);
+    let mn=Math.min(...vals)-3, mx=Math.max(...vals)+3;
+    const xs=y=>L+(y-2010)/(2030-2010)*(W-L-R);
+    const ys=v=>T+(mx-v)/(mx-mn)*(H-T-B);
+    for(let k=0;k<=3;k++){
+      const v=mn+(mx-mn)*k/3;
+      el('line',{x1:L,y1:ys(v),x2:W-R,y2:ys(v),stroke:'var(--line)'},svg);
+      axText(svg,L-8,ys(v)+4,v.toFixed(0)+'%','end');
+    }
+    /* uncertainty band */
+    const lastY=d.obs[d.obs.length-1][0];
+    el('path',{d:`M${xs(lastY)} ${ys(d.last)} L${xs(2030)} ${ys(d.hi)} L${xs(2030)} ${ys(d.lo)} Z`,
+      fill:'var(--accent2)',opacity:.14},svg);
+    /* threshold */
+    el('line',{x1:L,y1:ys(thr),x2:W-R,y2:ys(thr),stroke:'var(--accent)',
+      'stroke-dasharray':'5 4','stroke-width':1.3},svg);
+    el('text',{x:W-R,y:ys(thr)-6,'text-anchor':'end',
+      style:'fill:var(--accent);font-size:10px'},svg,'trap threshold '+thr+'%');
+    /* observed */
+    let path='';
+    d.obs.forEach((o,i)=>{path+=(i?' L':'M')+xs(o[0])+' '+ys(o[1]);});
+    el('path',{d:path,fill:'none',stroke:'var(--accent2)','stroke-width':2.2,'stroke-linejoin':'round'},svg);
+    /* damped projection */
+    el('path',{d:`M${xs(lastY)} ${ys(d.last)} L${xs(2030)} ${ys(d.p2030)}`,fill:'none',
+      stroke:'var(--accent2)','stroke-width':2,'stroke-dasharray':'6 5',opacity:.9},svg);
+    el('circle',{cx:xs(2030),cy:ys(d.p2030),r:4.5,fill:'var(--accent2)'},svg);
+    el('text',{x:xs(2030),y:ys(d.p2030)-11,'text-anchor':'end',
+      style:'fill:var(--ink);font-size:11px;font-weight:600'},svg,d.p2030.toFixed(1)+'%');
+    [2010,2016,2023,2030].forEach(y=>axText(svg,xs(y),H-8,y));
+    svg.dataset.done=1;
+  }
+
+  /* ---------- tables ---------- */
+  const bar=(w,c)=>`<span class="bar" style="width:${Math.max(w,2)}px${c?';background:'+c:''}"></span>`;
+  function tables(D){
+    const tb=document.getElementById('fdTrapBody');
+    if(tb&&!tb.dataset.done){
+      tb.innerHTML=D.trapTable.map(r=>`<tr><td>${r[0]}</td>`+
+        `<td class="n">${bar(r[1]*0.55)}${r[1].toFixed(1)}%</td>`+
+        `<td class="n">${r[2].toFixed(1)}%</td>`+
+        `<td class="n">${r[3].toFixed(2)}</td>`+
+        `<td class="n">${r[5]!=null?r[5].toFixed(1)+'%':'n/a'}</td></tr>`).join('');
+      tb.dataset.done=1;
+    }
+    const ib=document.getElementById('fdIronBody');
+    if(ib&&!ib.dataset.done){
+      const R=[["Niger",24.2,.037,47.1,1713],["India",16.9,.060,53.7,8871],["Mauritania",14.0,.206,54.5,6276],
+               ["Guatemala",14.0,.191,10.5,12380],["Australia",18.1,.331,11.1,60685]];
+      ib.innerHTML=R.map(r=>`<tr><td>${r[0]}</td><td class="n">${r[1].toFixed(1)}</td>`+
+        `<td class="n">${(r[2]*100).toFixed(1)}%</td><td class="n">${r[3].toFixed(1)}%</td>`+
+        `<td class="n">$${r[4].toLocaleString()}</td></tr>`).join('');
+      ib.dataset.done=1;
+    }
+    const gb=document.getElementById('fdGdpBody');
+    if(gb&&!gb.dataset.done){
+      const R=[["Afghanistan","Watch list",2849,1984],["Haiti","Watch list",3205,2939],
+               ["Namibia","Trap",10615,10126],["Lesotho","Trap",2651,2592],
+               ["Botswana","Trap",14545,18932],["Bhutan","Trap",9985,14610]];
+      gb.innerHTML=R.map(r=>{const ch=(r[3]-r[2])/r[2]*100;
+        return `<tr><td>${r[0]}</td><td>${r[1]}</td><td class="n">$${r[2].toLocaleString()}</td>`+
+        `<td class="n">$${r[3].toLocaleString()}</td>`+
+        `<td class="n" style="color:${ch<0?'var(--accent)':'var(--accent2)'}">${ch>0?'+':''}${ch.toFixed(0)}%</td></tr>`;}).join('');
+      gb.dataset.done=1;
+    }
+    const wb=document.getElementById('fdWatchBody');
+    if(wb&&!wb.dataset.done){
+      const R=[["Morocco",.07,"Imports 61.8% to 63.7%",2,"toward · closes in ~1.5 yrs"],
+        ["Cabo Verde",.09,"Starch 48.9% to 50.2%",2,"toward"],
+        ["Haiti",.12,"Imports 60.4% to 63.7%",2,"toward · closes in ~3 yrs"],
+        ["El Salvador",.21,"Starch 47.2% to 50.2%",2,"toward"],
+        ["Saudi Arabia",.38,"Starch 44.7% to 50.2%",2,"toward"],
+        ["Comoros",.38,"Imports 53.5% to 63.7%",2,"toward"],
+        ["Georgia",.39,"Starch 44.5% to 50.2%",2,"away"],
+        ["Afghanistan",.55,"Imports 49.0% to 63.7%",2,"toward · closes in ~9 yrs"]];
+      wb.innerHTML=R.map(r=>`<tr><td>${r[0]}</td>`+
+        `<td class="n">${bar(r[1]*70,r[1]<.15?'var(--accent)':'var(--accent2)')}${r[1].toFixed(2)} SD</td>`+
+        `<td>${r[2]}</td><td class="n">${r[3]} / 3</td>`+
+        `<td style="color:${r[4].startsWith('away')?'var(--accent2)':'var(--ink3)'}">${r[4]}</td></tr>`).join('');
+      wb.dataset.done=1;
+    }
+    const wf=document.getElementById('fdWfpBody');
+    if(wf&&!wf.dataset.done){
+      const R=[["Timor-Leste","Trap",22],["Afghanistan","Watch list",15.5],["Iraq","Trap",-1.5],
+        ["Yemen","Trap",-3.7],["Djibouti","Trap",-4],["Lesotho","Trap",-6],
+        ["Mauritania","Trap",-7.2],["Eswatini","Trap",-11]];
+      wf.innerHTML=R.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td>`+
+        `<td class="n" style="color:${r[2]>0?'var(--accent)':'var(--accent2)'}">${r[2]>0?'+':''}${r[2]}%</td></tr>`).join('');
+      wf.dataset.done=1;
+    }
+    const ct=document.getElementById('fdCorr');
+    if(ct&&!ct.dataset.done){
+      const V=["Import share","Starch share","Micronutrients","Density gap","log GDP","Anemia"];
+      const M=[[1,-.448,-.029,.219,.401,-.184],[-.448,1,-.331,.186,-.759,.635],
+        [-.029,-.331,1,.270,.311,-.234],[.219,.186,.270,1,-.327,.290],
+        [.401,-.759,.311,-.327,1,-.617],[-.184,.635,-.234,.290,-.617,1]];
+      const SH=["Import","Starch","Micro","Density","GDP","Anemia"];
+      let h='<tr><th></th>'+SH.map(v=>`<th style="text-align:center">${v}</th>`).join('')+'</tr>';
+      M.forEach((row,i)=>{
+        h+=`<tr><th>${V[i]}</th>`+row.map(v=>{
+          const a=Math.abs(v), c=v>=0?'226,58,87':'63,199,184';
+          return `<td class="v" style="background:rgba(${c},${(a*0.55).toFixed(2)})">${v===1?'1':v.toFixed(2)}</td>`;
+        }).join('')+'</tr>';
+      });
+      ct.innerHTML=h; ct.dataset.done=1;
+    }
+  }
+
+  let FD=null, pending=false;
+  function paintFindings(){
+    if(!FD){ if(!pending){ pending=true;
+        (__embed('dataFindings')||fetch('findings.json').then(r=>r.json())).then(d=>{FD=d;pending=false;paintFindings();})
+          .catch(()=>{pending=false;}); }
+      return; }
+    trend(FD); groups(FD); gap(FD); trap(FD); price(); forest();
+    proj('fcHaiti',FD.proj.haiti,63.7); proj('fcCabo',FD.proj.cabo,50.2);
+    tables(FD);
+  }
+  window.paintFindings=paintFindings;
+  /* if the page is opened straight onto the findings tab */
+  if(document.getElementById('p-find')&&document.getElementById('p-find').classList.contains('on'))paintFindings();
+})();
+
 </script>
 </body>
 </html>
