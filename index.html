@@ -137,10 +137,15 @@ h1.big em{font-style:italic;color:var(--accent)}
 .m-top .t{font-family:'Petrona',serif;font-size:1.4rem;font-weight:600}
 .m-top .h{font-size:.8rem;color:var(--ink3);max-width:40ch;line-height:1.55}
 .m-grid{display:grid;grid-template-columns:1.06fr .94fr}
-@media(max-width:900px){.m-grid{grid-template-columns:1fr}}
+@media(max-width:720px){
+  .m-grid{grid-template-columns:1fr}
+  .m-r{order:-1}
+  .dial{position:sticky;top:60px;z-index:20;background:var(--surf);
+    padding-bottom:12px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+}
 .m-l{padding:30px}
 .m-r{padding:30px;background:color-mix(in srgb,var(--ink) 4%,transparent);border-left:1px solid var(--line)}
-@media(max-width:900px){.m-r{border-left:none;border-top:1px solid var(--line)}}
+@media(max-width:720px){.m-r{border-left:none;border-top:1px solid var(--line)}}
 .step{margin-bottom:30px}.step:last-child{margin-bottom:0}
 .step .hd{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
 .step .hd i{font-family:'Petrona',serif;font-style:italic;color:var(--accent);font-size:1rem;font-weight:600}
@@ -492,11 +497,11 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
         <div class="num"><span class="bn">47%</span><span class="bl">of Nigerien women anemic regardless</span></div>
       </div>
       <div class="callout">The label counts milligrams. <b>The body counts what it can actually take up.</b> Iron from meat, fish and eggs absorbs several times more efficiently than iron from grain, which is why the share of iron from animal sources predicts anemia far better than the total ever does.</div>
-      <p class="body">So we stopped asking where food came from and started asking what was in it. <b>Starch share of diet against anemia holds at +0.315.</b> Then we spent the rest of the time trying to kill it.</p>
+      <p class="body">So we changed the question, from where the food came from to what it was made of. <b>Starch share of diet is correlated with anemia at +0.315 across countries, a real, statistically significant relationship.</b> We spent the rest of our time trying to explain it away.</p>
       <div class="ladder" id="ladder">
         <div class="st"><span class="lb">The raw relationship<small>168 countries, income controlled</small></span>
           <span class="track"><i style="width:100%;animation-delay:.04s"></i></span><span class="vv">+0.315</span></div>
-        <div class="st"><span class="lb">Add malaria<small>a genuine independent predictor of anemia</small></span>
+        <div class="st"><span class="lb">Add malaria<small>168 countries, same sample. Malaria data is a single 2021 snapshot, not a multi-year series like the rest.</small></span>
           <span class="track"><i style="width:86%;animation-delay:.12s"></i></span><span class="vv">+0.271</span></div>
         <div class="st"><span class="lb">Add water and sanitation<small>sample falls to 123 countries</small></span>
           <span class="track"><i style="width:81%;animation-delay:.2s"></i></span><span class="vv">+0.256</span></div>
@@ -581,6 +586,7 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
 <script>
 const $=id=>document.getElementById(id);
 const R=(a,b)=>a+Math.random()*(b-a);
+const short=c=>c.replace(/\s*\([^)]*\)\s*$/,'').trim();
 const slow=matchMedia('(prefers-reduced-motion:reduce)').matches;
 const B={int:40.02,imp:5.07,star:31.98,adq:0.49,lg:-3.15};
 const predict=(s,i,g,adq=1.5)=>B.int+B.imp*(i/100)+B.star*(s/100)+B.adq*adq+B.lg*Math.log(g);
@@ -632,7 +638,7 @@ function run(moved){
     const d=p-base.pred;
     if(Math.abs(d)>.15){
       const span=Math.abs(predict(s,100,g)-predict(s,0,g));
-      $('delta').innerHTML='That is <b>'+(d>0?'+':'')+d.toFixed(1)+' points</b> against '+base.c+
+      $('delta').innerHTML='That is <b>'+(d>0?'+':'')+d.toFixed(1)+' points</b> against '+short(base.c)+
         ' as it really is. Sweeping the import slider across its entire range moves this by only <b>'+span.toFixed(1)+' points</b>.';
       $('delta').classList.add('on');
     }
@@ -647,13 +653,13 @@ function load(name){
   if(DD1)DD1.setLabel(d.c);$('delta').classList.remove('on');run(false);
   const resid=d.a-base.pred;
   $('read').innerHTML='In a country like this the model expects <b>about '+base.pred.toFixed(0)+
-    ' in every 100 women</b> to be anemic. In '+d.c+' the real figure is <b>'+d.a+'</b>. '+
+    ' in every 100 women</b> to be anemic. In '+short(d.c)+' the real figure is <b>'+d.a+'</b>. '+
     (resid>2?'That gap is what diet and income cannot explain: healthcare, genetics, malaria, and how food is shared inside a household.'
      :resid<-2?'It is doing better than its diet and income predict, so something there is working.'
      :'The model lands close, which is about as well as it ever does.');
   const near=D.filter(x=>x.c!==d.c).sort((a,b)=>Math.abs(a.a-d.a)-Math.abs(b.a-d.a)).slice(0,3);
-  $('cmpList').innerHTML='<div class="r you"><span>'+d.c+' · as it really is</span><span class="n">'+d.a+'</span></div>'+
-    near.map(x=>'<div class="r"><span>'+x.c+'</span><span class="n">'+x.a+'</span></div>').join('');
+  $('cmpList').innerHTML='<div class="r you"><span>'+short(d.c)+' · as it really is</span><span class="n">'+d.a+'</span></div>'+
+    near.map(x=>'<div class="r"><span>'+short(x.c)+'</span><span class="n">'+x.a+'</span></div>').join('');
   sel(d.c);
   if(DD1)DD1.render();
 }
@@ -663,7 +669,7 @@ function makeDD(ids,onPick,getLabel){
     const t=f.trim().toLowerCase();
     const rows=[...D].sort((a,b)=>a.c.localeCompare(b.c)).filter(d=>!t||d.c.toLowerCase().includes(t));
     list.innerHTML=rows.length
-      ? rows.map(d=>`<button role="option" data-c="${d.c}"${d.c===selected?' class="sel"':''}>${d.c}</button>`).join('')
+      ? rows.map(d=>`<button role="option" data-c="${d.c}"${d.c===selected?' class="sel"':''}>${short(d.c)}</button>`).join('')
       : '<div class="none">No country matches that.</div>';
   }
   function open(o){
@@ -716,7 +722,7 @@ function draw(){
       let guard=0;
       while(placed.some(p=>Math.abs(p.x-lx)<74&&Math.abs(p.y-ly)<13)&&guard++<6) ly+=13;
       placed.push({x:lx,y:ly});
-      g+=`<text x="${lx}" y="${ly}" text-anchor="${anchor}" font-size="11" font-weight="600" fill="${ink}" opacity="${q&&!hit?.15:.9}">${d.c}</text>`;
+      g+=`<text x="${lx}" y="${ly}" text-anchor="${anchor}" font-size="11" font-weight="600" fill="${ink}" opacity="${q&&!hit?.15:.9}">${short(d.c)}</text>`;
     }
   });
   g+=`<circle id="you" r="11" fill="none" stroke="#038DA2" stroke-width="2.2" cx="${X(+sS.value)}" cy="${Y(Math.max(2,Math.min(78,predict(+sS.value,+sI.value,+sG.value))))}" style="transition:cx .6s var(--ease),cy .6s var(--ease)"/>`;
@@ -730,7 +736,7 @@ function sel(c){selected=c;draw();}
   const svg=$('sc');
   svg.addEventListener('pointerover',e=>{const c=e.target.closest('circle[data-i]');if(!c)return;
     const d=D[+c.dataset.i];
-    $('tip').innerHTML='<b>'+d.c+'</b>'+d.s+'% starch · '+d.a+'% anemic<br>'+(d.fe??'')+' mg iron · $'+(d.g||0).toLocaleString()+'<br><span style="opacity:.6">click to load</span>';
+    $('tip').innerHTML='<b>'+short(d.c)+'</b>'+d.s+'% starch · '+d.a+'% anemic<br>'+(d.fe??'')+' mg iron · $'+(d.g||0).toLocaleString()+'<br><span style="opacity:.6">click to load</span>';
     $('tip').style.opacity=1;});
   svg.addEventListener('pointermove',e=>{$('tip').style.left=Math.min(innerWidth-250,e.clientX+15)+'px';$('tip').style.top=(e.clientY-12)+'px';});
   svg.addEventListener('pointerout',()=>$('tip').style.opacity=0);
@@ -800,10 +806,10 @@ if(ld)lo.observe(ld);
 
 fetch('country_data.json').then(r=>r.json()).then(j=>{
   D=j;
-  $('clist').innerHTML=[...D].sort((a,b)=>a.c.localeCompare(b.c)).map(d=>`<option>${d.c}</option>`).join('');
+  $('clist').innerHTML=[...D].sort((a,b)=>a.c.localeCompare(b.c)).map(d=>`<option>${short(d.c)}</option>`).join('');
   DD1=makeDD({root:'dd',btn:'ddBtn',val:'ddVal',list:'ddList',search:'ddSearch'},load);
   $('find').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();draw();});
-  const line=D.slice(0,30).map(d=>`<span>${d.c} <b>${d.a}%</b></span>`).join('');
+  const line=D.slice(0,30).map(d=>`<span>${short(d.c)} <b>${d.a}%</b></span>`).join('');
   $('mq').innerHTML=line+line;
   load('Niger');paint();
 }).catch(()=>{
