@@ -27,7 +27,7 @@ a{color:inherit;text-decoration:none}
 ::selection{background:var(--accent);color:var(--bg)}
 :focus-visible{outline:2px solid var(--accent2);outline-offset:4px;border-radius:3px}
 *{scrollbar-color:var(--ink3) var(--surf);scrollbar-width:thin}
-.wrap{max-width:1060px;margin:0 auto;padding:0 30px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 40px}
 @media(max-width:640px){.wrap{padding:0 20px}body{font-size:16px}}
 
 /* fixed background layers  present on every section */
@@ -40,7 +40,7 @@ a{color:inherit;text-decoration:none}
 /* ── nav ── */
 nav{position:sticky;top:0;z-index:500;backdrop-filter:blur(12px);border-bottom:1px solid rgba(4,54,71,.14);
   background:rgba(245,242,236,.9);transition:background .5s var(--ease),border-color .5s var(--ease),color .5s var(--ease)}
-nav .in{max-width:1060px;margin:0 auto;padding:13px 30px;display:flex;align-items:center;gap:20px}
+nav .in{max-width:1320px;margin:0 auto;padding:13px 40px;display:flex;align-items:center;gap:20px}
 .mk{font-family:'Petrona',serif;font-weight:600;font-size:1.08rem;letter-spacing:-.01em;
   padding:0;cursor:pointer}
 #egg{position:fixed;left:50%;top:74px;transform:translate(-50%,-14px);z-index:800;
@@ -216,7 +216,7 @@ input[type=range].quiet::-moz-range-thumb{background:var(--ink3)}
 .cmp .r.you{color:var(--accent2)} .cmp .r.you .n{color:var(--accent2)}
 
 /* ── plot ── */
-.plot{margin-top:34px;border-radius:14px;padding:28px 26px 14px;background:var(--surf);border:1px solid var(--line)}
+.plot{margin-top:34px;border-radius:14px;padding:28px 30px 14px;background:var(--surf);border:1px solid var(--line)}
 .plot h3{font-family:'Petrona',serif;font-size:1.3rem;font-weight:600;margin-bottom:6px}
 .plot .cap{font-size:.855rem;line-height:1.6;color:var(--ink3);max-width:68ch;margin-bottom:16px}
 .plot .tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
@@ -579,7 +579,7 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
 
 <footer>
   <div class="wrap">
-    <p><b>Slow Cooked</b> · Women in Data Datathon 2026, “What's Cooking?” · Built on FAOSTAT, World Bank, WHO and DHS data, 2010 to 2023.</p>
+    <p><b>Slow Cooked</b> · Women in Data Datathon 2026, “What's Cooking?” · Built on FAOSTAT and World Bank data, 2010 to 2023, plus single-year WHO and DHS figures for malaria (2021) and iron supplementation (2022).</p>
   </div>
 </footer>
 
