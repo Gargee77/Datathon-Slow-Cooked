@@ -132,25 +132,29 @@ h1.big em{font-style:italic;color:var(--accent)}
 
 /* ── instrument ── */
 .machine{margin-top:44px;border-radius:14px;overflow:hidden;background:var(--surf);border:1px solid var(--line)}
-.m-top{padding:24px 30px;border-bottom:1px solid var(--line);display:flex;
+.m-top{padding:12px 26px;border-bottom:1px solid var(--line);display:flex;
   justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
 .m-top .t{font-family:'Petrona',serif;font-size:1.4rem;font-weight:600}
-.m-top .h{font-size:.8rem;color:var(--ink3);max-width:40ch;line-height:1.55}
+.m-top .h{font-size:.8rem;color:var(--ink3);max-width:64ch;line-height:1.4}
 .m-grid{display:grid;grid-template-columns:1.06fr .94fr}
 @media(max-width:720px){
   .m-grid{grid-template-columns:1fr}
   .m-r{order:-1}
-  .dial{position:sticky;top:60px;z-index:20;background:var(--surf);
-    padding-bottom:12px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+  .dial{position:sticky;top:64px;z-index:20;background:var(--surf);
+    padding-bottom:8px;margin-bottom:4px;border-bottom:1px solid var(--line)}
 }
-.m-l{padding:30px}
-.m-r{padding:30px;background:color-mix(in srgb,var(--ink) 4%,transparent);border-left:1px solid var(--line)}
+.m-l{padding:14px 26px}
+.m-r{padding:14px 26px;background:color-mix(in srgb,var(--ink) 4%,transparent);border-left:1px solid var(--line)}
 @media(max-width:720px){.m-r{border-left:none;border-top:1px solid var(--line)}}
-.step{margin-bottom:30px}.step:last-child{margin-bottom:0}
-.step .hd{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.step{margin-bottom:10px}.step:last-child{margin-bottom:0}
+.step .hd{display:flex;align-items:baseline;gap:10px;margin-bottom:2px}
 .step .hd i{font-family:'Petrona',serif;font-style:italic;color:var(--accent);font-size:1rem;font-weight:600}
 .step .hd h4{font-size:1rem;font-weight:600}
-.step .ex{font-size:.855rem;line-height:1.6;color:var(--ink3);margin-bottom:14px;max-width:45ch}
+.step .ex{font-size:.82rem;line-height:1.45;color:var(--ink3);margin-bottom:8px;max-width:60ch}
+.sliders{display:grid;grid-template-columns:repeat(3,1fr);gap:0 18px;margin-bottom:10px}
+.sliders .step{margin-bottom:0}
+.sliders .step .ex{max-width:none}
+@media(max-width:900px){.sliders{grid-template-columns:1fr}}
 .row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
 /* custom country dropdown */
 .dd{position:relative}
@@ -180,11 +184,11 @@ h1.big em{font-style:italic;color:var(--accent)}
   font-weight:600;color:var(--ink2);transition:all .35s var(--ease)}
 .mini:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-2px)}
 .mini.on{background:var(--accent2);border-color:var(--accent2);color:var(--bg)}
-.sl .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+.sl .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
 .sl .k{font-size:.9rem;font-weight:600}
 .sl .v{font-family:'Petrona',serif;font-size:1.44rem;font-weight:600;line-height:1}
 .sl .v small{font-size:.85rem;font-style:italic;color:var(--ink3)}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:24px;background:transparent;cursor:ew-resize}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:18px;background:transparent;cursor:ew-resize}
 input[type=range]::-webkit-slider-runnable-track{height:2px;background:var(--line)}
 input[type=range]::-moz-range-track{height:2px;background:var(--line)}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;
@@ -194,23 +198,23 @@ input[type=range]::-moz-range-thumb{width:17px;height:17px;border-radius:50%;bac
 input[type=range]:hover::-webkit-slider-thumb{box-shadow:0 0 0 8px color-mix(in srgb,var(--accent2) 14%,transparent)}
 input[type=range].quiet::-webkit-slider-thumb{background:var(--ink3)}
 input[type=range].quiet::-moz-range-thumb{background:var(--ink3)}
-.sl .sc{display:flex;justify-content:space-between;font-size:.735rem;color:var(--ink3);margin-top:2px}
+.sl .sc{display:flex;justify-content:space-between;font-size:.72rem;color:var(--ink3);margin-top:0}
 .dial{text-align:center;padding:4px 0 20px}
 .dial .k{font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ink3);font-weight:700}
-.dial .n{font-family:'Petrona',serif;font-size:clamp(4rem,10vw,5.8rem);line-height:.92;
-  letter-spacing:-.035em;color:var(--accent);margin:12px 0 5px;font-weight:600}
+.dial .n{font-family:'Petrona',serif;font-size:clamp(2.6rem,6vw,3.6rem);line-height:.95;
+  letter-spacing:-.03em;color:var(--accent);margin:6px 0 3px;font-weight:600}
 .dial .u{font-size:.93rem;color:var(--ink2)}
-.plain{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:19px 21px;
-  font-size:.94rem;line-height:1.66;color:var(--ink2)}
+.plain{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:13px 16px;
+  font-size:.88rem;line-height:1.5;color:var(--ink2)}
 .plain b{color:var(--ink);font-weight:600}
 .delta{margin-top:12px;font-size:.865rem;line-height:1.6;color:var(--ink3);
   opacity:0;transform:translateY(5px);transition:all .5s var(--ease)}
 .delta.on{opacity:1;transform:none}
 .delta b{color:var(--accent2);font-weight:600}
-.cmp{margin-top:24px}
+.cmp{margin-top:14px}
 .cmp .ttl{font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ink3);font-weight:700;margin-bottom:10px}
-.cmp .r{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;
-  border-bottom:1px solid var(--line);font-size:.9rem}
+.cmp .r{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:6px 0;
+  border-bottom:1px solid var(--line);font-size:.86rem}
 .cmp .r:last-child{border-bottom:none}
 .cmp .r .n{font-family:'Petrona',serif;font-size:1.1rem;font-weight:600}
 .cmp .r.you{color:var(--accent2)} .cmp .r.you .n{color:var(--accent2)}
@@ -328,13 +332,12 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
       <div class="mq"><div class="mq-t" id="mq"></div></div>
     </header>
 
-    <section class="blk" id="instrument">
+    <section class="blk">
       <div class="section-label">The instrument</div>
       <h2 class="section-title">Build a country's plate, and the model tells you <em>what it costs</em></h2>
-      <p class="body">This is the regression from our analysis, running live. It learned from 167 countries. Give it a diet and an income and it estimates how many women aged 15 to 49 would be anemic there.</p>
-      <p class="body"><b>Start with a real country, then change one thing at a time.</b> The interesting part isn't the number it gives you. It's which sliders move it, and which ones barely do anything at all.</p>
+      <p class="body">This is the regression from our analysis, running live: 167 countries, one diet and one income in, one anemia estimate out. <b>Start with a real country, then change one thing at a time</b>, and watch which sliders move the number and which barely do anything at all.</p>
 
-      <div class="machine rv">
+      <div class="machine rv" id="instrument" style="scroll-margin-top:74px">
         <div class="m-top">
           <span class="t">The model</span>
           <span class="h">Ordinary least squares · 167 countries · explains 46% of the variation. The rest is healthcare, genetics, malaria and geography.</span>
@@ -360,26 +363,28 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
                 <button class="mini" id="bRand">Surprise me</button>
               </div>
             </div>
+            <div class="sliders">
             <div class="step sl">
               <div class="hd"><i>02</i><h4>How starchy is the diet?</h4></div>
-              <p class="ex">Share of daily calories from cereals, roots and tubers: bread, rice, maize, cassava. Low means a varied plate. High means most calories come from one or two staples.</p>
+              <p class="ex">Cereals, roots and tubers as a share of calories. Low means a varied plate, high means one or two staples.</p>
               <div class="top"><span class="k">Starch share of calories</span><span class="v" id="vS">45<small>%</small></span></div>
               <input type="range" id="sS" min="13" max="86" step="0.5" value="45" aria-label="Starch share of calories">
               <div class="sc"><span>13% · Netherlands</span><span>86% · DR Congo</span></div>
             </div>
             <div class="step sl">
               <div class="hd"><i>03</i><h4>How much food is imported?</h4></div>
-              <p class="ex">Share of the food supply bought from abroad. This was our original hypothesis and the control we expected to matter most. Move it and watch the number closely.</p>
+              <p class="ex">Share of the food supply bought from abroad. Our original hypothesis — move it and watch the number barely move.</p>
               <div class="top"><span class="k">Imported share of food</span><span class="v" id="vI">40<small>%</small></span></div>
               <input type="range" id="sI" min="0" max="100" step="1" value="40" class="quiet" aria-label="Imported share of food">
               <div class="sc"><span>0% · grows everything</span><span>100% · buys everything</span></div>
             </div>
             <div class="step sl">
               <div class="hd"><i>04</i><h4>How rich is the country?</h4></div>
-              <p class="ex">GDP per person, adjusted for what money actually buys locally. Income matters enormously, which is exactly why we had to hold it still to see whether diet mattered on its own.</p>
+              <p class="ex">GDP per person, adjusted for local prices. Held steady to isolate diet's effect from income.</p>
               <div class="top"><span class="k">Income per person</span><span class="v" id="vG">$16,000</span></div>
               <input type="range" id="sG" min="1500" max="120000" step="500" value="16000" aria-label="Income per person">
               <div class="sc"><span>$1,500 · Burundi</span><span>$120,000 · Luxembourg</span></div>
+            </div>
             </div>
           </div>
           <div class="m-r">
@@ -501,7 +506,7 @@ footer p{font-size:.84rem;color:var(--ink3);line-height:1.7;max-width:66ch}
       <div class="ladder" id="ladder">
         <div class="st"><span class="lb">The raw relationship<small>168 countries, income controlled</small></span>
           <span class="track"><i style="width:100%;animation-delay:.04s"></i></span><span class="vv">+0.315</span></div>
-        <div class="st"><span class="lb">Add malaria<small>168 countries, same sample. Malaria data is a single 2021 snapshot, not a multi-year series like the rest.</small></span>
+        <div class="st"><span class="lb">Add malaria<small>168 countries, 2021 only</small></span>
           <span class="track"><i style="width:86%;animation-delay:.12s"></i></span><span class="vv">+0.271</span></div>
         <div class="st"><span class="lb">Add water and sanitation<small>sample falls to 123 countries</small></span>
           <span class="track"><i style="width:81%;animation-delay:.2s"></i></span><span class="vv">+0.256</span></div>
@@ -657,7 +662,7 @@ function load(name){
     (resid>2?'That gap is what diet and income cannot explain: healthcare, genetics, malaria, and how food is shared inside a household.'
      :resid<-2?'It is doing better than its diet and income predict, so something there is working.'
      :'The model lands close, which is about as well as it ever does.');
-  const near=D.filter(x=>x.c!==d.c).sort((a,b)=>Math.abs(a.a-d.a)-Math.abs(b.a-d.a)).slice(0,3);
+  const near=D.filter(x=>x.c!==d.c).sort((a,b)=>Math.abs(a.a-d.a)-Math.abs(b.a-d.a)).slice(0,2);
   $('cmpList').innerHTML='<div class="r you"><span>'+short(d.c)+' · as it really is</span><span class="n">'+d.a+'</span></div>'+
     near.map(x=>'<div class="r"><span>'+short(x.c)+'</span><span class="n">'+x.a+'</span></div>').join('');
   sel(d.c);
