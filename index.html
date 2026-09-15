@@ -361,7 +361,8 @@ table.fd th{text-align:left;font-size:.71rem;letter-spacing:.13em;text-transform
   color:var(--ink3);font-weight:700;padding:0 12px 9px 0;border-bottom:1px solid var(--line);white-space:nowrap}
 table.fd td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line);color:var(--ink2);vertical-align:baseline}
 table.fd td:first-child{color:var(--ink);font-weight:600}
-table.fd td.n{text-align:right;font-family:'Archivo',system-ui,sans-serif;font-size:.83rem;white-space:nowrap}
+table.fd td.n{text-align:center;font-family:'Archivo',system-ui,sans-serif;font-size:.83rem;white-space:nowrap}
+table.fd th.n{text-align:center}
 table.fd tr:last-child td{border-bottom:none}
 table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(--lime);
   margin-right:8px;vertical-align:middle;opacity:.75}
@@ -802,10 +803,9 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       </div>
 
       <table class="fd">
-        <thead><tr><th>Country</th><th>Calories imported</th><th>Starch share</th><th>Micronutrient index</th><th>Anemia, women</th></tr></thead>
+        <thead><tr><th>Country</th><th class="n">Calories imported</th><th class="n">Starch share</th><th class="n">Micronutrient index</th><th class="n">Anemia, women</th></tr></thead>
         <tbody id="fdTrapBody"></tbody>
       </table>
-      <p class="fd-note">Micronutrient index is the average of iron, zinc and vitamins A, B12 and C as a multiple of need; the bottom tercile is 1.50 or below. Sorted by anemia. The list is identical in the latest-available and 2023-only snapshots.</p>
 
       <div class="fd-grid">
         <div class="fd-card"><h5>Djibouti imports 97.8% of its calories</h5><p>And the food it buys carries about a third of the protein density of what it grows.</p></div>
@@ -816,7 +816,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">What is actually <em>on the boat</em></h3>
       <p class="body">Tracing imports item by item for the heaviest-burden countries: <b>more than nine tenths of what they buy is classed as starchy.</b> Rice, wheat and maize, with palm oil and sugar alongside.</p>
       <table class="fd">
-        <thead><tr><th>Country</th><th>Group</th><th>Imports that are starchy</th><th>Leading starchy imports</th><th>Anemia</th></tr></thead>
+        <thead><tr><th>Country</th><th>Group</th><th class="n">Imports that are starchy</th><th>Leading starchy imports</th><th class="n">Anemia</th></tr></thead>
         <tbody>
           <tr><td>Liberia</td><td>Trap</td><td class="n">96.0%</td><td>Rice (100%) · palm oil (57%)</td><td class="n">42.5%</td></tr>
           <tr><td>Afghanistan</td><td>Watch list</td><td class="n">95.9%</td><td>Wheat (46%) · palm oil (100%)</td><td class="n">45.4%</td></tr>
@@ -846,7 +846,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       <div class="fd-two">
         <div>
           <div class="fd-label">In the trap</div>
-          <table class="fd"><thead><tr><th>Country</th><th>Malaria per 1,000</th><th>Anemia</th></tr></thead>
+          <table class="fd"><thead><tr><th>Country</th><th class="n">Malaria per 1,000</th><th class="n">Anemia</th></tr></thead>
           <tbody>
             <tr><td>Iraq</td><td class="n">0</td><td class="n">27.1%</td></tr>
             <tr><td>Timor-Leste</td><td class="n">0</td><td class="n">29.7%</td></tr>
@@ -859,7 +859,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
         </div>
         <div>
           <div class="fd-label">High anemia, outside the trap</div>
-          <table class="fd"><thead><tr><th>Country</th><th>Malaria per 1,000</th><th>Anemia</th></tr></thead>
+          <table class="fd"><thead><tr><th>Country</th><th class="n">Malaria per 1,000</th><th class="n">Anemia</th></tr></thead>
           <tbody>
             <tr><td>Mozambique</td><td class="n">313</td><td class="n">47.0%</td></tr>
             <tr><td>Niger</td><td class="n">304</td><td class="n">47.1%</td></tr>
@@ -874,7 +874,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Iron on the label is not iron <em>in the blood</em></h3>
       <p class="body">Iron from meat, fish and eggs is absorbed efficiently. Iron from cereals and beans largely is not. So the total in a food supply says much less than the form it arrives in. <b>Across countries, total iron supply barely tracks anemia at r = &minus;0.21, while the animal-source share tracks it 2.7 times more strongly at r = &minus;0.55.</b></p>
       <table class="fd">
-        <thead><tr><th>Country</th><th>Iron supplied, mg/day</th><th>From animal sources</th><th>Anemia, women</th><th>GDP per person</th></tr></thead>
+        <thead><tr><th>Country</th><th class="n">Iron supplied, mg/day</th><th class="n">From animal sources</th><th class="n">Anemia, women</th><th class="n">GDP per person</th></tr></thead>
         <tbody id="fdIronBody"></tbody>
       </table>
       <p class="fd-note">Guatemala is one fifth as rich as Australia and has lower anemia. Income is not destiny. Between 2010 and 2023 the typical country's iron supply rose from 15.4 to 16.0 mg a day, and rose in 102 of 162 countries. Anemia rose anyway in 73 of those 102.</p>
@@ -947,7 +947,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Getting richer is not an exit <em>from the trap</em></h3>
       <p class="body">Income is falling in several of the countries flagged here, most sharply Afghanistan, where GDP per person dropped by nearly a third. But growth is no escape either: Bhutan and Botswana both grew fast and are both still in the trap.</p>
       <table class="fd">
-        <thead><tr><th>Country</th><th>Group</th><th>GDP per person, 2010</th><th>2023</th><th>Change</th></tr></thead>
+        <thead><tr><th>Country</th><th>Group</th><th class="n">GDP per person, 2010</th><th class="n">2023</th><th class="n">Change</th></tr></thead>
         <tbody id="fdGdpBody"></tbody>
       </table>
       <div class="fd-sowhat"><b>Trade is not the villain. It is the amplifier.</b> Importing is safe when a country can afford to import diversity. It becomes a trap where imports reinforce a plate that was already starchy.</div>
@@ -956,7 +956,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       <p class="body">Fitting each country's 2010 to 2023 line and extending it to 2030 named Haiti and Cabo Verde as new trap countries. Then the back-test ran: fit up to 2016, 2017 and so on, predict the years after, compare. <b>The straight-line trend did worse than assuming nothing changes at all</b>, 4.45 points of error against 3.73 on import share.</p>
       <p class="body">The model that survived damps the trend to 10% of its slope. Under it <b>no country confidently crosses by 2030</b>, and the uncertainty is about ±6.7 points on imports and ±4.4 on starch. So rather than name winners, the analysis measures how far each country sits from its last unmet condition, in cross-country standard deviations.</p>
       <table class="fd">
-        <thead><tr><th>Country</th><th>Distance to trap</th><th>Still missing</th><th>Conditions met</th><th>Observed drift</th></tr></thead>
+        <thead><tr><th>Country</th><th class="n">Distance to trap</th><th>Still missing</th><th class="n">Conditions met</th><th>Observed drift</th></tr></thead>
         <tbody id="fdWatchBody"></tbody>
       </table>
       <p class="fd-note">"Closes in about N years" is the remaining gap divided by observed drift, where that drift is statistically significant. That is arithmetic on history, not a validated forecast. A wider lens finds 47 countries moving toward the trap on both fronts at once, including Samoa, Papua New Guinea, the Philippines and Namibia.</p>
@@ -964,7 +964,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Where diets are still getting <em>starchier</em></h3>
       <p class="body">Globally starch is slowly leaving the plate, falling in 102 of 156 countries. In three trap countries and one watch-list country it is still climbing.</p>
       <table class="fd">
-        <thead><tr><th>Country</th><th>Group</th><th>Starch share, latest</th><th>Trend a year</th><th>2030 on trend</th></tr></thead>
+        <thead><tr><th>Country</th><th>Group</th><th class="n">Starch share, latest</th><th class="n">Trend a year</th><th class="n">2030 on trend</th></tr></thead>
         <tbody>
           <tr><td>Liberia</td><td>Trap</td><td class="n">72.0%</td><td class="n">+0.65</td><td class="n">77.0%</td></tr>
           <tr><td>Eswatini</td><td>Trap</td><td class="n">56.9%</td><td class="n">+0.46</td><td class="n">59.1%</td></tr>
@@ -976,7 +976,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Where anemia itself is <em>heading</em></h3>
       <p class="body">Four forecasting models were tested on held-out 2019 to 2023 data. A per-country trend anchored at the last observation won with 1.14 points of error, beating naive persistence (1.45), fitted-line extrapolation (1.37), a random forest (1.49 to 2.22) and cross-sectional regression (about 8.0).</p>
       <table class="fd">
-        <thead><tr><th>Country</th><th>Anemia, latest</th><th>Trend/yr</th><th>2030</th><th>Why it matters</th></tr></thead>
+        <thead><tr><th>Country</th><th class="n">Anemia, latest</th><th class="n">Trend/yr</th><th class="n">2030</th><th>Why it matters</th></tr></thead>
         <tbody>
           <tr><td>Mauritius</td><td class="n">32.8%</td><td class="n">+1.01</td><td class="n">39.3%</td><td>Fastest rise in the panel, 87% import dependent</td></tr>
           <tr><td>Lesotho</td><td class="n">34.2%</td><td class="n">+0.81</td><td class="n">39.4%</td><td>In the trap and rising fast</td></tr>
@@ -1009,7 +1009,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Local staple prices <em>today</em></h3>
       <p class="body">Whatever world prices do, local markets are calmer right now. Staple prices are falling in six of the eight trap and watch-list countries with current readings, which is part of why food prices failed as the channel.</p>
       <table class="fd">
-        <thead><tr><th>Country</th><th>Group</th><th>Change against a year earlier</th></tr></thead>
+        <thead><tr><th>Country</th><th>Group</th><th class="n">Change against a year earlier</th></tr></thead>
         <tbody id="fdWfpBody"></tbody>
       </table>
       <p class="fd-note">Average year-on-year change across each country's tracked staples, readings from June 2026. Too old to count as current: El Salvador +72.5% (Aug 2022), Lebanon +263% (Feb 2023), Liberia +11% (Oct 2020), Haiti &minus;6.5% (Feb 2025).</p>
@@ -1154,6 +1154,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
 <footer>
   <div class="wrap">
     <p><b>Slow Cooked</b> · Women in Data Datathon 2026, “What's Cooking?” · Built on FAOSTAT and World Bank data, 2010 to 2023, plus single-year WHO and DHS figures for malaria (2021) and iron supplementation (2022).</p>
+    <p style="margin-top:10px">Four people, three weeks, five datasets and a hypothesis we had to let go of: <b>Mansi Modi</b> · <b>Amia Nagpal</b> · <b>Gargee Nimdeo</b> · <b>Alexandra Harlan</b>.</p>
   </div>
 </footer>
 
