@@ -561,13 +561,39 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       <div class="section-label">01 · Why this, what we're asking</div>
       <h2 class="section-title">Half the world's calories cross a border. Nobody checks <em>what's in them</em></h2>
 
-      <p class="body"><b>Why.</b> Anemia in women of reproductive age is common, and it's getting worse — up in 123 of 162 countries since 2010. Two reasons this is a food-supply problem, not just a health statistic. One: the data measures food available per person, nationally. That average can look fine on paper while women don't get their share of it — they're more food-insecure than men in 98 of 135 countries. Two: the average doesn't adjust for biology. Iron needs peak during the exact reproductive years this analysis covers.</p>
+      <div class="fd-two">
+        <div class="fd-facts">
+          <div class="fd-label">Imported</div>
+          <div class="hd">Nutrition Facts</div>
+          <div class="sv">Serving size 1,000 kcal of imported food</div>
+          <div class="r"><span>Iron</span><b>4.6 mg</b></div>
+          <div class="r"><span>Zinc</span><b>3.4 mg</b></div>
+          <div class="r"><span>Vitamin A</span><b>187 µg</b></div>
+          <div class="r"><span>Vitamin C</span><b>27 mg</b></div>
+          <div class="r"><span>Vitamin B12</span><b>0.48 µg</b></div>
+          <div class="ft">Mostly cereals, oils, sugar</div>
+        </div>
+        <div class="fd-facts">
+          <div class="fd-label">Home-grown</div>
+          <div class="hd">Nutrition Facts</div>
+          <div class="sv">Serving size 1,000 kcal of domestic food</div>
+          <div class="r"><span>Iron</span><b>5.6 mg</b></div>
+          <div class="r"><span>Zinc</span><b>4.2 mg</b></div>
+          <div class="r"><span>Vitamin A</span><b>294 µg</b></div>
+          <div class="r"><span>Vitamin C</span><b>67 mg</b></div>
+          <div class="r"><span>Vitamin B12</span><b>0.41 µg</b></div>
+          <div class="ft">Mostly vegetables, pulses, roots, eggs</div>
+        </div>
+      </div>
+      <p class="fd-note">Pooled across 178 national food supplies, latest year. Home-grown calories win on four of five micronutrients. Only B12 goes the other way, because meat and dairy travel too.</p>
 
-      <p class="body"><b>What.</b> Which countries have traded their way into a starch-rich, micronutrient-poor food supply, and does it show up in women's anemia? The reasoning: starch, sugar and oil ship and store well; vegetables, eggs and fish don't — so trade quietly selects for calories over nutrition without anyone deciding it. That's a clean, testable chain. We tested it four ways. It broke.</p>
+      <p class="body"><b>Why.</b> Anemia in women of reproductive age is common, and it's getting worse. It rose in 123 of 162 countries since 2010. Two reasons this is a food-supply problem, not just a health statistic. One: the data measures food available per person, nationally. That average can look fine on paper while women don't get their share of it. They're more food-insecure than men in 98 of 135 countries. Two: the average doesn't adjust for biology. Iron needs peak during the exact reproductive years this analysis covers.</p>
 
-      <p class="body"><b>Who.</b> 161–167 countries with complete records (178 in the raw data; some of the worst-affected are missing entirely — see the assumptions below), looking at women aged 15–49. Built by four of us: Mansi Modi, Amia Nagpal, Gargee Nimdeo, Alexandra Harlan.</p>
+      <p class="body"><b>What.</b> Which countries have traded their way into a starch-rich, micronutrient-poor food supply, and does it show up in women's anemia? The reasoning: starch, sugar and oil ship and store well; vegetables, eggs and fish don't, so trade quietly selects for calories over nutrition without anyone deciding it. That's a clean, testable chain. We tested it four ways. It broke.</p>
 
-      <p class="body"><b>How.</b> Public data — FAOSTAT, World Bank, WHO/DHS. A regression you can run live on the Model tab. Checked against five rival explanations before trusting any of it. Full method and sources further down this tab.</p>
+      <p class="body"><b>Who.</b> 161–167 countries with complete records (178 in the raw data; some of the worst-affected are missing entirely; see the assumptions below), looking at women aged 15–49. Built by four of us: Mansi Modi, Amia Nagpal, Gargee Nimdeo, Alexandra Harlan.</p>
+
+      <p class="body"><b>How.</b> Public data: FAOSTAT, World Bank, WHO/DHS. A regression you can run live on the Model tab. Checked against five rival explanations before trusting any of it. Full method and sources further down this tab.</p>
 
       <p class="body"><b>When.</b> 2010 to 2023, latest year available per country. The 2030 outlook appears later in this tab.</p>
 
@@ -587,9 +613,9 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
         <div class="fd-card"><h5>A modelled outcome</h5><p>The World Bank anemia series is partly model-interpolated between surveys, which blunts year-to-year signal. DHS measured anemia covers 49 countries.</p></div>
         <div class="fd-card"><h5>A hand-built crosswalk</h5><p>99 FBS item codes were mapped to 15 SUA food groups by the team, not by FAO. Every decision is documented in the pipeline doc.</p></div>
         <div class="fd-card"><h5>Many tests</h5><p>Around nine variables were tried. Malaria and starch are large enough to be unlikely flukes, but they deserve held-out validation.</p></div>
-        <div class="fd-card"><h5>Each country's latest year</h5><p>Countries are compared at whatever year is most recently available for them, not one shared year — a 2023 figure sits next to another country's 2015 figure.</p></div>
+        <div class="fd-card"><h5>Each country's latest year</h5><p>Countries are compared at whatever year is most recently available for them, not one shared year. A 2023 figure sits next to another country's 2015 figure.</p></div>
         <div class="fd-card"><h5>"Trapped" is a line we drew</h5><p>The starch trap is the riskiest third of countries on imports, the riskiest third on starch, and the bottom third on micronutrients. Draw the cutoff elsewhere and the list changes.</p></div>
-        <div class="fd-card"><h5>The order we tested in</h5><p>Rival explanations were ruled out income first, then malaria, water, fertility and iron supplementation, in that order — a different order could shift how much credit each one gets.</p></div>
+        <div class="fd-card"><h5>The order we tested in</h5><p>Rival explanations were ruled out income first, then malaria, water, fertility and iron supplementation, in that order. A different order could shift how much credit each one gets.</p></div>
         <div class="fd-card"><h5>Two modelling choices</h5><p>Income enters as its logarithm, assuming an extra dollar matters more to a poor country than a rich one. And every effect is treated as a straight line that adds up on its own, with nothing amplifying or dampening anything else.</p></div>
       </div>
     </section>
@@ -621,32 +647,6 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
 
       <p class="body">No FAO file labels a calorie as imported and then reports its nutrients, so that measure had to be built. Each food group's calories and nutrients get split by that group's own import share, the pieces are summed, and the two halves are compared per 1,000 kcal against a woman's daily requirement.</p>
 
-      <div class="fd-two">
-        <div class="fd-facts">
-          <div class="fd-label">Imported</div>
-          <div class="hd">Nutrition Facts</div>
-          <div class="sv">Serving size 1,000 kcal of imported food</div>
-          <div class="r"><span>Iron</span><b>4.6 mg</b></div>
-          <div class="r"><span>Zinc</span><b>3.4 mg</b></div>
-          <div class="r"><span>Vitamin A</span><b>187 µg</b></div>
-          <div class="r"><span>Vitamin C</span><b>27 mg</b></div>
-          <div class="r"><span>Vitamin B12</span><b>0.48 µg</b></div>
-          <div class="ft">Mostly cereals, oils, sugar</div>
-        </div>
-        <div class="fd-facts">
-          <div class="fd-label">Home-grown</div>
-          <div class="hd">Nutrition Facts</div>
-          <div class="sv">Serving size 1,000 kcal of domestic food</div>
-          <div class="r"><span>Iron</span><b>5.6 mg</b></div>
-          <div class="r"><span>Zinc</span><b>4.2 mg</b></div>
-          <div class="r"><span>Vitamin A</span><b>294 µg</b></div>
-          <div class="r"><span>Vitamin C</span><b>67 mg</b></div>
-          <div class="r"><span>Vitamin B12</span><b>0.41 µg</b></div>
-          <div class="ft">Mostly vegetables, pulses, roots, eggs</div>
-        </div>
-      </div>
-      <p class="fd-note">Pooled across 178 national food supplies, latest year. Home-grown calories win on four of five micronutrients. Only B12 goes the other way, because meat and dairy travel too.</p>
-
       <div class="fd-chart">
         <div class="ct">Density gap: domestic minus imported nutrient density</div>
         <div class="cs">Number of countries per 20-point bin, measured as percent of daily requirement delivered per 1,000 kcal.</div>
@@ -656,7 +656,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
 
       <p class="body"><b>146 of 178 countries show a positive gap</b>, median +33% of daily need per 1,000 kcal. Protein says the same: 26.7 g per 1,000 kcal imported against 32.9 g home-grown, thinner in 131 of 177 countries. By starch it is stronger still, with imported calories starchier in 84% of countries.</p>
 
-      <div class="fd-sowhat"><b>So the premise is real.</b> Trade has pushed half the world's plate across a border, and what crosses is the thinner half. But trade alone doesn't make a diet starchy — the next test makes that explicit.</div>
+      <div class="fd-sowhat"><b>So the premise is real.</b> Trade has pushed half the world's plate across a border, and what crosses is the thinner half. But trade alone doesn't make a diet starchy. The next test makes that explicit.</div>
 
       <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">Import dependence <em>does not predict</em> anemia</h3>
       <p class="body">Import dependence does not predict anemia in women. Not across countries, not within a single country tracked over thirteen years, and not three years ahead of time. The correlation is <b>−0.18</b>, and the sign points the wrong way: countries buying the most food from abroad trend slightly <em>healthier</em>.</p>
@@ -805,7 +805,7 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       <p class="body">Some of the worst burdens sit outside the trap altogether. <b>India</b> has 53.7% anemia and imports only 6.8% of its calories, mostly edible oils, sugar and pulses, even though it is the world's largest vegetable-oil importer. <b>Gabon</b> has the worst rate in the panel at 59.9%, on $18,700 per person, with imports below the threshold. Their drivers are domestic diets, malaria, sanitation and health access, not trade.</p>
 
       <h3 class="section-title" style="font-size:1.35rem;margin-top:42px">The starch effect, tested one control at a time</h3>
-      <p class="body">Here's the same relationship walked through step by step. Starting point: starch share of diet correlates with anemia at <b>+0.315</b> across countries, income already held fixed — a real, statistically significant relationship. Each row below adds one more rival explanation and shows what survives.</p>
+      <p class="body">Here's the same relationship walked through step by step. Starting point: starch share of diet correlates with anemia at <b>+0.315</b> across countries, income already held fixed: a real, statistically significant relationship. Each row below adds one more rival explanation and shows what survives.</p>
       <div class="ladder" id="ladder">
         <div class="st"><span class="lb">The raw relationship<small>168 countries, income controlled</small></span>
           <span class="track"><i style="width:100%;animation-delay:.04s"></i></span><span class="vv">+0.315</span></div>
@@ -988,9 +988,9 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
       </div>
       <div class="qa">
         <details open><summary>The model, written out</summary>
-          <p>anemia% = 40.02 + 5.07 × import share + 31.98 × starch share + 0.49 × micronutrient adequacy − 3.15 × log(GDP per capita). Fitted on 167 countries. R² = 0.463 — the model explains 46% of the variation; the rest is healthcare, genetics, fortification and geography. South Asia alone carries 11 extra points that income and diet together can't account for. The starch coefficient has z = 5.435 and p &lt; 0.001, with a confidence interval of 20.45 to 43.52, nowhere near zero.</p></details>
+          <p>anemia% = 40.02 + 5.07 × import share + 31.98 × starch share + 0.49 × micronutrient adequacy − 3.15 × log(GDP per capita). Fitted on 167 countries. R² = 0.463. The model explains 46% of the variation; the rest is healthcare, genetics, fortification and geography. South Asia alone carries 11 extra points that income and diet together can't account for. The starch coefficient has z = 5.435 and p &lt; 0.001, with a confidence interval of 20.45 to 43.52, nowhere near zero.</p></details>
         <details><summary>Why we controlled for income first</summary>
-          <p>Income correlates with starch share at −0.759. Richer countries eat less starch and have less anemia, so any raw starch-anemia relationship could simply be poverty wearing a costume. Holding income constant was the first thing we did, not the last — before adding malaria, water, fertility or iron supplementation.</p></details>
+          <p>Income correlates with starch share at −0.759. Richer countries eat less starch and have less anemia, so any raw starch-anemia relationship could simply be poverty wearing a costume. Holding income constant was the first thing we did, not the last, before adding malaria, water, fertility or iron supplementation.</p></details>
         <details><summary>Why we then tested within countries over time</summary>
           <p>Comparing different countries risks confusing "starchy" with "poor" or "African" or "rural". Panel fixed effects compare each country only against itself, cancelling every permanent trait. <b>Nothing survived that test.</b> The honest reading is that the relationship is structural rather than a lever: it tells you who is at risk today, not that changing diet tomorrow would fix it.</p></details>
       </div>
