@@ -407,6 +407,103 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
   color:var(--ink3);transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease)}
 .fd-nav a:hover{color:var(--bg);background:var(--accent2);border-color:var(--accent2)}
 .fd-nav .lead{font-size:.79rem;color:var(--ink3);padding:7px 6px 7px 0;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+
+/* ── who cooked this: a quiet nav button and the card it opens ── */
+.who-btn{font-size:.76rem;color:var(--ink3);opacity:.45;padding:5px 11px;border-radius:999px;
+  border:1px solid transparent;letter-spacing:.01em;white-space:nowrap;
+  transition:opacity .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
+.who-btn:hover,.who-btn:focus-visible{opacity:1;color:var(--ink);border-color:var(--line)}
+.who-wrap{position:fixed;inset:0;z-index:960;display:grid;place-items:center;padding:24px;
+  background:color-mix(in srgb,var(--ink) 34%,transparent);backdrop-filter:blur(3px);
+  opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.who-wrap.on{opacity:1;visibility:visible}
+.who-card:focus{outline:none}
+.who-card{width:min(540px,100%);background:var(--surf);border:1px solid var(--line);
+  border-radius:14px;padding:26px 28px 22px;box-shadow:0 30px 60px -32px rgba(42,38,32,.5);
+  transform:translateY(12px) scale(.985);transition:transform .5s var(--ease)}
+.who-wrap.on .who-card{transform:none}
+.who-card .hd{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:4px}
+.who-card h3{font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:1.32rem;letter-spacing:-.02em}
+.who-card .x{font-size:1.3rem;line-height:1;color:var(--ink3);padding:2px 6px;border-radius:6px;
+  transition:color .3s,background .3s}
+.who-card .x:hover{color:var(--ink);background:color-mix(in srgb,var(--ink) 7%,transparent)}
+.who-card .sub{font-size:.8rem;color:var(--ink3);margin-bottom:16px}
+.who-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);
+  opacity:0;transform:translateY(6px)}
+.who-wrap.on .who-row{animation:whoIn .5s var(--ease) forwards}
+.who-wrap.on .who-row:nth-child(1){animation-delay:.10s}
+.who-wrap.on .who-row:nth-child(2){animation-delay:.18s}
+.who-wrap.on .who-row:nth-child(3){animation-delay:.26s}
+.who-wrap.on .who-row:nth-child(4){animation-delay:.34s}
+@keyframes whoIn{to{opacity:1;transform:none}}
+.who-row:last-of-type{border-bottom:none}
+.who-row .av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex:none;
+  font-family:'Archivo',system-ui,sans-serif;font-size:.71rem;font-weight:700;color:var(--bg)}
+.who-row .nm{font-size:.93rem;font-weight:600}
+.who-row .rl{font-size:.78rem;color:var(--ink3);margin-left:auto;text-align:right}
+.who-foot{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.78rem;
+  color:var(--ink3);line-height:1.65}
+.who-foot b{color:var(--ink2);font-weight:600}
+@media(prefers-reduced-motion:reduce){.who-wrap.on .who-row{animation-duration:1ms}}
+@media(max-width:540px){.who-btn{display:none}}
+
+.who-card{width:min(860px,100%)}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:4px}
+.who-c{background:var(--bg);border:1px solid var(--line);border-radius:12px;
+  padding:13px 14px 12px;text-align:center;display:flex;flex-direction:column;align-items:center;
+  opacity:0;transform:translateY(10px);transition:border-color .35s var(--ease),transform .35s var(--ease)}
+.who-c:hover{border-color:var(--accent2)}
+.who-wrap.on .who-c{animation:whoIn .55s var(--ease) forwards}
+.who-wrap.on .who-c:nth-child(1){animation-delay:.10s}
+.who-wrap.on .who-c:nth-child(2){animation-delay:.20s}
+.who-wrap.on .who-c:nth-child(3){animation-delay:.30s}
+.who-wrap.on .who-c:nth-child(4){animation-delay:.40s}
+.cat{width:76px;height:86px;margin-bottom:0;margin-top:-6px}
+.who-c .nm{font-size:1rem;font-weight:600;color:var(--ink)}
+.who-c .rl{font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:.95rem;
+  letter-spacing:-.01em;color:var(--accent);margin-top:3px}
+.who-c .ds{font-size:.75rem;color:var(--ink3);line-height:1.55;margin-top:6px;max-width:36ch}
+.who-foot{display:flex;align-items:flex-start;gap:16px}
+.who-foot .trk{display:inline-flex;align-items:center;gap:8px;background:var(--lime);
+  border-radius:999px;padding:6px 14px;white-space:nowrap;flex:none}
+.who-foot .trk i{font-style:normal;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink);opacity:.62;font-weight:700}
+.who-foot .trk b{font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:.88rem;color:var(--ink)}
+.who-foot p{font-size:.79rem;line-height:1.6;color:var(--ink3)}
+@media(max-width:700px){.who-grid{grid-template-columns:1fr}.who-foot{flex-direction:column;gap:10px}}
+
+/* each cat blinks on its own rhythm, so they never blink in unison */
+.cat .ec{opacity:0}
+.who-wrap.on .cat .eo{animation:blinkO 4.2s infinite}
+.who-wrap.on .cat .ec{animation:blinkC 4.2s infinite}
+.who-wrap.on .who-c:nth-child(2) .eo,.who-wrap.on .who-c:nth-child(2) .ec{animation-delay:1.05s}
+.who-wrap.on .who-c:nth-child(3) .eo,.who-wrap.on .who-c:nth-child(3) .ec{animation-delay:2.1s}
+.who-wrap.on .who-c:nth-child(4) .eo,.who-wrap.on .who-c:nth-child(4) .ec{animation-delay:3.15s}
+@keyframes blinkO{0%,90%,100%{opacity:1}93%,96%{opacity:0}}
+@keyframes blinkC{0%,90%,100%{opacity:0}93%,96%{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+  .who-wrap.on .cat .eo,.who-wrap.on .cat .ec{animation:none}
+  .cat .ec{opacity:0}}
+
+/* the tail sways, and the ears twitch now and then */
+.cat .tail,.cat .earL,.cat .earR{transform-box:fill-box}
+.cat .tail{transform-origin:10% 90%}
+.cat .earL{transform-origin:bottom right}
+.cat .earR{transform-origin:bottom left}
+.who-wrap.on .cat .tail{animation:sway 3.6s ease-in-out infinite}
+.who-wrap.on .cat .earL{animation:twitchL 6.4s infinite}
+.who-wrap.on .cat .earR{animation:twitchR 6.4s infinite}
+@keyframes sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(8deg)}}
+@keyframes twitchL{0%,84%,100%{transform:none}87%{transform:rotate(-11deg)}91%{transform:rotate(4deg)}94%{transform:none}}
+@keyframes twitchR{0%,40%,100%{transform:none}44%{transform:rotate(10deg)}48%{transform:rotate(-4deg)}52%{transform:none}}
+.who-wrap.on .who-c:nth-child(2) .tail{animation-delay:.9s}
+.who-wrap.on .who-c:nth-child(3) .tail{animation-delay:1.8s}
+.who-wrap.on .who-c:nth-child(4) .tail{animation-delay:2.7s}
+.who-wrap.on .who-c:nth-child(2) .earL,.who-wrap.on .who-c:nth-child(2) .earR{animation-delay:1.6s}
+.who-wrap.on .who-c:nth-child(3) .earL,.who-wrap.on .who-c:nth-child(3) .earR{animation-delay:3.2s}
+.who-wrap.on .who-c:nth-child(4) .earL,.who-wrap.on .who-c:nth-child(4) .earR{animation-delay:4.8s}
+@media(prefers-reduced-motion:reduce){
+  .who-wrap.on .cat .tail,.who-wrap.on .cat .earL,.who-wrap.on .cat .earR{animation:none}}
 </style>
 </head>
 <body>
@@ -418,12 +515,25 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
 <nav>
   <div class="in">
     <button class="mk" id="mk" title="go on, click it">Slow <i>Cooked</i></button>
+    <button class="who-btn" id="whoBtn" aria-haspopup="dialog">Who cooked this?</button>
     <div class="tabs" role="tablist">
       <button class="tab on" data-p="model" role="tab" aria-selected="true">Model</button>
       <button class="tab" data-p="find" role="tab" aria-selected="false">Findings</button>
     </div>
   </div>
 </nav>
+<div class="who-wrap" id="whoWrap" role="dialog" aria-modal="true" aria-labelledby="whoTtl">
+  <div class="who-card" tabindex="-1">
+    <div class="hd"><h3 id="whoTtl">Who cooked this</h3><button class="x" id="whoX" aria-label="Close">&times;</button></div>
+    <div class="sub">Four people, three weeks, five datasets, and a hypothesis we had to let go of.</div>
+    <div class="who-grid"><div class="who-c"><svg viewBox="0 0 64 72" class="cat" aria-hidden="true"><g class="tail"><path d="M43.5 67.5C52.5 68 56.5 62 54.5 53.5" fill="none" stroke="#D8BD95" stroke-width="6.8" stroke-linecap="round"/><path d="M43.5 67.5C52.5 68 56.5 62 54.5 53.5" fill="none" stroke="#F2DDBE" stroke-width="4.6" stroke-linecap="round"/></g><path d="M19.5 71C19.5 59.5 25 52.5 32 52.5s12.5 7 12.5 18.5Z" fill="#F2DDBE" stroke="#D8BD95" stroke-width="1.3" stroke-linejoin="round"/><path d="M25.6 52h12.8L32 61.2Z" fill="#6F7D17" stroke="#D8BD95" stroke-width="1.1" stroke-linejoin="round"/><circle cx="32" cy="53.2" r="2.3" fill="#6F7D17" stroke="#D8BD95" stroke-width="1.1"/><g stroke="#D8BD95" stroke-width="1.3" stroke-linejoin="round" fill="#F2DDBE"><path class="earL" d="M18.5 31 20 18.5 30.5 26Z"/><path class="earR" d="M45.5 31 44 18.5 33.5 26Z"/><ellipse cx="32" cy="38" rx="15" ry="13.4"/></g><path d="M21.2 28.4 22 22.6 27.2 26.3Z" fill="#E8A9A0"/><path d="M42.8 28.4 42 22.6 36.8 26.3Z" fill="#E8A9A0"/><g fill="#FFFFFF" stroke="#D8BD95" stroke-width="1.3" stroke-linejoin="round"><circle cx="24" cy="13.6" r="6.6"/><circle cx="32" cy="9.6" r="8"/><circle cx="40" cy="13.6" r="6.6"/><rect x="21.2" y="16.8" width="21.6" height="7.6" rx="3.8"/></g><rect x="22.4" y="20.8" width="19.2" height="3.2" rx="1.6" fill="#6F7D17"/><g class="eo"><circle cx="25.8" cy="37.6" r="2.6" fill="#3A3228"/><circle cx="38.2" cy="37.6" r="2.6" fill="#3A3228"/><circle cx="26.8" cy="36.6" r=".9" fill="#fff"/><circle cx="39.2" cy="36.6" r=".9" fill="#fff"/></g><g class="ec"><path d="M23.2 38q2.6-2.9 5.2 0M35.8 38q2.6-2.9 5.2 0" stroke="#3A3228" stroke-width="2" fill="none" stroke-linecap="round"/></g><path d="M32 42.2 29.7 44.3h4.6Z" fill="#6B5B45"/><path d="M32 44.6v1.5M32 46.1q-2 1.9-3.8 0M32 46.1q2 1.9 3.8 0" stroke="#6B5B45" stroke-width="1.35" fill="none" stroke-linecap="round"/><g stroke="#6B5B45" stroke-width="1.2" stroke-linecap="round" opacity=".45"><path d="M14.4 39.2h5.6M14.8 43.2l5.4-1.5M49.6 39.2H44M49.2 43.2l-5.4-1.5"/></g><ellipse cx="22.2" cy="43" rx="3.1" ry="2" fill="#E8A9A0" opacity=".5"/><ellipse cx="41.8" cy="43" rx="3.1" ry="2" fill="#E8A9A0" opacity=".5"/></svg><span class="nm">Mansi Modi</span><span class="rl">Recipe Writer</span><span class="ds">set the question, and tested whether the premise held</span></div><div class="who-c"><svg viewBox="0 0 64 72" class="cat" aria-hidden="true"><g class="tail"><path d="M43.5 67.5C52.5 68 56.5 62 54.5 53.5" fill="none" stroke="#CFBFA6" stroke-width="6.8" stroke-linecap="round"/><path d="M43.5 67.5C52.5 68 56.5 62 54.5 53.5" fill="none" stroke="#EDE2D2" stroke-width="4.6" stroke-linecap="round"/></g><path d="M19.5 71C19.5 59.5 25 52.5 32 52.5s12.5 7 12.5 18.5Z" fill="#EDE2D2" stroke="#CFBFA6" stroke-width="1.3" stroke-linejoin="round"/><path d="M25.6 52h12.8L32 61.2Z" fill="#D8362B" stroke="#CFBFA6" stroke-width="1.1" stroke-linejoin="round"/><circle cx="32" cy="53.2" r="2.3" fill="#D8362B" stroke="#CFBFA6" stroke-width="1.1"/><g stroke="#CFBFA6" stroke-width="1.3" stroke-linejoin="round" fill="#EDE2D2"><path class="earL" d="M18.5 31 20 18.5 30.5 26Z"/><path class="earR" d="M45.5 31 44 18.5 33.5 26Z"/><ellipse cx="32" cy="38" rx="15" ry="13.4"/></g><path d="M21.2 28.4 22 22.6 27.2 26.3Z" fill="#E8A9A0"/><path d="M42.8 28.4 42 22.6 36.8 26.3Z" fill="#E8A9A0"/><g fill="#FFFFFF" stroke="#CFBFA6" stroke-width="1.3" stroke-linejoin="round"><circle cx="24" cy="13.6" r="6.6"/><circle cx="32" cy="9.6" r="8"/><circle cx="40" cy="13.6" r="6.6"/><rect x="21.2" y="16.8" width="21.6" height="7.6" rx="3.8"/></g><rect x="22.4" y="20.8" width="19.2" height="3.2" rx="1.6" fill="#D8362B"/><g class="eo"><circle cx="25.8" cy="37.6" r="2.6" fill="#3A3228"/><circle cx="38.2" cy="37.6" r="2.6" fill="#3A3228"/><circle cx="26.8" cy="36.6" r=".9" fill="#fff"/><circle cx="39.2" cy="36.6" r=".9" fill="#fff"/></g><g class="ec"><path d="M23.2 38q2.6-2.9 5.2 0M35.8 38q2.6-2.9 5.2 0" stroke="#3A3228" stroke-width="2" fill="none" stroke-linecap="round"/></g><path d="M32 42.2 29.7 44.3h4.6Z" fill="#6B5B45"/><path d="M32 44.6v1.5M32 46.1q-2 1.9-3.8 0M32 46.1q2 1.9 3.8 0" stroke="#6B5B45" stroke-width="1.35" fill="none" stroke-linecap="round"/><g stroke="#6B5B45" stroke-width="1.2" stroke-linecap="round" opacity=".45"><path d="M14.4 39.2h5.6M14.8 43.2l5.4-1.5M49.6 39.2H44M49.2 43.2l-5.4-1.5"/></g><ellipse cx="22.2" cy="43" rx="3.1" ry="2" fill="#E8A9A0" opacity=".5"/><ellipse cx="41.8" cy="43" rx="3.1" ry="2" fill="#E8A9A0" opacity=".5"/></svg><span class="nm">Amia Nagpal</span><span class="rl">Data Chef</span><span class="ds">the pipeline, the density-gap metric, the twelve trap countries</span></div><div class="who-c"><svg viewBox="0 0 64 72" class="cat" aria-hidden="true"><g class="tail"><path d="M43.5 67.5C52.5 68 56.5 62 54.5 53.5" fill="none" stroke="#DCC3AE" stroke-width="6.8" stroke-linecap="round"/><path d="M43.5 67.5C52.5 68 56.5 62 54.5 53.5" fill="none" stroke="#F7E6D8" stroke-width="4.6" stroke-linecap="round"/></g><path d="M19.5 71C19.5 59.5 25 52.5 32 52.5s12.5 7 12.5 18.5Z" fill="#F7E6D8" stroke="#DCC3AE" stroke-width="1.3" stroke-linejoin="round"/><path d="M25.6 52h12.8L32 61.2Z" fill="#B5542F" stroke="#DCC3AE" stroke-width="1.1" stroke-linejoin="round"/><circle cx="32" cy="53.2" r="2.3" fill="#B5542F" stroke="#DCC3AE" stroke-width="1.1"/><g stroke="#DCC3AE" stroke-width="1.3" stroke-linejoin="round" fill="#F7E6D8"><path class="earL" d="M18.5 31 20 18.5 30.5 26Z"/><path class="earR" d="M45.5 31 44 18.5 33.5 26Z"/><ellipse cx="32" cy="38" rx="15" ry="13.4"/></g><path d="M21.2 28.4 22 22.6 27.2 26.3Z" fill="#E8A9A0"/><path d="M42.8 28.4 42 22.6 36.8 26.3Z" fill="#E8A9A0"/><g fill="#FFFFFF" stroke="#DCC3AE" stroke-width="1.3" stroke-linejoin="round"><circle cx="24" cy="13.6" r="6.6"/><circle cx="32" cy="9.6" r="8"/><circle cx="40" cy="13.6" r="6.6"/><rect x="21.2" y="16.8" width="21.6" height="7.6" rx="3.8"/></g><rect x="22.4" y="20.8" width="19.2" height="3.2" rx="1.6" fill="#B5542F"/><g class="eo"><circle cx="25.8" cy="37.6" r="2.6" fill="#3A3228"/><circle cx="38.2" cy="37.6" r="2.6" fill="#3A3228"/><circle cx="26.8" cy="36.6" r=".9" fill="#fff"/><circle cx="39.2" cy="36.6" r=".9" fill="#fff"/></g><g class="ec"><path d="M23.2 38q2.6-2.9 5.2 0M35.8 38q2.6-2.9 5.2 0" stroke="#3A3228" stroke-width="2" fill="none" stroke-linecap="round"/></g><path d="M32 42.2 29.7 44.3h4.6Z" fill="#6B5B45"/><path d="M32 44.6v1.5M32 46.1q-2 1.9-3.8 0M32 46.1q2 1.9 3.8 0" stroke="#6B5B45" stroke-width="1.35" fill="none" stroke-linecap="round"/><g stroke="#6B5B45" stroke-width="1.2" stroke-linecap="round" opacity=".45"><path d="M14.4 39.2h5.6M14.8 43.2l5.4-1.5M49.6 39.2H44M49.2 43.2l-5.4-1.5"/></g><ellipse cx="22.2" cy="43" rx="3.1" ry="2" fill="#E8A9A0" opacity=".5"/><ellipse cx="41.8" cy="43" rx="3.1" ry="2" fill="#E8A9A0" opacity=".5"/></svg><span class="nm">Gargee Nimdeo</span><span class="rl">Flavor Architect</span><span class="ds">the live model, the recommendations, and the limits</span></div><div class="who-c"><svg viewBox="0 0 64 72" class="cat" aria-hidden="true"><g class="tail"><path d="M43.5 67.5C52.5 68 56.5 62 54.5 53.5" fill="none" stroke="#C6C3B0" stroke-width="6.8" stroke-linecap="round"/><path d="M43.5 67.5C52.5 68 56.5 62 54.5 53.5" fill="none" stroke="#E6E4D8" stroke-width="4.6" stroke-linecap="round"/></g><path d="M19.5 71C19.5 59.5 25 52.5 32 52.5s12.5 7 12.5 18.5Z" fill="#E6E4D8" stroke="#C6C3B0" stroke-width="1.3" stroke-linejoin="round"/><path d="M25.6 52h12.8L32 61.2Z" fill="#2E7C8C" stroke="#C6C3B0" stroke-width="1.1" stroke-linejoin="round"/><circle cx="32" cy="53.2" r="2.3" fill="#2E7C8C" stroke="#C6C3B0" stroke-width="1.1"/><g stroke="#C6C3B0" stroke-width="1.3" stroke-linejoin="round" fill="#E6E4D8"><path class="earL" d="M18.5 31 20 18.5 30.5 26Z"/><path class="earR" d="M45.5 31 44 18.5 33.5 26Z"/><ellipse cx="32" cy="38" rx="15" ry="13.4"/></g><path d="M21.2 28.4 22 22.6 27.2 26.3Z" fill="#E8A9A0"/><path d="M42.8 28.4 42 22.6 36.8 26.3Z" fill="#E8A9A0"/><g fill="#FFFFFF" stroke="#C6C3B0" stroke-width="1.3" stroke-linejoin="round"><circle cx="24" cy="13.6" r="6.6"/><circle cx="32" cy="9.6" r="8"/><circle cx="40" cy="13.6" r="6.6"/><rect x="21.2" y="16.8" width="21.6" height="7.6" rx="3.8"/></g><rect x="22.4" y="20.8" width="19.2" height="3.2" rx="1.6" fill="#2E7C8C"/><g class="eo"><circle cx="25.8" cy="37.6" r="2.6" fill="#3A3228"/><circle cx="38.2" cy="37.6" r="2.6" fill="#3A3228"/><circle cx="26.8" cy="36.6" r=".9" fill="#fff"/><circle cx="39.2" cy="36.6" r=".9" fill="#fff"/></g><g class="ec"><path d="M23.2 38q2.6-2.9 5.2 0M35.8 38q2.6-2.9 5.2 0" stroke="#3A3228" stroke-width="2" fill="none" stroke-linecap="round"/></g><path d="M32 42.2 29.7 44.3h4.6Z" fill="#6B5B45"/><path d="M32 44.6v1.5M32 46.1q-2 1.9-3.8 0M32 46.1q2 1.9 3.8 0" stroke="#6B5B45" stroke-width="1.35" fill="none" stroke-linecap="round"/><g stroke="#6B5B45" stroke-width="1.2" stroke-linecap="round" opacity=".45"><path d="M14.4 39.2h5.6M14.8 43.2l5.4-1.5M49.6 39.2H44M49.2 43.2l-5.4-1.5"/></g><ellipse cx="22.2" cy="43" rx="3.1" ry="2" fill="#E8A9A0" opacity=".5"/><ellipse cx="41.8" cy="43" rx="3.1" ry="2" fill="#E8A9A0" opacity=".5"/></svg><span class="nm">Alexandra Harlan</span><span class="rl">Master Blender</span><span class="ds">tested the finding against every rival cause, and forecast 2030</span></div></div>
+    <div class="who-foot">
+      <span class="trk"><i>Track</i><b>Trade &times; Eat</b></span>
+      <p><b>What we asked:</b> which countries have traded their way into a starch-rich, micronutrient-poor food supply, and does it show up in women&rsquo;s anemia?</p>
+    </div>
+  </div>
+</div>
+
 
 <!-- ═══════════ MODEL ═══════════ -->
 <div class="page on" id="p-model">
@@ -1044,7 +1154,6 @@ table.fd .bar{display:inline-block;height:6px;border-radius:3px;background:var(-
 <footer>
   <div class="wrap">
     <p><b>Slow Cooked</b> · Women in Data Datathon 2026, “What's Cooking?” · Built on FAOSTAT and World Bank data, 2010 to 2023, plus single-year WHO and DHS figures for malaria (2021) and iron supplementation (2022).</p>
-    <p style="margin-top:10px">Four people, three weeks, five datasets and a hypothesis we had to let go of: <b>Mansi Modi</b> · <b>Amia Nagpal</b> · <b>Gargee Nimdeo</b> · <b>Alexandra Harlan</b>.</p>
   </div>
 </footer>
 
@@ -1730,6 +1839,18 @@ if(ld)lo.observe(ld);
   if(document.getElementById('p-find')&&document.getElementById('p-find').classList.contains('on'))paintFindings();
 })();
 
+
+/* ── who cooked this ── */
+(function(){
+  const w=$('whoWrap'),b=$('whoBtn'),x=$('whoX');
+  if(!w||!b)return;
+  const open=o=>{w.classList.toggle('on',o);b.setAttribute('aria-expanded',o);
+    if(o)setTimeout(()=>w.querySelector('.who-card').focus(),80);else b.focus();};
+  b.onclick=()=>open(true);
+  x.onclick=()=>open(false);
+  w.addEventListener('click',e=>{if(e.target===w)open(false);});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&w.classList.contains('on'))open(false);});
+})();
 </script>
 </body>
 </html>
